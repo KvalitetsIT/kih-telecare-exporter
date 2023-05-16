@@ -1,0 +1,7 @@
+#!/bin/sh
+
+LOGDIR=/var/log/exporter/stdout
+
+if [ ! -d $LOGDIR ]; then mkdir -p $LOGDIR; chown nobody $LOGDIR; fi
+
+exec s6-setuidgid nobody s6-log -bp -- T n1 s1000000 $LOGDIR

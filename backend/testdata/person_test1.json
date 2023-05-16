@@ -1,0 +1,34 @@
+{
+  "createdDate": "2019-11-11T14:38:37",
+  "uniqueId": "0104909995",
+  "username": "sverretest",
+  "firstName": "Sverre Test",
+  "lastName": "Mosebryggersen",
+  "dateOfBirth": "01-04-1990",
+  "sex": "male",
+  "status": "active",
+  "address": "Testgrusgraven 3, 3.tv",
+  "postalCode": "3400",
+  "city": "Hillerød",
+  "place": null,
+  "phone": null,
+  "mobilePhone": null,
+  "email": null,
+  "comment": null,
+  "patientGroups": [
+    {
+      "name": "Lungemedicinsk",
+      "links": {
+        "patientGroup": "http://clinician:8080/clinician/api/patientgroups/4"
+      }
+    }
+  ],
+  "relatives": [],
+  "links": {
+    "self": "http://clinician:8080/clinician/api/patients/140",
+    "questionnaireSchedules": "http://clinician:8080/clinician/api/patients/140/questionnaire_schedules",
+    "measurements": "http://clinician:8080/clinician/api/patients/140/measurements",
+    "questionnaireResults": "http://clinician:8080/clinician/api/patients/140/questionnaireResults",
+    "patientThresholds": "http://thresholds:8280/patient-thresholds?patient=http://localhost:8080/clinician/api/patients/140"
+  }
+}

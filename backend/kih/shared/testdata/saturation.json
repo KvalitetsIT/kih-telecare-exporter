@@ -1,0 +1,23 @@
+{
+    "timestamp": "2020-04-21T16:11:08.000+02:00",
+    "type": "saturation",
+    "measurement": {
+        "unit": "%",
+        "value": 96
+    },
+    "severity": "green",
+    "origin": {
+        "deviceMeasurement": {
+            "connectionType": "bluetooth_spp",
+            "manufacturer": "Nonin",
+            "model": "Nonin_Medical_Inc._666288",
+            "primaryDeviceIdentifier": {
+                "serialNumber": "501666288"
+            }
+        }
+    },
+    "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/721",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "timestamp": "2020-05-27T10:41:05.000+02:00",
+    "type": "fev1/fev6",
+    "measurement": {
+        "unit": "%",
+        "value": 80
+    },
+    "severity": "green",
+    "origin": {
+        "manualMeasurement": {
+            "enteredBy": "citizen"
+        }
+    },
+    "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/832",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+    }
+}

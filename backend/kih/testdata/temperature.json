@@ -1,0 +1,29 @@
+{
+    "timestamp": "2020-06-18T14:29:05.000+02:00",
+    "type": "temperature",
+    "measurement": {
+        "unit": "°C",
+        "value": 36.4
+    },
+    "severity": "green",
+    "origin": {
+        "deviceMeasurement": {
+            "connectionType": "bluetooth_gatt",
+            "manufacturer": "A&D Medical",
+            "model": "A&D_UT201BLEA_43DE1F",
+            "primaryDeviceIdentifier": {
+                "macAddress": "6C:EC:EB:43:DE:1F"
+            },
+            "softwareVersion": "0.00",
+            "additionalDeviceIdentifiers": [
+                {
+                    "systemId": "1FDE43FEFFEBEC6C"
+                }
+            ]
+        }
+    },
+    "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/14/measurements/843",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/14"
+    }
+}

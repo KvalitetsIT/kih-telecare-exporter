@@ -1,0 +1,34 @@
+{
+  "createdDate": "2019-11-11T14:38:37",
+  "uniqueId": "2512484916",
+  "username": "NancyAnn",
+  "firstName": "Nancy Ann",
+  "lastName": "Berggren",
+  "dateOfBirth": "25-12-1948",
+  "sex": "female",
+  "status": "active",
+  "address": "Åbogade 15",
+  "postalCode": "8200",
+  "city": "Aarhus N",
+  "place": null,
+  "phone": null,
+  "mobilePhone": null,
+  "email": null,
+  "comment": null,
+  "patientGroups": [
+    {
+      "name": "Hjertepatient",
+      "links": {
+        "patientGroup": "http://clinician:8080/clinician/api/patientgroups/3"
+      }
+    }
+  ],
+  "relatives": [],
+  "links": {
+    "self": "http://clinician:8080/clinician/api/patients/13",
+    "questionnaireSchedules": "http://clinician:8080/clinician/api/patients/13/questionnaire_schedules",
+    "measurements": "http://clinician:8080/clinician/api/patients/13/measurements",
+    "questionnaireResults": "http://clinician:8080/clinician/api/patients/13/questionnaireResults",
+    "patientThresholds": "http://thresholds:8280/patient-thresholds?patient=http://localhost:8080/clinician/api/patients/13"
+  }
+}

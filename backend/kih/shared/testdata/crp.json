@@ -1,0 +1,18 @@
+{
+  "timestamp": "2020-09-22T18:44:38.000+02:00",
+  "type": "crp",
+  "measurement": {
+    "unit": "mg/L",
+    "value": 6
+  },
+  "severity": "green",
+  "origin": {
+    "manualMeasurement": {
+      "enteredBy": "citizen"
+    }
+  },
+  "links": {
+    "measurement": "https://oth-demo.oth.io/clinician/api/patients/13/measurements/1772",
+    "patient": "https://oth-demo.oth.io/clinician/api/patients/13"
+  }
+}

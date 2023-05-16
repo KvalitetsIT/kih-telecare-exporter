@@ -1,0 +1,19 @@
+{
+    "timestamp": "2020-04-19T19:55:57.000+02:00",
+    "type": "weight",
+    "measurement": {
+        "unit": "kg",
+        "value": 999
+    },
+    "comment": "",
+    "severity": "green",
+    "origin": {
+        "manualMeasurement": {
+            "enteredBy": "citizen"
+        }
+    },
+    "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/14/measurements/720",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/14"
+    }
+}

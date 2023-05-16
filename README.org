@@ -1,0 +1,756 @@
+#+TITLE: OTH Exporter
+#+OPTIONS: toc:nil
+
+* Development notes
+The =exporter= is Go application. A =Makefile= is supplied. The =Makefile= is the main way to interact with the project.
+
+The =Makefile= has the following targets:
+
+#+BEGIN_SRC sh :pretty :exports results :results raw code
+S=1 make help
+#+END_SRC
+
+#+RESULTS:
+#+begin_src sh
+================================================================================
+Standard OTH targets:
+================================================================================
+cleanall             Cleans everything
+clean                Cleans source and dependencies
+compile              Compile project
+dockerize            Dockerize component
+format               Runs formatter
+help                 This help
+release              Release component
+setup                Runs setup - if any
+start                Starts in development mode
+tag                  Set version
+test                 Runs test for component
+
+================================================================================
+Extra targets:
+================================================================================
+buildcontainer       Builds docker container
+ci-test              Run tests for cmponent
+clean-build          Removes croos compilation files
+clean-cover          Removes coverage files
+clean-dist           Removes distribution files
+cover                Runs coverage
+docker-enter         Enter container
+docker-logs          Tails logs from container
+docker-run           buildcontainer application in container
+docker-stop          Stop running container
+documentation        Compiles the README.md from README.org
+ecr-login            Performs ECR login
+integrationtest      Runs integration tests
+list                 List packages
+mysql                connnect to dev db
+push-to-ecr          Push container to ecr
+resetdb              Drop current database and re-apply migrations
+serve                Just starts API
+tag-container        tags docker image
+tags                 Displays tags
+testall              Test all then things
+#+end_src
+
+While in development the target `start` will start the reflex utility, which will reload the application if any relevant files are altered.
+** Modifying database structure
+The database migrations are managed by the [[https://github.com/golang-migrate/migrate][golang-migrate]] project. There is a subcommand for doing database upgrades which is =exporter migrate=. This command is run at every container start.
+
+** Running a local environment to test on
+
+Setting up a local development environment requires 3 parts:
+1. XDS Repository
+2. Running XDS generator
+3. Running this exporter
+*** Local XDS repository
+
+Start XDS repository til test, følgende =docker-compose.yml= anvendes
+#+begin_src yaml
+version: "3.9"  # optional since v1.27.0
+
+services:
+  openxds-server:
+    image: registry.nspop.dk/components/dds/openxds:snapshot
+    # networks:
+    #   - dds_net
+    depends_on:
+      - openxds-db
+      - openxds-logs-db
+    environment:
+      - XDS_REGISTRY_HOST=localhost
+      - XDS_REGISTRY_PORT=8010
+      - XDS_REGISTRY_URL=/axis2/services/xdsregistryb
+      - XDS_REPOSITORY_UNIQUE_ID=1.3.6.1.4.1.21367.2010.1.2.1125
+      - XDS_HOME_COMMUNITY_ID=urn:oid:1.3.6.1.4.1.21367.2010.1.2.2045
+      - XDS_DB_DIALECT=org.hibernate.dialect.MySQLDialect
+      - XDS_DB_DRIVER=com.mysql.jdbc.Driver
+      - XDS_DB_OPENXDS_URL=jdbc:mysql://openxds-db:3306/openxds
+      - XDS_DB_OPENXDS_USERNAME=openxds
+      - XDS_DB_OPENXDS_PASSWORD=open123
+      - XDS_DB_LOGS_URL=jdbc:mysql://openxds-logs-db:3306/openxdslogs
+      - XDS_DB_LOGS_USERNAME=logs
+      - XDS_DB_LOGS_PASSWORD=logs123
+      - XARGS=-Xmx128m
+      - XDS_LOG_LEVEL=DEBUG
+    ports:
+      - "8010:8010"
+      - "8020:8020"
+
+  openxds-db:
+    image: mariadb:10.1
+    # networks:
+    #   - dds_net
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=openxds
+      - MYSQL_USER=openxds
+      - MYSQL_PASSWORD=open123
+    volumes:
+      - ./database/openxds/openxds.sql:/docker-entrypoint-initdb.d/01_db.sql
+      - ./database/openxds/sds_2504_testdata.sql:/docker-entrypoint-initdb.d/50_sds2504test.sql
+      - ./database/my.cnf:/etc/mysql/my.cnf
+
+  openxds-logs-db:
+    image: mariadb:10.1
+    # networks:
+    #   - dds_net
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=openxdslogs
+      - MYSQL_USER=logs
+      - MYSQL_PASSWORD=logs123
+    volumes:
+      - ./database/openxds/openxdslogs.sql:/docker-entrypoint-initdb.d/db.sql
+      - ./database/my.cnf:/etc/mysql/my.cnf
+#+end_src
+
+Start by:
+#+begin_src sh
+  docker-compose up
+#+end_src
+
+*** XDS generator service
+Go to repository
+#+begin_src sh
+  make start
+#+end_src
+
+***** Configuration
+For running against xds-test repository as mentioned above, the following settings can be used:
+
+#+begin_src yaml
+  spring:
+    output:
+      ansi:
+        enabled: detect
+
+  logging:
+    level:
+      root: warn
+      org:
+        apache:
+          cxf: info
+      io:
+        oth:
+          xdsgenerator:
+              handlers:
+              KihDataController: info
+    pattern:
+      dateformat: yyyy-MM-dd HH:mm:ss.SSS
+      console: "%d %-5p %-30.30logger{29}: %m %n %ex{2}"
+
+  management:
+    endpoint:
+      health:
+        probes:
+          enabled: true
+        show-details: always
+
+  server:
+    error:
+      include-stacktrace: never
+    port: 9010
+    tomcat:
+      accesslog:
+        enabled: true
+        pattern: "%t sip=%h r=\"%r\" htsc=%s B=%b tt=%D tid=%I ua=\"%{User-Agent}i\""
+      basedir: tomcat
+
+  # XDS Settings
+  xds:
+    repositoryuniqueid: 1.2.208.176.43210.8.1.29
+    generate:
+      # Set this to true for using xds-test
+      documentid: true
+    iti41:
+      endpoint: http://localhost:8020/axis2/services/xdsrepositoryb
+  # SOR mapping for all measurements
+  sor:
+    code: 6071000016008
+    name: TeleCare Nord
+
+
+  # DGWS Setup for vaults and what note
+  dgws:
+    # true if should be signed
+    enabled: false
+    sts:
+      url: https://test2.ekstern-test.nspop.dk:8443/sts/services/SecurityTokenService
+    keystore:
+      type: production
+      alias: nets danid a/s - tu voces gyldig
+      filename: classpath:VOCES_gyldig_2022.p12
+      password: Test1234
+    certificate:
+      itsystem: TRUST2408 Systemtest XIX CA
+      orgname: NETS DANID A/S
+      cvr: 30808460
+#+end_src
+
+for using against medcom test
+#+begin_src yaml
+  spring:
+    output:
+      ansi:
+        enabled: detect
+
+  logging:
+    level:
+      root: warn
+      org:
+        apache:
+          cxf: info
+      io:
+        oth:
+          xdsgenerator:
+              handlers:
+              KihDataController: info
+    pattern:
+      dateformat: yyyy-MM-dd HH:mm:ss.SSS
+      console: "%d %-5p %-30.30logger{29}: %m %n %ex{2}"
+
+  management:
+    endpoint:
+      health:
+        probes:
+          enabled: true
+        show-details: always
+
+  server:
+    error:
+      include-stacktrace: never
+    port: 9010
+    tomcat:
+      accesslog:
+        enabled: true
+        pattern: "%t sip=%h r=\"%r\" htsc=%s B=%b tt=%D tid=%I ua=\"%{User-Agent}i\""
+      basedir: tomcat
+
+  # XDS Settings
+  xds:
+    repositoryuniqueid: 1.2.208.176.43210.8.1.29
+    generate:
+      # Set this to true for using xds-test
+      documentid: false
+    iti41:
+      endpoint: http://kih.test.xdsrepositoryb.medcom.dk:8031/kih-iti41/iti41
+  # SOR mapping for all measurements
+  sor:
+    code: 6071000016008
+    name: TeleCare Nord
+
+
+  # DGWS Setup for vaults and what note
+  dgws:
+    # true if should be signed
+    enabled: true
+    sts:
+      url: https://test2.ekstern-test.nspop.dk:8443/sts/services/SecurityTokenService
+    keystore:
+      type: production
+      alias: nets danid a/s - tu voces gyldig
+      filename: classpath:VOCES_gyldig_2022.p12
+      password: Test1234
+    certificate:
+      itsystem: TRUST2408 Systemtest XIX CA
+      orgname: NETS DANID A/S
+      cvr: 30808460
+#+end_src
+
+*** Export
+The exporter requires a local database. This can be started as follows:
+
+#+begin_src sh
+  docker-compose up
+ #+end_src
+
+Create a configuration similiar to this:
+
+#+begin_src yaml
+version: '1.1_build1'
+environment: 'dev'
+
+logfile: '/var/log/exporter'
+loglevel: 'warn'
+logging:
+  repository: debug
+  measurement: debug
+
+export:
+  start: 2020-06-01 # must be a date
+  retrydays: 15
+  nodevicewhitelist: true
+  backend: oioxds
+  oioxds:
+    xdsgenerator:
+      url: http://localhost:9010/api/createphmr
+      healthcheck: http://localhost:9010/actuator/health
+
+clinician:
+  batchsize: 1000
+  url: "https://<oth server dns>/clinician/api"
+
+authentication:
+  key: <insert key>
+  secret: <insert secret>
+
+database:
+  hostname: <db host>
+  username: <db user>
+  password: <password>
+  type: 'mysql'
+  port: 3306
+  database: 'exporter'
+
+#+end_src
+
+Bootstrap and restart the service
+#+begin_src sh
+  make resetdb start
+#+end_src
+
+Data can be exported in two ways:
+1. Batch mode
+   a. Intended for re-exporting all measurements from an OTH installation
+2. Normally operations, using cron/scheduled job/curl
+
+To trigger the batch export, using the =exportall= subcommand:
+#+begin_src sh
+  go run main.go exportall
+#+end_src
+
+Or setup for normal operations by:
+#+begin_src sh
+  go run main.go serve
+#+end_src
+
+Then in another shell, trigger the export like so:
+#+begin_src sh
+  curl http://localhost:8360/export
+#+end_src
+
+*** Backends
+The following describes how to setup a backend to export to.
+**** OIO XDS
+This requires the [[https://bitbucket.org/opentelehealth/xds-generator/src/master/][xds-generator]] backend.
+
+
+* OTH Exporter
+The OTH Exporter (exporter) is a component, which handles:
+- Exporting measurements from OTH to external system
+- The following external systems are supported:
+  - OIO XDS
+- Keeping track of, which types should be exported
+- Handling of soft and hard failures:
+  - Soft failures is the backend export failing, can be retries
+  - Hard failures, when retry of exports keep failing mark measurement as permanently failed
+
+For more information about the =exporter= please visit [[file:docs/Documentation.md][the documentation]].
+
+The exporter has the following endpoints:
+#+BEGIN_SRC http :pretty :exports both
+GET http://localhost:8360
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+{
+  "apiVersion": "1.1_build1",
+  "environment": "dev",
+  "links": {
+    "measurement": "http://localhost:8360/measurement",
+    "export": "http://localhost:8360/export",
+    "failed": "http://localhost:8360/failed",
+    "health": "http://localhost:8360/health",
+    "status": "http://localhost:8360/status",
+    "self": "http://localhost:8360/"
+  }
+}
+#+end_example
+
+The following methods/endpoints are supported by the exporter.
+
+** The /health endpoint
+
+The =/health= endpoint is used to access basic health information about the service. It only supports =HTTP GET=
+
+The output is as follows:
+#+BEGIN_SRC http :pretty :exports both
+  GET http://localhost:8360/health
+#+END_SRC
+
+#+RESULTS:
+: {
+:   "apiVersion": "1.0.6_build1",
+:   "environment": "dev"
+: }
+
+The health checks queries:
+- database
+- if kih export is selected:
+  - Sosiserver for idcard signing
+  - KIHDB for export
+** The /export endpoint
+The =/export= endpoint is used trigger the export. It only supports =HTTP GET=
+
+When the export is started it does as follows:
+1. Find time of last run
+2. Get measurements from opentele from 30 minutes before time of lastrun
+3. For each measurement:
+   1. Check if measurement is already known and exported?
+   2. Convert measurements to output format
+   3. Export measurements
+   4. Mark measurement as exported
+4. Check if results was paginiation, if yes fetch next batch and perform steps in step 3
+5. Mark run as completed
+
+The output is as follows:
+#+BEGIN_SRC restclient :pretty :exports both inline-body
+GET http://localhost:8360/export
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+,#+BEGIN_SRC js
+[
+  {
+    "Success": true,
+    "Measurement": {
+      "id": "d99394ab-2c51-440f-9aa1-4b97e62c8696",
+      "measurement": "https://docker-demo.oth.io/clinician/api/patients/14/measurements/397",
+      "patient": "https://docker-demo.oth.io/clinician/api/patients/14",
+      "status": "COMPLETED",
+      "created_at": "2020-02-25T15:58:40+01:00",
+      "updated_at": "2020-02-25T15:58:41.361090851+01:00"
+    }
+  },
+  {
+    "Success": true,
+    "Measurement": {
+      "id": "883e39d0-ca2c-4995-9897-53c7b05528eb",
+      "measurement": "https://docker-demo.oth.io/clinician/api/patients/13/measurements/396",
+      "patient": "https://docker-demo.oth.io/clinician/api/patients/13",
+      "status": "COMPLETED",
+      "created_at": "2020-02-25T15:58:41+01:00",
+      "updated_at": "2020-02-25T15:58:41.729067684+01:00"
+    }
+  },
+]
+// GET http://localhost:8360/export
+// HTTP/1.1 200 OK
+// Content-Type: application/json; charset=utf-8
+,#+END_SRC
+#+end_example
+
+** The /status endpoint
+The =/statuss= endpoint is used to access basic metrics from the underlying service. It only supports =HTTP GET=
+
+The output is as follows:
+#+BEGIN_SRC http :pretty :exports both
+GET http://localhost:8360/status
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+{
+  "Measurements": {
+    "TotalMeasurements": 397,
+    "TempFailedMeasurements": 0,
+    "RejectedMeasurements": 5,
+    "FailedMeasurements": 0
+  },
+  "LastRun": {
+    "TimeStamp": "2020-02-25T16:14:18+01:00",
+    "Status": "COMPLETED"
+  },
+  "Runs": {
+    "Total": 2,
+    "Failed": 0,
+    "Successfull": 2
+  },
+  "Source": {
+    "Endpoint": "https://docker-demo.oth.io/clinician/api"
+  },
+  "Destination": {
+    "Endpoint": "https://kihdb-devel.oth.io/services/monitoringDataset"
+  }
+}
+#+end_example
+
+** The /failed endpoint
+
+The =/failed= endpoint is used to trigger, failed measurements
+
+** The /measurement endpoint
+
+The =/measurement/ endpoint is used to retrieve a measurement using the ID for the measurement. The operations fetches both the exporters internal state, as well as the actual measurement and patient from OTH.
+
+Example:
+#+BEGIN_SRC http :pretty :exports both
+GET localhost:8360/measurement/7ee1c80c-d687-4c02-9ac4-8a9bc8586111
+#+END_SRC
+
+#+RESULTS:
+#+begin_example
+{
+  "patient": {
+    "createdDate": "2021-06-25T07:06:37.000Z",
+    "uniqueId": "2512688916",
+    "username": "Lisa",
+    "firstName": "Lisa",
+    "lastName": "Jensen",
+    "dateOfBirth": null,
+    "sex": "female",
+    "status": "active",
+    "address": "21 Carter Building Washington",
+    "postalCode": "DC 20510",
+    "city": "Washington DC",
+    "place": null,
+    "phone": null,
+    "mobilePhone": "",
+    "email": "",
+    "comment": null,
+    "patientGroups": [
+      {
+        "name": "Obstructive Lung Disease Clinic",
+        "links": {
+          "patientGroup": "https://docker-demo.oth.io/clinician/api/patientgroups/4"
+        }
+      }
+    ],
+    "relatives": [],
+    "links": {
+      "self": "https://docker-demo.oth.io/clinician/api/patients/14",
+      "questionnaireSchedules": "https://docker-demo.oth.io/clinician/api/patients/14/questionnaire_schedules",
+      "measurements": "https://docker-demo.oth.io/clinician/api/patients/14/measurement-types",
+      "questionnaireResults": "https://docker-demo.oth.io/clinician/api/patients/14/questionnaire-results",
+      "patientThresholds": ""
+    }
+  },
+  "measurement": {
+    "timestamp": "2021-06-02T09:00:00+02:00",
+    "type": "bloodsugar",
+    "measurement": {
+      "unit": "mmol/L",
+      "value": 6.900000095367432,
+      "ignored": {
+        "by": {
+          "firstName": "",
+          "lastName": "",
+          "email": "",
+          "links": {}
+        }
+      }
+    },
+    "origin": {
+      "manualMeasurement": {
+        "enteredBy": ""
+      },
+      "deviceMeasurement": {
+        "connectionType": "bluetooth_spp",
+        "manufacturer": "MyGlycoHealth",
+        "model": "MyGlycoHealth",
+        "primaryDeviceIdentifier": {
+          "macAddress": "AA:BB:CC:DD:EE:FF"
+        },
+        "hardwareVersion": "A2",
+        "firmwareVersion": "Z3",
+        "softwareVersion": "B1",
+        "additionalDeviceIdentifiers": [
+          {
+            "systemId": "123456",
+            "other": {
+              "description": "",
+              "value": ""
+            }
+          },
+          {
+            "other": {
+              "description": "manufacturer_id",
+              "value": "ACF123G155"
+            }
+          }
+        ]
+      }
+    },
+    "links": {
+      "patient": "https://docker-demo.oth.io/clinician/api/patients/14"
+    }
+  },
+  "storedMeasurement": {
+    "id": "7ee1c80c-d687-4c02-9ac4-8a9bc8586111",
+    "measurement": "https://docker-demo.oth.io/clinician/api/patients/14/measurements/279",
+    "patient": "https://docker-demo.oth.io/clinician/api/patients/14",
+    "status": "COMPLETED",
+    "created_at": "2021-05-21T13:58:15+02:00",
+    "updated_at": "2021-05-21T13:58:16+02:00"
+  }
+}
+#+end_example
+
+* Configuration
+The =exporter= is configured using  =exporter.yaml= file.
+
+The following options are available to configure =exporter=:
+
+#+BEGIN_EXAMPLE
+version: '1.1_build1'
+environment: 'dev'
+
+logfile: '/var/log/exporter'
+loglevel: 'warn'
+logging:
+  repository: debug
+  measurement: debug
+
+export:
+  start: 2020-06-01 # must be a date
+  retrydays: 15
+  created_by: OTH Test Exporter
+  nodevicewhitelist: true
+  backend: oioxds
+  oioxds:
+    xdsgenerator:
+      url: http://localhost:9010/api/createphmr
+      healthcheck: http://localhost:9010/actuator/health
+
+clinician:
+  batchsize: 1000
+  url: "https://oth-demo.oth.io/clinician/api"
+
+authentication:
+  key: <insert key>
+  secret: <insert secret>
+
+database:
+  hostname: localhost
+  username: root
+  password: opentele
+  type: 'mysql'
+  port: 3306
+  database: 'exporter'
+
+#+END_EXAMPLE
+
+The application specific settings are under the =exporter= space. The settings mean the following:
+  - =clinician:= Settings for clinician
+    - =url= Where the measurements API is located
+    - =batchsize= control how many measurements are retrieved
+  - =export= The exporter backends
+    - =backend= Denotes which type is to be deployed. Choices are =kih= or =oioxds=
+    - =start= The start date for using when to export measurements
+    - =retrydays= How many days must temporary failed measurements be marked as temporary failed before moving to permanently failed
+    - =nodevicewhitelist= Use the by MedCom defined device whitelist, or use the origin data from a measurement.
+
+
+** Setting up the local IdP
+The keys for OTH IdP must be manually created. This can be done with the following steps:
+1. Create client using the IdPs keys
+2. Grant permission to client.
+
+IdP keys can be retrieved using salt on the minion like this:
+#+BEGIN_SRC sh :export :results raw code :exports inline-only both
+sudo salt-call pillar.items authentication:idp
+#+END_SRC
+
+The persmissions can then be created using:
+#+BEGIN_SRC sh :export :results raw code :exports inline-only both
+echo '{ "name": "exporter client", "permissions": [ "ROLE_MEASUREMENT_READ", "ROLE_PATIENT_READ" ] }'  | \
+http --auth $KEY:$SECRET post https://$HOST/idp2/clients
+#+END_SRC
+
+The above will return a response, which key and secret. The response will look something like this:
+#+BEGIN_EXAMPLE
+{
+  "permissions": [
+    {
+      "service": "Clinician",
+      "name": "ROLE_MEASUREMENT_READ",
+      "links": {
+        "permission": "https://oth-demo.oth.io/idp2/permissions/111"
+      },
+      "displayName": "Read: Measurements",
+      "description": "Read measurements"
+    },
+    {
+      "service": "Clinician",
+      "name": "ROLE_PATIENT_READ",
+      "links": {
+        "permission": "https://oth-demo.oth.io/idp2/permissions/9"
+      },
+      "displayName": "Read: Patients",
+      "description": "Read patients"
+    }
+],
+  "name": "exporter client",
+  "links": {
+    "self": "https://oth-demo.oth.io/idp2/clients/17"
+  },
+  "clientSecret": "MGm1bDqVgle74C_UxiEx4J4IJdXOcnvPHHBsZ-OB_Zazqw2sqpdrImswbH",
+  "clientKey": "1A8ByV0-hm6-doZ8bCFiaPI6O",
+  "auditId": "fb60b1eb-8f37-11ea-9f02-0242ac110006"
+}
++END_EXAMPLE
+
+* Using exporter as injector to OIOXDS
+The binary can be used to inject measurements into KIHDB or OIOXDS
+
+This can be achieved by using the =exporter testinject= subcommand. The short hand =exporter ti= can also be use.
+
+The =testinject= commands takes the following arguments:
+#+BEGIN_SRC sh :pretty :exports results :results raw code
+exporter ti -h
+#+END_SRC
+
+#+RESULTS:
+#+begin_src sh
+Reads measurements and patients from file and exports based on config
+
+Usage:
+  exporter testinject [flags]
+
+Aliases:
+  testinject, ti
+
+Flags:
+  -b, --backend string         -b indicates with exporter backend to use. Supported backends: kih (default "kih")
+  -f, --file string            -f is a path to JSON file measurent data to be sent
+  -h, --help                   help for testinject
+      --kihcreatedby string    Sets created by in OIO request
+      --kihsosiserver string   Sets URL for SOSI Server
+      --kihurl string          Sets URL for KIHDB endpoint (https://kihdb-devel.oth.io/services/monitoringDataset) (default "https://kihdb-devel.oth.io/services/monitoringDataset")
+  -p, --patient string         -p is a path to JSON file with patient information
+      --setnow                 Set timestamp on measurement to now?
+  -s, --source string          -s is a path to directory with JSON files with measurent data to be sent
+      --usesosi                Use SOSI?
+
+Global Flags:
+      --exporter string   config file (default is exporter.yaml)
+#+end_src
+
+For instance to inject a single test file, this can be accomplished like this:
+#+begin_src sh :exports inline-only
+exporter testinject -b oioxds --date 2019-01-01T10:10:10 --kihcreatedby "OTH Test" -f ./backend/kih/testdata/pulse.json \
+    -p ./backend/testdata/person_m33.json --xdsgen http://docker-demo.oth.io:9010/api/createphmr
+#+end_src

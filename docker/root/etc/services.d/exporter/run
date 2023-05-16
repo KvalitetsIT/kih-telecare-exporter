@@ -1,0 +1,8 @@
+#!/usr/bin/execlineb -P
+
+with-contenv
+s6-envuidgid opentele
+fdmove -c 2 1
+s6-envdir /etc/services.d/exporter/envdir
+cd /app
+./exporter serve

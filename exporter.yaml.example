@@ -1,0 +1,34 @@
+version: '1.1_build1'
+environment: 'dev'
+
+logfile: '/var/log/exporter'
+loglevel: 'warn'
+logging:
+  repository: debug
+  measurement: debug
+
+export:
+  start: 2020-06-01 # must be a date
+  retrydays: 15
+  nodevicewhitelist: true
+  backend: oioxds
+  oioxds:
+    xdsgenerator:
+      url: http://localhost:9010/api/createphmr
+      healthcheck: http://localhost:9010/actuator/health
+
+clinician:
+  batchsize: 1000
+  url: "https://oth-demo.oth.io/clinician/api"
+
+authentication:
+  key: <insert key>
+  secret: <insert secret>
+
+database:
+  hostname: localhost
+  username: root
+  password: opentele
+  type: 'mysql'
+  port: 3306
+  database: 'exporter'

@@ -1,0 +1,34 @@
+{
+  "createdDate": "2019-11-11T14:38:37",
+  "uniqueId": "2512688916",
+  "username": "Lene",
+  "firstName": "Lene",
+  "lastName": "Jensen",
+  "dateOfBirth": "25-12-1988",
+  "sex": "female",
+  "status": "active",
+  "address": "Åbogade 25",
+  "postalCode": "8200",
+  "city": "Aarhus N",
+  "place": null,
+  "phone": null,
+  "mobilePhone": null,
+  "email": null,
+  "comment": null,
+  "patientGroups": [
+    {
+      "name": "Lungemedicinsk",
+      "links": {
+        "patientGroup": "http://clinician:8080/clinician/api/patientgroups/4"
+      }
+    }
+  ],
+  "relatives": [],
+  "links": {
+    "self": "http://clinician:8080/clinician/api/patients/14",
+    "questionnaireSchedules": "http://clinician:8080/clinician/api/patients/14/questionnaire_schedules",
+    "measurements": "http://clinician:8080/clinician/api/patients/14/measurements",
+    "questionnaireResults": "http://clinician:8080/clinician/api/patients/14/questionnaireResults",
+    "patientThresholds": "http://thresholds:8280/patient-thresholds?patient=http://localhost:8080/clinician/api/patients/14"
+  }
+}

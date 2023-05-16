@@ -1,0 +1,41 @@
+{
+    "timestamp": "2019-11-02T02:00:00.000Z",
+    "type": "bloodsugar",
+    "measurement": {
+        "unit": "mmol/L",
+        "value": 7.199999809265137,
+        "isAfterMeal": false,
+        "isBeforeMeal": false,
+        "isFasting": false,
+        "isControlMeasurement": false
+    },
+    "severity": "green",
+    "origin": {
+        "deviceMeasurement": {
+            "connectionType": "bluetooth_spp",
+            "manufacturer": "MyGlycoHealth",
+            "model": "MyGlycoHealth",
+            "primaryDeviceIdentifier": {
+                "macAddress": "AA:BB:CC:DD:EE:FF"
+            },
+            "hardwareVersion": "A2",
+            "firmwareVersion": "Z3",
+            "softwareVersion": "B1",
+            "additionalDeviceIdentifiers": [
+                {
+                    "systemId": "123456"
+                },
+                {
+                    "other": {
+                        "description": "manufacturer_id",
+                        "value": "ACF123G155"
+                    }
+                }
+            ]
+        }
+    },
+    "links": {
+        "measurement": "http://clinician:8080/clinician/api/patients/13/measurements/29",
+        "patient": "http://clinician:8080/clinician/api/patients/13"
+    }
+}

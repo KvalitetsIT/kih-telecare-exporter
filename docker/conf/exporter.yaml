@@ -1,0 +1,52 @@
+logfile: '/var/log/exporter'
+loglevel: 'warn'
+## Control logging in more detail
+logging:
+  cmd: warn
+  repository: info
+  measurement: debug
+  exporter: info
+  exporter/kih/dgws: warn
+
+version: '1.0_build1'
+environment: 'dev'
+
+export:
+  start: 2019-06-01 # must be a date
+  retrydays: 15
+  backend: 'kih'
+  kih:
+    skipSosi: false
+    created_by: 'OTH Test'
+    sosi:
+      url: http://sosiserver:9008
+    #url: 'http://kihdb-devel.oth.io/services/v3/monitoringDataset'
+    #url: 'http://localhost:9080/services/v3/monitoringDataset
+    #url:'http://localhost:9080/kih_database/services/v3/monitoringDataset'
+    url: 'http://172.17.0.1:9080/kih_database/services/monitoringDataset'
+
+
+proxy:
+  port: 8360
+  scheme: 'http'
+  host: 'localhost'
+
+app:
+  url: 'http://localhost:8360'
+  port: 8360
+
+clinician:
+  batchsize: 50
+  url: "http://clinician:8080/clinician/api"
+
+authentication:
+  key: 'kihexport'
+  secret: 'abcd1234'
+
+database:
+  hostname: 'devdb'
+  username: 'opentele'
+  password: 'opentele'
+  type: 'mysql'
+  port: 3306
+  database: 'exporter'

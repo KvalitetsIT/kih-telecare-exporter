@@ -1,0 +1,1845 @@
+{
+  "results": [
+    {
+      "timestamp": "2020-06-17T08:46:50.000+02:00",
+      "type": "nitrite_in_urine",
+      "measurement": {
+        "unit": "-",
+        "value": "Pos."
+      },
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "clinician"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/2/measurements/836",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/2"
+      }
+    },
+    {
+      "timestamp": "2020-06-17T08:46:50.000+02:00",
+      "type": "protein_in_urine",
+      "measurement": {
+        "unit": "g/L",
+        "value": "+2"
+      },
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "clinician"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/2/measurements/837",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/2"
+      }
+    },
+    {
+      "timestamp": "2020-06-17T08:46:50.000+02:00",
+      "type": "leukocytes_in_urine",
+      "measurement": {
+        "unit": "Leu/µL",
+        "value": "+2"
+      },
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "clinician"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/2/measurements/838",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/2"
+      }
+    },
+    {
+      "timestamp": "2020-06-17T08:46:50.000+02:00",
+      "type": "blood_in_urine",
+      "measurement": {
+        "unit": "Ery/μL",
+        "value": "+1"
+      },
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "clinician"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/2/measurements/839",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/2"
+      }
+    },
+    {
+      "timestamp": "2020-06-17T08:46:50.000+02:00",
+      "type": "glucose_in_urine",
+      "measurement": {
+        "unit": "mmol/L",
+        "value": "+2"
+      },
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "clinician"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/2/measurements/840",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/2"
+      }
+    },
+    {
+      "timestamp": "2020-06-04T10:35:47.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 84.9
+      },
+      "severity": "yellow",
+      "origin": {
+        "deviceMeasurement": {
+          "connectionType": "bluetooth_gatt",
+          "manufacturer": "A&D Medical",
+          "model": "UC-352BLE",
+          "primaryDeviceIdentifier": {
+            "serialNumber": "5150400146"
+          },
+          "hardwareVersion": "0.00",
+          "firmwareVersion": "WSP001_201",
+          "softwareVersion": "0.00",
+          "additionalDeviceIdentifiers": [
+            {
+              "systemId": "FFF85AFEFF4C99B4"
+            }
+          ]
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/13/measurements/835",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/13"
+      }
+    },
+    {
+      "timestamp": "2020-05-27T10:41:05.000+02:00",
+      "type": "fev1",
+      "measurement": {
+        "unit": "L",
+        "value": 4
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/829",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-05-27T10:41:05.000+02:00",
+      "type": "fev6",
+      "measurement": {
+        "unit": "L",
+        "value": 5
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/830",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-05-27T10:41:05.000+02:00",
+      "type": "fef25-75%",
+      "measurement": {
+        "unit": "L/s",
+        "value": 4
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/831",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-05-27T10:41:05.000+02:00",
+      "type": "fev1/fev6",
+      "measurement": {
+        "unit": "%",
+        "value": 80
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/832",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-05-27T10:41:05.000+02:00",
+      "type": "fev1%",
+      "measurement": {
+        "unit": "%",
+        "value": null
+      },
+      "severity": "green",
+      "origin": {
+        "calculatedMeasurement": {
+          "calculatedBy": "spi-ref"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/833",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-05-27T10:41:05.000+02:00",
+      "type": "fev6%",
+      "measurement": {
+        "unit": "%",
+        "value": null
+      },
+      "severity": "green",
+      "origin": {
+        "calculatedMeasurement": {
+          "calculatedBy": "spi-ref"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/834",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-05-19T15:40:45.000+02:00",
+      "type": "pain_scale",
+      "measurement": {
+        "unit": "-",
+        "value": 5.9
+      },
+      "severity": "green",
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/13/measurements/826",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/13"
+      }
+    },
+    {
+      "timestamp": "2020-05-19T15:40:45.000+02:00",
+      "type": "phase_angle",
+      "measurement": {
+        "unit": "°",
+        "value": 6
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/13/measurements/827",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/13"
+      }
+    },
+    {
+      "timestamp": "2020-05-19T15:40:45.000+02:00",
+      "type": "sit_to_stand",
+      "measurement": {
+        "unit": "repetitions",
+        "value": 6
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/13/measurements/828",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/13"
+      }
+    },
+    {
+      "timestamp": "2020-05-18T09:23:21.000+02:00",
+      "type": "blood_pressure",
+      "measurement": {
+        "unit": "mmHg",
+        "systolic": 121,
+        "diastolic": 90
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/13/measurements/824",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/13"
+      }
+    },
+    {
+      "timestamp": "2020-05-18T09:23:21.000+02:00",
+      "type": "pulse",
+      "measurement": {
+        "unit": "BPM",
+        "value": 91
+      },
+      "severity": "yellow",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/13/measurements/825",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/13"
+      }
+    },
+    {
+      "timestamp": "2020-04-30T18:44:31.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 188
+      },
+      "comment": "janj",
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/14/measurements/823",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/14"
+      }
+    },
+    {
+      "timestamp": "2020-04-24T15:15:38.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 10
+      },
+      "comment": "4",
+      "severity": "yellow",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/13/measurements/822",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/13"
+      }
+    },
+    {
+      "timestamp": "2020-04-23T14:03:24.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 333
+      },
+      "comment": "fafafa",
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/14/measurements/821",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/14"
+      }
+    },
+    {
+      "timestamp": "2020-04-23T11:59:01.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 75
+      },
+      "comment": "",
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/37/measurements/820",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/37"
+      }
+    },
+    {
+      "timestamp": "2020-04-23T11:58:54.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 75
+      },
+      "comment": "",
+      "severity": "orange",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/37/measurements/819",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/37"
+      }
+    },
+    {
+      "timestamp": "2020-04-23T11:58:22.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 80
+      },
+      "comment": "",
+      "severity": "red",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/36/measurements/818",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/36"
+      }
+    },
+    {
+      "timestamp": "2020-04-23T11:58:11.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 80
+      },
+      "comment": "",
+      "severity": "red",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/36/measurements/817",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/36"
+      }
+    },
+    {
+      "timestamp": "2020-04-23T11:57:57.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 90
+      },
+      "comment": "",
+      "severity": "red",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/36/measurements/816",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/36"
+      }
+    },
+    {
+      "timestamp": "2020-04-23T11:56:30.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 50
+      },
+      "comment": "",
+      "severity": "red",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/36/measurements/815",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/36"
+      }
+    },
+    {
+      "timestamp": "2020-04-23T11:55:12.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 34
+      },
+      "comment": "",
+      "severity": "red",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/36/measurements/814",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/36"
+      }
+    },
+    {
+      "timestamp": "2020-04-23T11:54:06.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 33
+      },
+      "comment": "",
+      "severity": "orange",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/36/measurements/813",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/36"
+      }
+    },
+    {
+      "timestamp": "2020-04-23T11:25:26.000+02:00",
+      "type": "fev1",
+      "measurement": {
+        "unit": "L",
+        "value": 3
+      },
+      "severity": "red",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/807",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-23T11:25:26.000+02:00",
+      "type": "fev6",
+      "measurement": {
+        "unit": "L",
+        "value": 4
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/808",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-23T11:25:26.000+02:00",
+      "type": "fef25-75%",
+      "measurement": {
+        "unit": "L/s",
+        "value": 4
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/809",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-23T11:25:26.000+02:00",
+      "type": "fev1/fev6",
+      "measurement": {
+        "unit": "%",
+        "value": 80
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/810",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-23T11:25:26.000+02:00",
+      "type": "fev1%",
+      "measurement": {
+        "unit": "%",
+        "value": null
+      },
+      "severity": "green",
+      "origin": {
+        "calculatedMeasurement": {
+          "calculatedBy": "spi-ref"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/811",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-23T11:25:26.000+02:00",
+      "type": "fev6%",
+      "measurement": {
+        "unit": "%",
+        "value": null
+      },
+      "severity": "green",
+      "origin": {
+        "calculatedMeasurement": {
+          "calculatedBy": "spi-ref"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/812",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-22T19:05:23.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 10
+      },
+      "comment": "",
+      "severity": "orange",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/35/measurements/805",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/35"
+      }
+    },
+    {
+      "timestamp": "2020-04-22T19:02:49.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 10
+      },
+      "comment": "",
+      "severity": "orange",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/34/measurements/804",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/34"
+      }
+    },
+    {
+      "timestamp": "2020-04-22T19:00:45.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 10
+      },
+      "comment": "",
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/33/measurements/803",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/33"
+      }
+    },
+    {
+      "timestamp": "2020-04-22T18:58:28.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 30
+      },
+      "comment": "",
+      "severity": "red",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/27/measurements/802",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/27"
+      }
+    },
+    {
+      "timestamp": "2020-04-22T18:57:43.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 10
+      },
+      "comment": "",
+      "severity": "orange",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/27/measurements/801",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/27"
+      }
+    },
+    {
+      "timestamp": "2020-04-22T18:54:41.000+02:00",
+      "type": "blood_pressure",
+      "measurement": {
+        "unit": "mmHg",
+        "systolic": 120,
+        "diastolic": 90
+      },
+      "severity": "orange",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/27/measurements/799",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/27"
+      }
+    },
+    {
+      "timestamp": "2020-04-22T18:54:41.000+02:00",
+      "type": "pulse",
+      "measurement": {
+        "unit": "BPM",
+        "value": 60
+      },
+      "severity": "orange",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/27/measurements/800",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/27"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T22:38:20.000+02:00",
+      "type": "pulse",
+      "measurement": {
+        "unit": "BPM",
+        "value": 87
+      },
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "clinician"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/13/measurements/787",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/13"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T22:38:20.000+02:00",
+      "type": "sit_to_stand",
+      "measurement": {
+        "unit": "repetitions",
+        "value": 15
+      },
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "clinician"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/13/measurements/788",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/13"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T22:38:20.000+02:00",
+      "type": "blood_pressure",
+      "measurement": {
+        "unit": "mmHg",
+        "systolic": 120,
+        "diastolic": 110
+      },
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "clinician"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/13/measurements/789",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/13"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:51:09.000+02:00",
+      "type": "bloodsugar",
+      "measurement": {
+        "unit": "mmol/L",
+        "value": 6.6,
+        "isAfterMeal": true,
+        "isBeforeMeal": null,
+        "isFasting": true,
+        "isControlMeasurement": null
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/13/measurements/786",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/13"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:01:32.000+02:00",
+      "type": "fev1",
+      "measurement": {
+        "unit": "L",
+        "value": 3.7
+      },
+      "severity": "red",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/778",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:01:32.000+02:00",
+      "type": "fev6",
+      "measurement": {
+        "unit": "L",
+        "value": 4
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/779",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:01:32.000+02:00",
+      "type": "fef25-75%",
+      "measurement": {
+        "unit": "L/s",
+        "value": 81
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/780",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:01:32.000+02:00",
+      "type": "fev1/fev6",
+      "measurement": {
+        "unit": "%",
+        "value": 4
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/781",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:01:32.000+02:00",
+      "type": "fev1%",
+      "measurement": {
+        "unit": "%",
+        "value": null
+      },
+      "severity": "green",
+      "origin": {
+        "calculatedMeasurement": {
+          "calculatedBy": "spi-ref"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/782",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:01:32.000+02:00",
+      "type": "fev6%",
+      "measurement": {
+        "unit": "%",
+        "value": null
+      },
+      "severity": "green",
+      "origin": {
+        "calculatedMeasurement": {
+          "calculatedBy": "spi-ref"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/783",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:01:09.000+02:00",
+      "type": "fev1",
+      "measurement": {
+        "unit": "L",
+        "value": 3.7
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/772",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:01:09.000+02:00",
+      "type": "fev6",
+      "measurement": {
+        "unit": "L",
+        "value": 4
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/773",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:01:09.000+02:00",
+      "type": "fef25-75%",
+      "measurement": {
+        "unit": "L/s",
+        "value": 80
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/774",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:01:09.000+02:00",
+      "type": "fev1/fev6",
+      "measurement": {
+        "unit": "%",
+        "value": 4
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/775",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:01:09.000+02:00",
+      "type": "fev1%",
+      "measurement": {
+        "unit": "%",
+        "value": null
+      },
+      "severity": "green",
+      "origin": {
+        "calculatedMeasurement": {
+          "calculatedBy": "spi-ref"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/776",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:01:09.000+02:00",
+      "type": "fev6%",
+      "measurement": {
+        "unit": "%",
+        "value": null
+      },
+      "severity": "green",
+      "origin": {
+        "calculatedMeasurement": {
+          "calculatedBy": "spi-ref"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/777",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:00:42.000+02:00",
+      "type": "fev1",
+      "measurement": {
+        "unit": "L",
+        "value": 3.7
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/766",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:00:42.000+02:00",
+      "type": "fev6",
+      "measurement": {
+        "unit": "L",
+        "value": 4
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/767",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:00:42.000+02:00",
+      "type": "fef25-75%",
+      "measurement": {
+        "unit": "L/s",
+        "value": 81
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/768",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:00:42.000+02:00",
+      "type": "fev1/fev6",
+      "measurement": {
+        "unit": "%",
+        "value": 4
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/769",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:00:42.000+02:00",
+      "type": "fev1%",
+      "measurement": {
+        "unit": "%",
+        "value": null
+      },
+      "severity": "green",
+      "origin": {
+        "calculatedMeasurement": {
+          "calculatedBy": "spi-ref"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/770",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:00:42.000+02:00",
+      "type": "fev6%",
+      "measurement": {
+        "unit": "%",
+        "value": null
+      },
+      "severity": "green",
+      "origin": {
+        "calculatedMeasurement": {
+          "calculatedBy": "spi-ref"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/771",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:00:15.000+02:00",
+      "type": "fev1",
+      "measurement": {
+        "unit": "L",
+        "value": 3.7
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/760",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:00:15.000+02:00",
+      "type": "fev6",
+      "measurement": {
+        "unit": "L",
+        "value": 4
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/761",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:00:15.000+02:00",
+      "type": "fef25-75%",
+      "measurement": {
+        "unit": "L/s",
+        "value": 85
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/762",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:00:15.000+02:00",
+      "type": "fev1/fev6",
+      "measurement": {
+        "unit": "%",
+        "value": 4
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/763",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:00:15.000+02:00",
+      "type": "fev1%",
+      "measurement": {
+        "unit": "%",
+        "value": null
+      },
+      "severity": "green",
+      "origin": {
+        "calculatedMeasurement": {
+          "calculatedBy": "spi-ref"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/764",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T17:00:15.000+02:00",
+      "type": "fev6%",
+      "measurement": {
+        "unit": "%",
+        "value": null
+      },
+      "severity": "green",
+      "origin": {
+        "calculatedMeasurement": {
+          "calculatedBy": "spi-ref"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/765",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:59:51.000+02:00",
+      "type": "fev1",
+      "measurement": {
+        "unit": "L",
+        "value": 4
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/754",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:59:51.000+02:00",
+      "type": "fev6",
+      "measurement": {
+        "unit": "L",
+        "value": 5
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/755",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:59:51.000+02:00",
+      "type": "fef25-75%",
+      "measurement": {
+        "unit": "L/s",
+        "value": 80
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/756",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:59:51.000+02:00",
+      "type": "fev1/fev6",
+      "measurement": {
+        "unit": "%",
+        "value": 4
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/757",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:59:51.000+02:00",
+      "type": "fev1%",
+      "measurement": {
+        "unit": "%",
+        "value": null
+      },
+      "severity": "green",
+      "origin": {
+        "calculatedMeasurement": {
+          "calculatedBy": "spi-ref"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/758",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:59:51.000+02:00",
+      "type": "fev6%",
+      "measurement": {
+        "unit": "%",
+        "value": null
+      },
+      "severity": "green",
+      "origin": {
+        "calculatedMeasurement": {
+          "calculatedBy": "spi-ref"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/759",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:59:27.000+02:00",
+      "type": "fev1",
+      "measurement": {
+        "unit": "L",
+        "value": 4
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/748",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:59:27.000+02:00",
+      "type": "fev6",
+      "measurement": {
+        "unit": "L",
+        "value": 5
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/749",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:59:27.000+02:00",
+      "type": "fef25-75%",
+      "measurement": {
+        "unit": "L/s",
+        "value": 80
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/750",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:59:27.000+02:00",
+      "type": "fev1/fev6",
+      "measurement": {
+        "unit": "%",
+        "value": 4
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/751",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:59:27.000+02:00",
+      "type": "fev1%",
+      "measurement": {
+        "unit": "%",
+        "value": null
+      },
+      "severity": "green",
+      "origin": {
+        "calculatedMeasurement": {
+          "calculatedBy": "spi-ref"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/752",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:59:27.000+02:00",
+      "type": "fev6%",
+      "measurement": {
+        "unit": "%",
+        "value": null
+      },
+      "severity": "green",
+      "origin": {
+        "calculatedMeasurement": {
+          "calculatedBy": "spi-ref"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/753",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:58:46.000+02:00",
+      "type": "fev1",
+      "measurement": {
+        "unit": "L",
+        "value": 3.7
+      },
+      "severity": "red",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/742",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:58:46.000+02:00",
+      "type": "fev6",
+      "measurement": {
+        "unit": "L",
+        "value": 4
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/743",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:58:46.000+02:00",
+      "type": "fef25-75%",
+      "measurement": {
+        "unit": "L/s",
+        "value": 80
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/744",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:58:46.000+02:00",
+      "type": "fev1/fev6",
+      "measurement": {
+        "unit": "%",
+        "value": 4
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/745",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:58:46.000+02:00",
+      "type": "fev1%",
+      "measurement": {
+        "unit": "%",
+        "value": null
+      },
+      "severity": "green",
+      "origin": {
+        "calculatedMeasurement": {
+          "calculatedBy": "spi-ref"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/746",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:58:46.000+02:00",
+      "type": "fev6%",
+      "measurement": {
+        "unit": "%",
+        "value": null
+      },
+      "severity": "green",
+      "origin": {
+        "calculatedMeasurement": {
+          "calculatedBy": "spi-ref"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/747",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:46:18.000+02:00",
+      "type": "daily_steps_weekly_average",
+      "measurement": {
+        "unit": "step count",
+        "value": 3780
+      },
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "clinician"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/740",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:46:18.000+02:00",
+      "type": "daily_steps",
+      "measurement": {
+        "unit": "step count",
+        "value": 4500
+      },
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "clinician"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/741",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:14:49.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 89
+      },
+      "severity": "yellow",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/13/measurements/733",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/13"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:12:36.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 84
+      },
+      "severity": "yellow",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/13/measurements/732",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/13"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:11:37.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 75
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/13/measurements/723",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/13"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:11:37.000+02:00",
+      "type": "blood_pressure",
+      "measurement": {
+        "unit": "mmHg",
+        "systolic": 123,
+        "diastolic": 110
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/13/measurements/724",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/13"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:11:37.000+02:00",
+      "type": "pulse",
+      "measurement": {
+        "unit": "BPM",
+        "value": 98
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/13/measurements/725",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/13"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:11:08.000+02:00",
+      "type": "saturation",
+      "measurement": {
+        "unit": "%",
+        "value": 97
+      },
+      "severity": "green",
+      "origin": {
+        "deviceMeasurement": {
+          "connectionType": "bluetooth_spp",
+          "manufacturer": "Nonin",
+          "model": "Nonin_Medical_Inc._666288",
+          "primaryDeviceIdentifier": {
+            "serialNumber": "501666288"
+          }
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/721",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-21T16:11:08.000+02:00",
+      "type": "pulse",
+      "measurement": {
+        "unit": "BPM",
+        "value": 74
+      },
+      "severity": "green",
+      "origin": {
+        "deviceMeasurement": {
+          "connectionType": "bluetooth_spp",
+          "manufacturer": "Nonin",
+          "model": "Nonin_Medical_Inc._666288",
+          "primaryDeviceIdentifier": {
+            "serialNumber": "501666288"
+          }
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/12/measurements/722",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/12"
+      }
+    },
+    {
+      "timestamp": "2020-04-19T19:55:57.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 999
+      },
+      "comment": "",
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/14/measurements/720",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/14"
+      }
+    },
+    {
+      "timestamp": "2020-04-03T20:14:51.000+02:00",
+      "type": "weight",
+      "measurement": {
+        "unit": "kg",
+        "value": 52
+      },
+      "comment": "",
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/23/measurements/718",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/23"
+      }
+    },
+    {
+      "timestamp": "2020-04-02T12:34:28.000+02:00",
+      "type": "respiratory_rate",
+      "measurement": {
+        "unit": "RR",
+        "value": 42
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/13/measurements/714",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/13"
+      }
+    },
+    {
+      "timestamp": "2020-04-02T12:34:28.000+02:00",
+      "type": "saturation",
+      "measurement": {
+        "unit": "%",
+        "value": 97
+      },
+      "severity": "green",
+      "origin": {
+        "manualMeasurement": {
+          "enteredBy": "citizen"
+        }
+      },
+      "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/13/measurements/715",
+        "patient": "https://oth-demo.oth.io/clinician/api/patients/13"
+      }
+    }
+  ],
+  "total": 797,
+  "max": 100,
+  "offset": 0,
+  "links": {
+    "self": "https://oth-demo.oth.io/clinician/api/measurements?offset=0&max=100",
+    "next": "https://oth-demo.oth.io/clinician/api/measurements?offset=100&max=100"
+  }
+}

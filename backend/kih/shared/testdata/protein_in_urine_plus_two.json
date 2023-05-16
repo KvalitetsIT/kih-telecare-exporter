@@ -1,0 +1,17 @@
+{
+  "timestamp": "2020-06-17T08:46:50.000+02:00",
+  "type": "protein_in_urine",
+  "measurement": {
+    "unit": "g/L",
+    "value": "+2"
+  },
+  "origin": {
+    "manualMeasurement": {
+      "enteredBy": "clinician"
+    }
+  },
+  "links": {
+    "measurement": "https://oth-demo.oth.io/clinician/api/patients/2/measurements/837",
+    "patient": "https://oth-demo.oth.io/clinician/api/patients/2"
+  }
+}

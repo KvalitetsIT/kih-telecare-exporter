@@ -1,0 +1,6 @@
+/cover
+/bin
+/dist
+/build
+.envrc
+/exporter.yaml

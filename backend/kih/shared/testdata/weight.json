@@ -1,0 +1,31 @@
+{
+    "timestamp": "2020-06-04T10:35:47.000+02:00",
+    "type": "weight",
+    "measurement": {
+        "unit": "kg",
+        "value": 84.9
+    },
+    "severity": "yellow",
+    "origin": {
+        "deviceMeasurement": {
+            "connectionType": "bluetooth_gatt",
+            "manufacturer": "A&D Medical",
+            "model": "UC-352BLE",
+            "primaryDeviceIdentifier": {
+                "serialNumber": "5150400146"
+            },
+            "hardwareVersion": "0.00",
+            "firmwareVersion": "WSP001_201",
+            "softwareVersion": "0.00",
+            "additionalDeviceIdentifiers": [
+                {
+                    "systemId": "FFF85AFEFF4C99B4"
+                }
+            ]
+        }
+    },
+    "links": {
+        "measurement": "https://oth-demo.oth.io/clinician/api/patients/13/measurements/835",
+        "patient": "http://clinician:8080/clinician/api/patients/13"
+    }
+}

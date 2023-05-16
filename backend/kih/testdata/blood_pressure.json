@@ -1,0 +1,23 @@
+{
+    "timestamp": "2019-11-03T00:00:00.000Z",
+    "type": "blood_pressure",
+    "measurement": {
+        "unit": "mmHg",
+        "systolic": 130,
+        "diastolic": 80
+    },
+    "origin": {
+        "deviceMeasurement": {
+            "connectionType": "bluetooth_gatt",
+            "manufacturer": "A&D",
+            "model": "UA-651BLE",
+            "primaryDeviceIdentifier": {
+                "serialNumber": "12345"
+            }
+        }
+    },
+    "links": {
+        "measurement": "http://clinician:8080/clinician/api/patients/13/measurements/5",
+        "patient": "http://clinician:8080/clinician/api/patients/13"
+    }
+}
