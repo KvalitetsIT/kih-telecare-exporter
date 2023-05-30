@@ -8,7 +8,7 @@ import (
 	"os"
 	"time"
 
-	"bitbucket.org/opentelehealth/exporter/measurement"
+	"github.com/KvalitetsIT/kih-telecare-exporter/measurement"
 	"github.com/jmoiron/sqlx"
 	"github.com/pkg/errors"
 )

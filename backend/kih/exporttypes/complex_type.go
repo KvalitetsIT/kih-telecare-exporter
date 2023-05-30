@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strconv"
 
-	"bitbucket.org/opentelehealth/exporter/measurement"
+	"github.com/KvalitetsIT/kih-telecare-exporter/measurement"
 )
 
 type BloodPressureType struct {

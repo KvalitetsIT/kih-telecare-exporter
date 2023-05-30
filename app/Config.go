@@ -50,7 +50,7 @@ func (c Config) CreateDatabaseURL() (string, error) {
 }
 
 func GetPackage(input string) string {
-	pkg := strings.ReplaceAll(input, "bitbucket.org/opentelehealth/exporter/", "")
+	pkg := strings.ReplaceAll(input, "github.com/KvalitetsIT/kih-telecare-exporter/", "")
 	logrus.Debug("Returning ", pkg)
 	return pkg
 }

@@ -1,6 +1,6 @@
 package types
 
-import "bitbucket.org/opentelehealth/exporter/repository"
+import "github.com/KvalitetsIT/kih-telecare-exporter/repository"
 
 type ExportResult struct {
 	Success         bool

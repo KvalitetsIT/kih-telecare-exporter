@@ -16,7 +16,7 @@ package exporttypes
 import (
 	"strings"
 
-	"bitbucket.org/opentelehealth/exporter/measurement"
+	"github.com/KvalitetsIT/kih-telecare-exporter/measurement"
 )
 
 func NewAnDMedical302PBTExportType() simpleDevice {

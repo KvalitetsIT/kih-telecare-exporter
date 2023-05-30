@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"strconv"
 
-	"bitbucket.org/opentelehealth/exporter/measurement"
+	"github.com/KvalitetsIT/kih-telecare-exporter/measurement"
 	"github.com/sirupsen/logrus"
 )
 

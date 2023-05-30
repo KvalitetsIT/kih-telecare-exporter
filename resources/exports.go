@@ -4,9 +4,9 @@ import (
 	"net/http"
 	"time"
 
-	"bitbucket.org/opentelehealth/exporter/backend"
-	"bitbucket.org/opentelehealth/exporter/measurement"
-	"bitbucket.org/opentelehealth/exporter/repository"
+	"github.com/KvalitetsIT/kih-telecare-exporter/backend"
+	"github.com/KvalitetsIT/kih-telecare-exporter/measurement"
+	"github.com/KvalitetsIT/kih-telecare-exporter/repository"
 	"github.com/go-chi/render"
 )
 

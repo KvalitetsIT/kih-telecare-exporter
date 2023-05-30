@@ -3,7 +3,7 @@ package exporttypes
 import (
 	"testing"
 
-	"bitbucket.org/opentelehealth/exporter/measurement"
+	"github.com/KvalitetsIT/kih-telecare-exporter/measurement"
 )
 
 func TestFloatConversion(t *testing.T) {

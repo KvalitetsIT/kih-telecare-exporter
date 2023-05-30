@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"time"
 
-	"bitbucket.org/opentelehealth/exporter/app"
+	"github.com/KvalitetsIT/kih-telecare-exporter/app"
 	"github.com/google/uuid"
 	"github.com/jmoiron/sqlx"
 	"github.com/pkg/errors"
