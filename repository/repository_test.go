@@ -105,8 +105,7 @@ func TestMain(m *testing.M) {
 	application.Database.Password = "opentele"
 	application.Database.Hostname = "localhost"
 
-	application.Export.Backend = "kih"
-	application.Export.KIHExport.CreatedBy = "test einstance"
+	application.Export.Backend = "oioxds"
 	application.ClinicianConfig.BatchSize = 400
 
 	// os.Remove("./foo.db")

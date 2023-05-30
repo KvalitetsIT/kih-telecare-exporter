@@ -110,7 +110,7 @@ func TestMain(m *testing.M) {
 	fmt.Println("------- running test ------")
 
 	logger = logrus.New()
-	logger.Level = logrus.DebugLevel
+	logger.Level = logrus.WarnLevel
 	viper.SetDefault("loglevel", "warn")
 
 	appConfig, err = app.InitConfig()
@@ -228,7 +228,6 @@ func TestHealthStatusResource(t *testing.T) {
 
 	appConfig.Version = version
 	appConfig.Environment = environ
-	appConfig.Export.KIHExport.SosiConfig.URL = ts.URL
 
 	db, conn, repo, err := setupTestDatabase()
 	if err != nil {
@@ -497,7 +496,6 @@ func TestFailingExportResource(t *testing.T) {
 
 	appConfig.Version = version
 	appConfig.Environment = environ
-	appConfig.Export.KIHExport.SosiConfig.URL = ts.URL
 	api := internal.TestInjectorApi{}
 
 	router, err := InitRouter(appConfig, repo, api, xprtr)
@@ -643,10 +641,8 @@ func TestFailedMeasurementsEndpoint(t *testing.T) {
 
 	viper.SetDefault("loglevel", "warn")
 
-	app.Export.KIHExport.Server = ts.URL
-	app.Export.Backend = "kih"
-	app.Export.KIHExport.CreatedBy = "dispatch test"
-	app.Export.KIHExport.SkipSosi = true
+	app.Export.Backend = "oioxds"
+	app.Export.OIOXDSExport.XdsGenerator.URL = ts.URL
 
 	exportr, err := backend.InitExporter(app, mApi, repo)
 	if err != nil {

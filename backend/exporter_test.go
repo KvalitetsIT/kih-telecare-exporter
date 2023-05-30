@@ -97,13 +97,11 @@ const created_by = "unit testing framework"
 
 const sqliteDSN = "file:test.db?cache=shared&mode=memory"
 
-var kihexport app.KIHConfig
-
 func TestMain(m *testing.M) {
 	var err error
 	fmt.Println("------- running test ------")
 	log = logrus.New()
-	log.SetLevel(logrus.DebugLevel)
+	log.SetLevel(logrus.WarnLevel)
 	viper.SetDefault("loglevel", "warn")
 	viper.SetDefault("export.start", "2019-06-01")
 	application, err = app.InitConfig()
@@ -116,13 +114,8 @@ func TestMain(m *testing.M) {
 	application.Database.Password = "opentele"
 	application.Database.Hostname = "localhost"
 
-	application.Export.Backend = "kih"
-	application.Export.KIHExport.CreatedBy = created_by
+	application.Export.Backend = "oioxds"
 	application.ClinicianConfig.BatchSize = 400
-
-	kihexport = app.KIHConfig{}
-
-	kihexport.SkipSosi = true
 
 	// os.Remove("./foo.db")
 
@@ -228,7 +221,7 @@ func TestExportMeasurements(t *testing.T) {
 				t.Errorf("error instantiating %+v", err)
 			}
 			application.Logger = log
-			application.Export.Backend = "kih"
+			application.Export.Backend = "oioxds"
 			mockApi := mockApi{}
 			ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 				body, _ := ioutil.ReadAll(r.Body)
@@ -246,10 +239,8 @@ func TestExportMeasurements(t *testing.T) {
 				// w.Header().
 			}))
 			defer ts.Close()
-
-			application.Export.KIHExport = kihexport
-			application.Export.KIHExport.Server = ts.URL
-			application.Export.KIHExport.SkipSosi = true
+			application.Export.OIOXDSExport.SkipSslVerify = true
+			application.Export.OIOXDSExport.XdsGenerator.URL = ts.URL
 
 			mm, err := measurementsFromFile(tt.measurementsFile)
 			if err != nil {
@@ -279,7 +270,6 @@ func TestExportMeasurements(t *testing.T) {
 				}
 			}
 
-			fmt.Println("A: ")
 			if len(a) != len(mm.Results) {
 				t.Errorf("Number of exports does not match - got: %v, expected: %v", len(a), len(mm.Results))
 			}
@@ -323,7 +313,7 @@ func TestExportMeasurement(t *testing.T) {
 				t.Errorf("error instantiating %+v", err)
 			}
 			application.Logger = log
-			application.Export.Backend = "kih"
+			application.Export.Backend = "oioxds"
 			mockApi := mockApi{}
 			// mockRepo := repositoryMock{measurements: measurements}
 
@@ -342,10 +332,7 @@ func TestExportMeasurement(t *testing.T) {
 			}))
 			defer ts.Close()
 
-			application.Export.KIHExport = kihexport
-			application.Export.KIHExport.Server = ts.URL
-			application.Export.KIHExport.SkipSosi = true
-
+			application.Export.OIOXDSExport.XdsGenerator.URL = ts.URL
 			exprtr, err := InitExporter(application, mockApi, repo)
 			if err != nil {
 				t.Errorf("error instantiating %+v - message: %s", err, err.Error())
@@ -396,29 +383,11 @@ func TestExportMeasurement(t *testing.T) {
 			if mmDb.Status != repository.COMPLETED {
 				t.Errorf("Status should be clompeted - but is %s", repository.StatusToText(mmDb.Status))
 			}
-			for _, v := range tt.uipacs {
-				if !strings.Contains(soapRequest, fmt.Sprintf("%s</IupacIdentifier>", v)) {
-					t.Errorf("Search for IUPAC: %s - not found", v)
-				}
-			}
-
-			for _, v := range tt.results {
-				if !strings.Contains(soapRequest, fmt.Sprintf("%s</ResultText>", v)) {
-					t.Errorf("Search for result: %s - not found", v)
-				}
-			}
-
-			for _, v := range tt.units {
-				if !strings.Contains(soapRequest, fmt.Sprintf("%s</ResultUnitText>", v)) {
-					t.Errorf("Search for unit: %s - not found", v)
-				}
-			}
 
 			//if res.Status != repository.COMPLETED {
 			// 	t.Error("Status should be COMPLETE - is ", repository.StatusToText(res.Status))
 			// }
-			fmt.Println(a)
-
+			log.Debug(a)
 		})
 	}
 }
@@ -455,7 +424,7 @@ func TestHandleTemporaryFailedMeasurements(t *testing.T) {
 		if err != nil {
 			t.Errorf("Error storing measurements %v", err)
 		}
-		fmt.Println("M: ", m)
+		log.Debug("M: ", m)
 	}
 
 	fmt.Println("Done setting up db")
@@ -466,7 +435,7 @@ func TestHandleTemporaryFailedMeasurements(t *testing.T) {
 	}
 	application.Logger = log
 	application.Export.DaysToRetry = 7
-	application.Export.Backend = "kih"
+	application.Export.Backend = "oioxds"
 
 	mockApi := mockApi{}
 
@@ -485,7 +454,7 @@ func TestHandleTemporaryFailedMeasurements(t *testing.T) {
 		t.Errorf("Error querying repo %v", err)
 	}
 
-	fmt.Println("Comparing ", setTempFailed, " ", len(failed))
+	log.Debug("Comparing ", setTempFailed, " ", len(failed))
 	if len(failed) != setTempFailed-(application.Export.DaysToRetry+1) { // Substracted 1 day per measuremnet in test set - per day.
 		t.Errorf(fmt.Sprintf("Expected %d - got %d ", setTempFailed, len(failed)))
 
