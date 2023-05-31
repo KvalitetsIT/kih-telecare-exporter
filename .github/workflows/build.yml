@@ -31,7 +31,7 @@ jobs:
 # Set docker image names.
     - name: Setup env variables
       run: |
-        echo "DOCKER_SERVICE=kvalitetsit/stakit-adapter-alertmanager" >> $GITHUB_ENV
+        echo "DOCKER_SERVICE=kvalitetsit/kih-telecare-exporter" >> $GITHUB_ENV
 
 # Checkout source code
     - uses: actions/checkout@v3
@@ -83,9 +83,6 @@ jobs:
     - name: Push version service docker image.
       if: ${{ steps.tag.conclusion != 'skipped' }}
       run: ./ci-build/docker-push.sh ${{ env.DOCKER_SERVICE }}:${{ steps.tag.outputs.VERSION }}
-
-    - name: Build and test helm chart
-      run: ./ci-build/build-helm.sh stakit-adapter-alertmanager ${{ steps.tag.outputs.VERSION }} ${{ steps.trunk.outputs.VERSION }}
 
     - name: Create Release Notes
       uses: softprops/action-gh-release@v1
