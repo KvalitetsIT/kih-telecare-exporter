@@ -1,7 +1,7 @@
 package exporttypes
 
 import (
-	"bitbucket.org/opentelehealth/exporter/measurement"
+	"github.com/KvalitetsIT/kih-telecare-exporter/measurement"
 )
 
 func NewPulseType() SimpleType {

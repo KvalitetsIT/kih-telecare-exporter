@@ -5,7 +5,7 @@ import (
 	"encoding/xml"
 	"fmt"
 
-	"bitbucket.org/opentelehealth/exporter/app"
+	"github.com/KvalitetsIT/kih-telecare-exporter/app"
 	"github.com/sirupsen/logrus"
 )
 

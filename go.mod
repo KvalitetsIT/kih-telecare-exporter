@@ -1,4 +1,4 @@
-module bitbucket.org/opentelehealth/exporter
+module github.com/KvalitetsIT/kih-telecare-exporter
 
 go 1.20
 
@@ -24,6 +24,7 @@ require (
 	github.com/hashicorp/go-multierror v1.0.0 // indirect
 	github.com/hashicorp/hcl v1.0.0 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
+	github.com/jstemmer/go-junit-report v1.0.0 // indirect
 	github.com/konsorten/go-windows-terminal-sequences v1.0.2 // indirect
 	github.com/magiconair/properties v1.8.1 // indirect
 	github.com/pelletier/go-toml v1.2.0 // indirect

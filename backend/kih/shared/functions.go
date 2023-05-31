@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"time"
 
-	"bitbucket.org/opentelehealth/exporter/backend/kih/exporttypes"
-	"bitbucket.org/opentelehealth/exporter/measurement"
-	"bitbucket.org/opentelehealth/exporter/repository"
+	"github.com/KvalitetsIT/kih-telecare-exporter/backend/kih/exporttypes"
+	"github.com/KvalitetsIT/kih-telecare-exporter/measurement"
+	"github.com/KvalitetsIT/kih-telecare-exporter/repository"
 	"github.com/google/uuid"
 	"github.com/pkg/errors"
 )

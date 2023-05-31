@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"bitbucket.org/opentelehealth/exporter/measurement"
-	"bitbucket.org/opentelehealth/exporter/repository"
+	"github.com/KvalitetsIT/kih-telecare-exporter/measurement"
+	"github.com/KvalitetsIT/kih-telecare-exporter/repository"
 	"github.com/go-chi/chi"
 	"github.com/go-chi/render"
 )

@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"os"
 
-	"bitbucket.org/opentelehealth/exporter/app"
+	"github.com/KvalitetsIT/kih-telecare-exporter/app"
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/golang-migrate/migrate/v4"
 	"github.com/golang-migrate/migrate/v4/database/mysql"

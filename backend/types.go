@@ -1,8 +1,8 @@
 package backend
 
 import (
-	"bitbucket.org/opentelehealth/exporter/measurement"
-	"bitbucket.org/opentelehealth/exporter/repository"
+	"github.com/KvalitetsIT/kih-telecare-exporter/measurement"
+	"github.com/KvalitetsIT/kih-telecare-exporter/repository"
 )
 
 type ExportResult struct {

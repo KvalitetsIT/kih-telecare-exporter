@@ -3,7 +3,7 @@
 ## ###############################################################
 ## Parameters and setups
 ## #################################################################
-IMPORT_PATH      := bitbucket.org/opentelehealth/exporter
+IMPORT_PATH      := github.com/KvalitetsIT/kih-telecare-exporter
 DOCKER_IMAGE     := oth/exporter
 ECR_REPO         := 401334847138.dkr.ecr.eu-west-1.amazonaws.com/${DOCKER_IMAGE}
 VERSION          := $(shell git describe --tags --always --dirty="-dev")

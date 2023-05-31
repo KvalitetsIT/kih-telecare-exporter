@@ -3,7 +3,7 @@ package internal
 import (
 	"time"
 
-	"bitbucket.org/opentelehealth/exporter/measurement"
+	"github.com/KvalitetsIT/kih-telecare-exporter/measurement"
 )
 
 type TestInjectorApi struct {

@@ -3,7 +3,7 @@ package exporttypes
 import (
 	"fmt"
 
-	"bitbucket.org/opentelehealth/exporter/measurement"
+	"github.com/KvalitetsIT/kih-telecare-exporter/measurement"
 )
 
 type MeasurementType interface {

@@ -5,11 +5,11 @@ import (
 	"reflect"
 	"time"
 
-	"bitbucket.org/opentelehealth/exporter/app"
-	"bitbucket.org/opentelehealth/exporter/backend/kih/exporttypes"
-	"bitbucket.org/opentelehealth/exporter/backend/oioxds"
-	"bitbucket.org/opentelehealth/exporter/measurement"
-	"bitbucket.org/opentelehealth/exporter/repository"
+	"github.com/KvalitetsIT/kih-telecare-exporter/app"
+	"github.com/KvalitetsIT/kih-telecare-exporter/backend/kih/exporttypes"
+	"github.com/KvalitetsIT/kih-telecare-exporter/backend/oioxds"
+	"github.com/KvalitetsIT/kih-telecare-exporter/measurement"
+	"github.com/KvalitetsIT/kih-telecare-exporter/repository"
 
 	"github.com/pkg/errors"
 	"github.com/sirupsen/logrus"

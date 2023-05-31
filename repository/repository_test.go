@@ -7,7 +7,7 @@ import (
 	"testing"
 	"time"
 
-	"bitbucket.org/opentelehealth/exporter/app"
+	"github.com/KvalitetsIT/kih-telecare-exporter/app"
 	"github.com/jmoiron/sqlx"
 	_ "github.com/mattn/go-sqlite3"
 	"github.com/pkg/errors"

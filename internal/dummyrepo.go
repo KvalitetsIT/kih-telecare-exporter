@@ -3,7 +3,7 @@ package internal
 import (
 	"time"
 
-	"bitbucket.org/opentelehealth/exporter/repository"
+	"github.com/KvalitetsIT/kih-telecare-exporter/repository"
 )
 
 // Setups a dummy repo

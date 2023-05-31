@@ -12,10 +12,10 @@ import (
 	"testing"
 	"time"
 
-	"bitbucket.org/opentelehealth/exporter/app"
-	othtest "bitbucket.org/opentelehealth/exporter/internal/testutil"
-	"bitbucket.org/opentelehealth/exporter/measurement"
-	"bitbucket.org/opentelehealth/exporter/repository"
+	"github.com/KvalitetsIT/kih-telecare-exporter/app"
+	othtest "github.com/KvalitetsIT/kih-telecare-exporter/internal/testutil"
+	"github.com/KvalitetsIT/kih-telecare-exporter/measurement"
+	"github.com/KvalitetsIT/kih-telecare-exporter/repository"
 
 	"github.com/jmoiron/sqlx"
 	_ "github.com/mattn/go-sqlite3"

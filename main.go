@@ -1,6 +1,6 @@
 package main
 
-import "bitbucket.org/opentelehealth/exporter/cmd"
+import "github.com/KvalitetsIT/kih-telecare-exporter/cmd"
 
 var (
 	Build   string
