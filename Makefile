@@ -67,8 +67,8 @@ start: ## Starts in development mode
 ## #################################################################
 
 resetdb: build ### Drop current database and re-apply migrations
-	exporter migrate drop
-	exporter migrate
+	./exporter migrate drop
+	./exporter migrate
 
 mysql: ### connnect to dev db
 	docker exec -it devdb bash -c 'mysql -uroot -p$$MYSQL_ROOT_PASSWORD exporter'
@@ -123,7 +123,7 @@ docker-logs: ### Tails logs from container
 	docker exec exporter tail -f /var/log/exporter/stdout/current
 
 docker-run: buildcontainer ### buildcontainer application in container
-	docker run --rm -d --name exporter --network openteledev \
+	docker run --rm --name exporter --network openteledev \
 	-v $$(pwd)/docker/conf/exporter.yaml:/app/exporter.yaml:ro \
 	-p 8360:8360 \
 	${DOCKER_IMAGE}:${DOCKER_TAG}

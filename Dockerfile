@@ -27,3 +27,4 @@ RUN apk add --no-cache curl ca-certificates nss && \
 ADD docker/root /
 COPY migrations /app/migrations
 EXPOSE 8360
+ENTRYPOINT ["/app/exporter", "serve"]
