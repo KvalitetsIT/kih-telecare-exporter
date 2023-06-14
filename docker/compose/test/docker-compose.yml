@@ -1,0 +1,204 @@
+version: '3.4'
+
+networks:
+  # To create this run:
+  # > docker network create nsp_net
+  nsp_net:
+    external: true
+  dds_net:
+    name: dds_net
+
+services:
+  cradb:
+    #       1.1.16 mangler både nyeste oces2 og oces3. Derfor vil en update i integrationstesten afspejles ned i cradb
+    image: registry.nspop.dk/platform/cradb:latest
+    #       kvalitetsit/cradb:latest20230606 har både nyeste oces2 og oces3.
+    networks:
+      - dds_net
+    environment:
+      - MYSQL_RANDOM_ROOT_PASSWORD=yes
+
+  cdavalidateservice:
+    image: kvalitetsit/cdavalidateservice:1.0.0
+    ports:
+      - "9096:8080"
+    networks:
+      - dds_net
+    environment:
+      - LOG_MAX_FILE_SIZE=10MB
+      - LOG_MAX_BACKUP_INDEX=5
+      - validation_rules_xds_root_path=
+      - document_type_codes_code=53576-5;74468-0;74465-6;
+      - document_type_codes_name=PHMR;QFDD;QRD;
+      - log_document_content=true
+      - LOG_LEVEL=INFO
+
+  xdsregistryproxy:
+    image: kvalitetsit/xdsregistryproxy:f5d0a84eecda45ce236934a475e7728f17ee61d4
+    ports:
+      - "9097:8080"
+    networks:
+      - dds_net
+    depends_on:
+      - openxds-server
+    environment:
+      - LOG_MAX_FILE_SIZE=10MB
+      - LOG_MAX_BACKUP_INDEX=5
+      - XDSREGISTRY_PROXY_REMOTE_ITI_42=http://openxds-server:8010/axis2/services/xdsregistryb
+      - notify_rabbitmq=false
+      - LOG_LEVEL=DEBUG
+
+  openxds-db:
+    image: mariadb:10.1
+    networks:
+      - dds_net
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=openxds
+      - MYSQL_USER=openxds
+      - MYSQL_PASSWORD=open123
+    volumes:
+      - ../database/openxds/openxds.sql:/docker-entrypoint-initdb.d/01_db.sql
+      - ../database/openxds/openxdsreporting.sql:/docker-entrypoint-initdb.d/02_db.sql
+      #      - ../database/openxds/sds_2504_testdata.sql:/docker-entrypoint-initdb.d/50_sds2504test.sql
+      - ../database/my.cnf:/etc/mysql/my.cnf
+
+  openxds-logs-db:
+    image: mariadb:10.1
+    networks:
+      - dds_net
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=openxdslogs
+      - MYSQL_USER=logs
+      - MYSQL_PASSWORD=logs123
+    volumes:
+      - ../database/openxds/openxdslogs.sql:/docker-entrypoint-initdb.d/db.sql
+      - ../database/my.cnf:/etc/mysql/my.cnf
+
+  openxds-server:
+    image: registry.nspop.dk/components/openxds:2.0.10
+    networks:
+      - dds_net
+    depends_on:
+      - openxds-db
+      - openxds-logs-db
+    environment:
+      # integration test adjustment
+      #      - XDS_REGISTRY_HOST=localhost
+      #      - XDS_REGISTRY_PORT=8010
+      #      - XDS_REGISTRY_URL=/axis2/services/xdsregistryb
+      - XDS_REGISTRY_HOST=xdsregistryproxy
+      - XDS_REGISTRY_PORT=8080
+      - XDS_REGISTRY_URL=/proxy
+      - XDS_REPOSITORY_UNIQUE_ID=1.3.6.1.4.1.21367.2010.1.2.1125
+      - XDS_HOME_COMMUNITY_ID=urn:oid:1.3.6.1.4.1.21367.2010.1.2.2045
+      - XDS_DB_DIALECT=org.hibernate.dialect.MySQLDialect
+      - XDS_DB_DRIVER=com.mysql.jdbc.Driver
+      - XDS_DB_OPENXDS_URL=jdbc:mysql://openxds-db:3306/openxds
+      - XDS_DB_OPENXDS_USERNAME=openxds
+      - XDS_DB_OPENXDS_PASSWORD=open123
+      - XDS_DB_LOGS_URL=jdbc:mysql://openxds-logs-db:3306/openxdslogs
+      - XDS_DB_LOGS_USERNAME=logs
+      - XDS_DB_LOGS_PASSWORD=logs123
+      - XARGS=-Xmx128m
+      - XDS_LOG_LEVEL=DEBUG
+    ports:
+      - "8010:8010"
+      - "8020:8020"
+
+  dgwsxdsvalidationproxy41:
+    image: kvalitetsit/dgwsxdsvalidationproxy:1.4.0
+    ports:
+      - "9098:8080"
+    networks:
+      - dds_net
+    depends_on:
+      - cradb
+    environment:
+      - LOG_MAX_FILE_SIZE=10MB
+      - LOG_MAX_BACKUP_INDEX=5
+      - iti41_backend_url=http://openxds-server:8020/axis2/services/xdsrepositoryb
+      - iti43_backend_url=http://openxds-server:8020/axis2/services/xdsrepositoryb
+      - logging_rules_log_cprnumber=true
+      - logging_rules_log_clinical_document=true
+      - validation_rules_validate_document=true
+      - validation_rules_continue_on_error=false
+      - reporting_rules_report_document=true
+      - allow_iti41=true
+      - allow_iti43=false
+      - cda_validation_client_endpoint=http://cdavalidateservice:8080/services/validate
+      - document_type_codes_code=53576-5;74468-0;74465-6;39289-4;
+      - document_type_codes_name=PHMR;QFDD;QRD;APD;
+      - log_cda_document_decode_exception=true
+      - log_cda_document_decode=false
+      - http_client_max_total_connections=2
+      - http_client_defalt_max_connections_per_route=2
+      - service_version=v1.3.9
+      - LOG_LEVEL=INFO
+      - NSP_TEST_FEDERATION=true
+    volumes:
+      - ./log/dgwsxdsvalidationproxy41:/pack/wildfly8/standalone/log
+      - ../configuration/datasources/openxds-ds.xml:/pack/wildfly8/standalone/deployments/openxds-ds.xml
+
+  dgwsxdsvalidationproxy43:
+    image: kvalitetsit/dgwsxdsvalidationproxy:1.4.0
+    ports:
+      - "9099:8080"
+    networks:
+      - dds_net
+    depends_on:
+      - cradb
+    environment:
+      - LOG_MAX_FILE_SIZE=10MB
+      - LOG_MAX_BACKUP_INDEX=5
+      - iti41_backend_url=http://openxds-server:8020/axis2/services/xdsrepositoryb
+      - iti43_backend_url=http://openxds-server:8020/axis2/services/xdsrepositoryb
+      - logging_rules_log_cprnumber=true
+      - logging_rules_log_clinical_document=true
+      - validation_rules_validate_document=false
+      - validation_rules_continue_on_error=false
+      - reporting_rules_report_document=false
+      - allow_iti41=false
+      - allow_iti43=true
+      - cda_validation_client_endpoint=http://cdavalidateservice:8080/services/validate
+      - document_type_codes_code=53576-5;74468-0;74465-6;39289-4;
+      - document_type_codes_name=PHMR;QFDD;QRD;APD;
+      - log_cda_document_decode_exception=false
+      - log_cda_document_decode=false
+      - http_client_max_total_connections=2
+      - http_client_defalt_max_connections_per_route=2
+      - service_version=v1.3.9
+      - LOG_LEVEL=INFO
+      - NSP_TEST_FEDERATION=true
+    volumes:
+      - ./log/dgwsxdsvalidationproxy43:/pack/wildfly8/standalone/log
+
+  kih-xds-generator:
+    image: kvalitetsit/kih-xds-generator:dev
+    ports:
+      - "9020:9010"
+    networks:
+      - dds_net
+    depends_on:
+      - dgwsxdsvalidationproxy41
+
+  devdb:
+    container_name: devdb
+    image: mariadb:10.1
+    ports:
+      - 3308:3306
+    networks:
+      - dds_net
+    environment:
+      - MYSQL_ROOT_PASSWORD=opentele
+      - MYSQL_DATABASE=exporter
+      - MYSQL_USER=opentele
+      - MYSQL_PASSWORD=opentele
+    volumes:
+      - type: volume
+        source: devdbvolume
+        target: /var/lib/mysql
+
+volumes:
+  devdbvolume:

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources>
+	<datasource jndi-name="java:/DocumentSourcesDS" pool-name="DocumentSourcesDS" enabled="true" use-ccm="true" jta="false">
+		<connection-url>jdbc:mysql://dds_db:3306/documentsources</connection-url>
+		<driver>mysql</driver>
+		<pool>
+			<min-pool-size>1</min-pool-size>
+			<max-pool-size>20</max-pool-size>
+			<prefill>false</prefill>
+		</pool>
+		<security>
+			<user-name>dsuser</user-name>
+			<password>password</password>
+		</security>
+		<validation>
+			<valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLValidConnectionChecker" />
+			<validate-on-match>true</validate-on-match>
+			<background-validation>false</background-validation>
+			<exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLExceptionSorter" />
+		</validation>
+		<timeout>
+			<blocking-timeout-millis>30000</blocking-timeout-millis>
+			<idle-timeout-minutes>15</idle-timeout-minutes>
+			<query-timeout>300</query-timeout>
+		</timeout>
+	</datasource>
+</datasources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources>
+	<datasource jndi-name="java:/SORDS" pool-name="SORDS" enabled="true" spy="false">
+		<connection-url>jdbc:mysql://stamdata_db:3306/stamdata</connection-url>
+		<driver>mysql</driver>
+		<pool>
+			<min-pool-size>2</min-pool-size>
+			<max-pool-size>20</max-pool-size>
+		</pool>
+		<security>
+			<user-name>stamdatauser</user-name>
+			<password>password</password>
+		</security>
+		<validation>
+			<valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLValidConnectionChecker" />
+			<exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLExceptionSorter" />
+			<background-validation>true</background-validation>
+			<background-validation-millis>10000</background-validation-millis>
+		</validation>
+	</datasource>
+</datasources>

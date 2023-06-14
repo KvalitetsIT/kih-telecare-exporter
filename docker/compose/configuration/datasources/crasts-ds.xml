@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources>
+	<datasource jndi-name="java:jboss/datasources/CRASTS" pool-name="stsDS" enabled="true" spy="false">
+		<connection-url>jdbc:mysql://cradb:3306/cra</connection-url>
+		<driver>mysql</driver>
+		<pool>
+			<min-pool-size>2</min-pool-size>
+			<max-pool-size>20</max-pool-size>
+		</pool>
+		<security>
+			<user-name>cra</user-name>
+			<password>cra</password>
+		</security>
+		<validation>
+			<valid-connection-checker class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLValidConnectionChecker" />
+			<exception-sorter class-name="org.jboss.jca.adapters.jdbc.extensions.mysql.MySQLExceptionSorter" />
+			<background-validation>true</background-validation>
+			<background-validation-millis>10000</background-validation-millis>
+		</validation>
+	</datasource>
+</datasources>

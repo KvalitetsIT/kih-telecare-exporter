@@ -4,8 +4,7 @@
 ## Parameters and setups
 ## #################################################################
 IMPORT_PATH      := github.com/KvalitetsIT/kih-telecare-exporter
-DOCKER_IMAGE     := oth/exporter
-ECR_REPO         := 401334847138.dkr.ecr.eu-west-1.amazonaws.com/${DOCKER_IMAGE}
+DOCKER_IMAGE     := kvalitetsit/kih-telecare-exporter
 VERSION          := $(shell git describe --tags --always --dirty="-dev")
 DATE             := $(shell date -u '+%Y-%m-%d-%H:%M UTC')
 VERSION_FLAGS    := -ldflags='-X "main.Version=$(VERSION)" -X "main.Build=${DATE}"'
@@ -56,7 +55,7 @@ ifeq (run,$(firstword $(MAKECMDGOALS)))
 endif
 
 ## #################################################################
-## OTH Targets
+## Targets
 ## #################################################################
 start: ## Starts in development mode
 	@echo "Starting development service"
@@ -67,8 +66,8 @@ start: ## Starts in development mode
 ## #################################################################
 
 resetdb: build ### Drop current database and re-apply migrations
-	exporter migrate drop
-	exporter migrate
+	./exporter migrate drop
+	./exporter migrate
 
 mysql: ### connnect to dev db
 	docker exec -it devdb bash -c 'mysql -uroot -p$$MYSQL_ROOT_PASSWORD exporter'
@@ -107,23 +106,11 @@ buildcontainer: ### Builds docker container
 	--build-arg version=${DOCKER_TAG}       \
 	-t ${DOCKER_IMAGE}:${DOCKER_TAG} .
 
-ecr-login: ### Performs ECR login
-	@aws ecr get-login-password \
-    --region eu-west-1 \
-	| docker login \
-    --username AWS \
-    --password-stdin 401334847138.dkr.ecr.eu-west-1.amazonaws.com
-
-tag-container: ### tags docker image
-	@echo "tagging - ${DOCKER_TAG}"
-	docker tag ${DOCKER_IMAGE}:${DOCKER_TAG} ${ECR_REPO}:${DOCKER_TAG}
-	@echo "Done tagging"
-
 docker-logs: ### Tails logs from container
 	docker exec exporter tail -f /var/log/exporter/stdout/current
 
 docker-run: buildcontainer ### buildcontainer application in container
-	docker run --rm -d --name exporter --network openteledev \
+	docker run --rm --name exporter --network dds_net \
 	-v $$(pwd)/docker/conf/exporter.yaml:/app/exporter.yaml:ro \
 	-p 8360:8360 \
 	${DOCKER_IMAGE}:${DOCKER_TAG}
@@ -134,21 +121,11 @@ docker-stop: ### Stop running container
 docker-enter: ### Enter container
 	@docker exec -it exporter bash
 
-push-to-ecr: ### Push container to ecr
-	@echo "Pushing - ${ECR_REPO}:${DOCKER_TAG}"
-	@docker push ${ECR_REPO}:${DOCKER_TAG}
+start-dev-env: ### Start local development environment
+	docker compose -f docker/compose/test/docker-compose.yml up -d
 
-release: clean ecr-login buildcontainer tag-container push-to-ecr ## Release component
-	@echo "Built docker container and pushed to AWS... $(TAG)"
-	@if [ ! -d release ]; then mkdir release; fi
-ifeq ($(TAG), master)
-	git archive --format zip --output release/exporter.zip origin/master
-else
-	git archive --format zip --output release/exporter.zip $(TAG)
-endif
-
-dockerize: ## Dockerize component
-	@echo "Docker image already build and pushed as part of release target"
+stop-dev-env: ### Stop local development environment
+	docker compose -f docker/compose/test/docker-compose.yml down
 
 ### Code not in the repository root? Another binary? Add to the path like this.
 # .PHONY: otherbin
@@ -181,6 +158,7 @@ clean-build: ### Removes croos compilation files
 clean-dist: ### Removes distribution files
 	@echo "Removing distribution files"
 	rm -rf $(dist_dir)
+
 clean-cover: ### Removes coverage files
 	@echo "Removing cover files"
 	rm -rf cover
@@ -294,7 +272,7 @@ endif
 
 help: ## This help
 	@printf '=%.0s' {1..80}
-	@echo -e "\nStandard OTH targets:"
+	@echo -e "\nStandard targets:"
 	@printf '=%.0s' {1..80}
 	@echo
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) |grep -v "###"| sort | awk 'BEGIN {FS = ":.*?## "}; {printf ${format}, $$1, $$2}'
@@ -306,4 +284,4 @@ help: ## This help
 	@grep -E '^[a-zA-Z_-]+:.*?### .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?### "}; {printf ${format}, $$1, $$2}'
 
 
-.PHONY: setup dev serve safebuild build tags release clean test list cover format docker deps clean-build clean-cover clean-dist clean setup format  compile test start set-version tag release dockerize help bootRun buildcontainer ecr-login tag-container push-to-ecr testtarget
+.PHONY: setup dev serve safebuild build tags release clean test list cover format docker deps clean-build clean-cover clean-dist clean setup format  compile test start set-version tag help bootRun buildcontainer tag-container testtarget
