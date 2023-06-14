@@ -4,7 +4,7 @@
 ## Parameters and setups
 ## #################################################################
 IMPORT_PATH      := github.com/KvalitetsIT/kih-telecare-exporter
-DOCKER_IMAGE     := Kvalitetsit/kih-telecare-exporter
+DOCKER_IMAGE     := kvalitetsit/kih-telecare-exporter
 VERSION          := $(shell git describe --tags --always --dirty="-dev")
 DATE             := $(shell date -u '+%Y-%m-%d-%H:%M UTC')
 VERSION_FLAGS    := -ldflags='-X "main.Version=$(VERSION)" -X "main.Build=${DATE}"'
@@ -55,7 +55,7 @@ ifeq (run,$(firstword $(MAKECMDGOALS)))
 endif
 
 ## #################################################################
-## OTH Targets
+## Targets
 ## #################################################################
 start: ## Starts in development mode
 	@echo "Starting development service"
@@ -110,7 +110,7 @@ docker-logs: ### Tails logs from container
 	docker exec exporter tail -f /var/log/exporter/stdout/current
 
 docker-run: buildcontainer ### buildcontainer application in container
-	docker run --rm --name exporter --network openteledev \
+	docker run --rm --name exporter --network dds_net \
 	-v $$(pwd)/docker/conf/exporter.yaml:/app/exporter.yaml:ro \
 	-p 8360:8360 \
 	${DOCKER_IMAGE}:${DOCKER_TAG}
@@ -120,6 +120,12 @@ docker-stop: ### Stop running container
 
 docker-enter: ### Enter container
 	@docker exec -it exporter bash
+
+start-dev-env: ### Start local development environment
+	docker compose -f docker/compose/test/docker-compose.yml up -d
+
+stop-dev-env: ### Stop local development environment
+	docker compose -f docker/compose/test/docker-compose.yml down
 
 ### Code not in the repository root? Another binary? Add to the path like this.
 # .PHONY: otherbin

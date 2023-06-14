@@ -59,6 +59,14 @@ The database migrations are managed by the [[https://github.com/golang-migrate/m
 
 ** Running a local environment to test on
 
+Setting up a docker based development environment can by done by running:
+#+BEGIN_SRC restclient :pretty :exports both inline-body
+make start-dev-env
+#+END_SRC
+
+This will all dependent systems and databases in a docker network.
+
+
 Setting up a local development environment requires 3 parts:
 1. XDS Repository
 2. Running XDS generator
@@ -279,51 +287,7 @@ for using against medcom test
 #+end_src
 
 *** Export
-The exporter requires a local database. This can be started as follows:
-
-#+begin_src sh
-  docker-compose up
- #+end_src
-
-Create a configuration similiar to this:
-
-#+begin_src yaml
-version: '1.1_build1'
-environment: 'dev'
-
-logfile: '/var/log/exporter'
-loglevel: 'warn'
-logging:
-  repository: debug
-  measurement: debug
-
-export:
-  start: 2020-06-01 # must be a date
-  retrydays: 15
-  nodevicewhitelist: true
-  backend: oioxds
-  oioxds:
-    xdsgenerator:
-      url: http://localhost:9010/api/createphmr
-      healthcheck: http://localhost:9010/actuator/health
-
-clinician:
-  batchsize: 1000
-  url: "https://<oth server dns>/clinician/api"
-
-authentication:
-  key: <insert key>
-  secret: <insert secret>
-
-database:
-  hostname: <db host>
-  username: <db user>
-  password: <password>
-  type: 'mysql'
-  port: 3306
-  database: 'exporter'
-
-#+end_src
+The exporter requires a local database. (included in the docker based developent environment)
 
 Bootstrap and restart the service
 #+begin_src sh
