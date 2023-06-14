@@ -5544,3 +5544,585 @@ timestamp=2023-06-14 09:57:25,342 threadId=MSC service thread 1-13 priority=INFO
 timestamp=2023-06-14 09:57:25,343 threadId=MSC service thread 1-1 priority=INFO category=org.wildfly.extension.undertow - JBAS017506: Undertow 1.1.8.Final stopping
 timestamp=2023-06-14 09:57:25,366 threadId=MSC service thread 1-16 priority=INFO category=org.jboss.as.server.deployment - JBAS015877: Stopped deployment kih-iti41.war (runtime-name: kih-iti41.war) in 112ms
 timestamp=2023-06-14 09:57:25,369 threadId=MSC service thread 1-1 priority=INFO category=org.jboss.as - JBAS015950: WildFly 8.2.1.Final "Tweek" stopped in 95ms
+timestamp=2023-06-14 10:11:05,039 threadId=main priority=INFO category=org.jboss.modules - JBoss Modules version 1.3.3.Final
+timestamp=2023-06-14 10:11:05,398 threadId=main priority=INFO category=org.jboss.msc - JBoss MSC version 1.2.2.Final
+timestamp=2023-06-14 10:11:05,480 threadId=MSC service thread 1-7 priority=INFO category=org.jboss.as - JBAS015899: WildFly 8.2.1.Final "Tweek" starting
+timestamp=2023-06-14 10:11:05,495 threadId=MSC service thread 1-7 priority=DEBUG category=org.jboss.as.config - Configured system properties:
+	[Standalone] = 
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /pack/wildfly8/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-1.8.0-amazon-corretto/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.runtime.name = OpenJDK Runtime Environment
+	java.runtime.version = 1.8.0_362-b08
+	java.specification.maintenance.version = 4
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Amazon.com Inc.
+	java.vendor.url = https://aws.amazon.com/corretto/
+	java.vendor.url.bug = https://github.com/corretto/corretto-8/issues/
+	java.version = 1.8.0_362
+	java.vm.info = mixed mode
+	java.vm.name = OpenJDK 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Amazon.com Inc.
+	java.vm.version = 25.362-b08
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.bind.address = 0.0.0.0
+	jboss.home.dir = /pack/wildfly8
+	jboss.host.name = 97e6efc78033
+	jboss.modules.dir = /pack/wildfly8/modules
+	jboss.node.name = 97e6efc78033
+	jboss.qualified.host.name = 97e6efc78033
+	jboss.server.base.dir = /pack/wildfly8/standalone
+	jboss.server.config.dir = /pack/wildfly8/standalone/configuration
+	jboss.server.data.dir = /pack/wildfly8/standalone/data
+	jboss.server.deploy.dir = /pack/wildfly8/standalone/data/content
+	jboss.server.log.dir = /pack/wildfly8/standalone/log
+	jboss.server.name = 97e6efc78033
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /pack/wildfly8/standalone/tmp
+	line.separator = 
+
+	logging.configuration = file:/pack/wildfly8/standalone/configuration/logging.properties
+	module.path = /pack/wildfly8/modules
+	org.jboss.boot.log.file = /pack/wildfly8/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 6.2.0-20-generic
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/resources.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/rt.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/jsse.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/jce.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/charsets.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/jfr.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /pack/wildfly8/jboss-modules.jar -mp /pack/wildfly8/modules org.jboss.as.standalone -Djboss.home.dir=/pack/wildfly8 -Djboss.server.base.dir=/pack/wildfly8/standalone -b 0.0.0.0
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	user.country = US
+	user.dir = /
+	user.home = /root
+	user.language = en
+	user.name = root
+	user.timezone = Europe/Copenhagen
+timestamp=2023-06-14 10:11:05,496 threadId=MSC service thread 1-7 priority=DEBUG category=org.jboss.as.config - VM Arguments: -D[Standalone] -XX:+UseCompressedOops -XX:+UseCompressedOops -Xms2048m -Xmx2048m -XX:MaxMetaspaceSize=512m -XX:CompressedClassSpaceSize=512m -XX:-OmitStackTraceInFastThrow -Dorg.jboss.boot.log.file=/pack/wildfly8/standalone/log/server.log -Dlogging.configuration=file:/pack/wildfly8/standalone/configuration/logging.properties 
+timestamp=2023-06-14 10:11:07,940 threadId=Controller Boot Thread priority=INFO category=org.jboss.as.server - JBAS015888: Creating http management service using socket-binding (management-http)
+timestamp=2023-06-14 10:11:08,065 threadId=MSC service thread 1-4 priority=INFO category=org.xnio - XNIO version 3.3.0.Final
+timestamp=2023-06-14 10:11:08,161 threadId=MSC service thread 1-4 priority=INFO category=org.xnio.nio - XNIO NIO Implementation Version 3.3.0.Final
+timestamp=2023-06-14 10:11:08,686 threadId=ServerService Thread Pool -- 31 priority=INFO category=org.wildfly.extension.io - WFLYIO001: Worker 'default' has auto-configured to 24 core threads with 192 task threads based on your 12 available processors
+timestamp=2023-06-14 10:11:08,802 threadId=ServerService Thread Pool -- 32 priority=INFO category=org.jboss.as.clustering.infinispan - JBAS010280: Activating Infinispan subsystem.
+timestamp=2023-06-14 10:11:08,952 threadId=ServerService Thread Pool -- 40 priority=INFO category=org.jboss.as.naming - JBAS011800: Activating Naming Subsystem
+timestamp=2023-06-14 10:11:09,040 threadId=ServerService Thread Pool -- 45 priority=INFO category=org.jboss.as.security - JBAS013171: Activating Security Subsystem
+timestamp=2023-06-14 10:11:09,177 threadId=ServerService Thread Pool -- 48 priority=INFO category=org.jboss.as.webservices - JBAS015537: Activating WebServices Extension
+timestamp=2023-06-14 10:11:09,306 threadId=MSC service thread 1-9 priority=INFO category=org.jboss.as.security - JBAS013170: Current PicketBox version=4.0.21.Final
+timestamp=2023-06-14 10:11:09,327 threadId=ServerService Thread Pool -- 38 priority=INFO category=org.jboss.as.jsf - JBAS012615: Activated the following JSF Implementations: [main]
+timestamp=2023-06-14 10:11:09,830 threadId=ServerService Thread Pool -- 47 priority=INFO category=org.wildfly.extension.undertow - JBAS017502: Undertow 1.1.8.Final starting
+timestamp=2023-06-14 10:11:09,838 threadId=MSC service thread 1-4 priority=INFO category=org.jboss.remoting - JBoss Remoting version 4.0.7.Final
+timestamp=2023-06-14 10:11:09,830 threadId=MSC service thread 1-18 priority=INFO category=org.wildfly.extension.undertow - JBAS017502: Undertow 1.1.8.Final starting
+timestamp=2023-06-14 10:11:10,075 threadId=MSC service thread 1-2 priority=INFO category=org.jboss.as.naming - JBAS011802: Starting Naming Service
+timestamp=2023-06-14 10:11:10,191 threadId=ServerService Thread Pool -- 27 priority=INFO category=org.jboss.as.connector.subsystems.datasources - JBAS010403: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+timestamp=2023-06-14 10:11:10,226 threadId=MSC service thread 1-19 priority=INFO category=org.jboss.as.mail.extension - JBAS015400: Bound mail session [java:jboss/mail/Default]
+timestamp=2023-06-14 10:11:10,599 threadId=MSC service thread 1-5 priority=INFO category=org.jboss.as.connector.logging - JBAS010408: Starting JCA Subsystem (IronJacamar 1.1.9.Final)
+timestamp=2023-06-14 10:11:10,670 threadId=MSC service thread 1-12 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010417: Started Driver service with driver-name = h2
+timestamp=2023-06-14 10:11:10,679 threadId=ServerService Thread Pool -- 27 priority=INFO category=org.jboss.as.connector.subsystems.datasources - JBAS010404: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+timestamp=2023-06-14 10:11:10,702 threadId=MSC service thread 1-22 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010417: Started Driver service with driver-name = mysql
+timestamp=2023-06-14 10:11:12,291 threadId=ServerService Thread Pool -- 47 priority=INFO category=org.wildfly.extension.undertow - JBAS017527: Creating file handler for path /pack/webapp
+timestamp=2023-06-14 10:11:12,762 threadId=MSC service thread 1-22 priority=INFO category=org.wildfly.extension.undertow - JBAS017525: Started server default-server.
+timestamp=2023-06-14 10:11:13,174 threadId=MSC service thread 1-22 priority=INFO category=org.wildfly.extension.undertow - JBAS017531: Host default-host starting
+timestamp=2023-06-14 10:11:14,113 threadId=MSC service thread 1-19 priority=INFO category=org.wildfly.extension.undertow - JBAS017519: Undertow HTTP listener default listening on /0.0.0.0:8080
+timestamp=2023-06-14 10:11:15,059 threadId=MSC service thread 1-9 priority=INFO category=org.jboss.as.server.deployment.scanner - JBAS015012: Started FileSystemDeploymentService for directory /pack/wildfly8/standalone/deployments
+timestamp=2023-06-14 10:11:15,071 threadId=MSC service thread 1-18 priority=INFO category=org.jboss.as.server.deployment - JBAS015876: Starting deployment of "cra-ds.xml" (runtime-name: "cra-ds.xml")
+timestamp=2023-06-14 10:11:15,071 threadId=MSC service thread 1-12 priority=INFO category=org.jboss.as.server.deployment - JBAS015876: Starting deployment of "kih-iti41.war" (runtime-name: "kih-iti41.war")
+timestamp=2023-06-14 10:11:15,770 threadId=MSC service thread 1-8 priority=INFO category=org.jboss.as.connector.subsystems.datasources - JBAS010400: Bound data source [java:jboss/datasources/ExampleDS]
+timestamp=2023-06-14 10:11:16,000 threadId=MSC service thread 1-3 priority=INFO category=org.jboss.as.connector.subsystems.datasources - JBAS010400: Bound data source [java:jboss/datasources/CRARO]
+timestamp=2023-06-14 10:11:18,354 threadId=MSC service thread 1-1 priority=INFO category=org.jboss.ws.common.management - JBWS022052: Starting JBoss Web Services - Stack CXF Server 4.3.2.Final
+timestamp=2023-06-14 10:11:23,229 threadId=MSC service thread 1-12 priority=WARN category=org.jboss.as.server.deployment - JBAS015852: Could not index class META-INF/versions/9/module-info.class at /content/kih-iti41.war/WEB-INF/lib/log4j-api-2.11.2.jar: java.lang.IllegalStateException: Unknown tag! pos=4 poolCount = 32
+	at org.jboss.jandex.Indexer.processConstantPool(Indexer.java:665) [jandex-1.2.1.Final.jar:1.2.1.Final]
+	at org.jboss.jandex.Indexer.index(Indexer.java:699) [jandex-1.2.1.Final.jar:1.2.1.Final]
+	at org.jboss.as.server.deployment.annotation.ResourceRootIndexer.indexResourceRoot(ResourceRootIndexer.java:100) [wildfly-server-8.2.1.Final.jar:8.2.1.Final]
+	at org.jboss.as.server.deployment.annotation.AnnotationIndexProcessor.deploy(AnnotationIndexProcessor.java:51) [wildfly-server-8.2.1.Final.jar:8.2.1.Final]
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:159) [wildfly-server-8.2.1.Final.jar:8.2.1.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1948) [jboss-msc-1.2.2.Final.jar:1.2.2.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1881) [jboss-msc-1.2.2.Final.jar:1.2.2.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [rt.jar:1.8.0_362]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [rt.jar:1.8.0_362]
+	at java.lang.Thread.run(Thread.java:750) [rt.jar:1.8.0_362]
+
+timestamp=2023-06-14 10:11:25,197 threadId=MSC service thread 1-21 priority=WARN category=org.jboss.as.dependency.private - JBAS018567: Deployment "deployment.kih-iti41.war" is using a private module ("org.apache.cxf.impl:main") which may be changed or removed in future versions without notice.
+timestamp=2023-06-14 10:11:25,199 threadId=MSC service thread 1-21 priority=WARN category=org.jboss.as.dependency.private - JBAS018567: Deployment "deployment.kih-iti41.war" is using a private module ("org.apache.cxf.impl:main") which may be changed or removed in future versions without notice.
+timestamp=2023-06-14 10:11:26,920 threadId=MSC service thread 1-14 priority=WARN category=org.jboss.as.ee - JBAS011006: Not installing optional component org.springframework.http.server.reactive.ServletServerHttpResponse$ResponseAsyncListener due to an exception (enable DEBUG log level to see the cause)
+timestamp=2023-06-14 10:11:26,944 threadId=MSC service thread 1-14 priority=WARN category=org.jboss.as.ee - JBAS011006: Not installing optional component org.springframework.http.server.reactive.ServletHttpHandlerAdapter$HandlerResultAsyncListener due to an exception (enable DEBUG log level to see the cause)
+timestamp=2023-06-14 10:11:26,972 threadId=MSC service thread 1-14 priority=WARN category=org.jboss.as.ee - JBAS011006: Not installing optional component org.springframework.http.server.ServletServerHttpAsyncRequestControl due to an exception (enable DEBUG log level to see the cause)
+timestamp=2023-06-14 10:11:26,979 threadId=MSC service thread 1-14 priority=WARN category=org.jboss.as.ee - JBAS011006: Not installing optional component org.springframework.web.context.request.async.StandardServletAsyncWebRequest due to an exception (enable DEBUG log level to see the cause)
+timestamp=2023-06-14 10:11:27,094 threadId=MSC service thread 1-14 priority=WARN category=org.jboss.as.ee - JBAS011006: Not installing optional component org.springframework.http.server.reactive.ServletServerHttpRequest$RequestAsyncListener due to an exception (enable DEBUG log level to see the cause)
+timestamp=2023-06-14 10:11:27,566 threadId=MSC service thread 1-14 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010404: Deploying non-JDBC-compliant driver class com.mysql.cj.jdbc.Driver (version 8.0)
+timestamp=2023-06-14 10:11:27,607 threadId=MSC service thread 1-14 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010404: Deploying non-JDBC-compliant driver class net.sourceforge.jtds.jdbc.Driver (version 1.3)
+timestamp=2023-06-14 10:11:27,855 threadId=MSC service thread 1-14 priority=INFO category=org.jboss.ws.cxf.metadata - JBWS024061: Adding service endpoint metadata: id=Iti41
+ address=http://jbossws.undefined.host:8080/kih-iti41/iti41
+ implementor=dk.kvalitetsit.xdsvalidationproxy.ws.Iti41ValidateAndProxyWs
+ serviceName={http://ws.xdsvalidationproxy.kvalitetsit.dk/}iti41
+ portName={http://ws.xdsvalidationproxy.kvalitetsit.dk/}Iti41ValidateAndProxyWsPort
+ annotationWsdlLocation=null
+ wsdlLocationOverride=null
+ mtomEnabled=false
+timestamp=2023-06-14 10:11:27,862 threadId=MSC service thread 1-14 priority=INFO category=org.jboss.ws.cxf.metadata - JBWS024061: Adding service endpoint metadata: id=Iti43
+ address=http://jbossws.undefined.host:8080/kih-iti41/iti43
+ implementor=dk.kvalitetsit.xdsvalidationproxy.ws.Iti43ValidateAndProxyWs
+ serviceName={http://ws.xdsvalidationproxy.kvalitetsit.dk/}iti43
+ portName={http://ws.xdsvalidationproxy.kvalitetsit.dk/}Iti43ValidateAndProxyWsPort
+ annotationWsdlLocation=null
+ wsdlLocationOverride=null
+ mtomEnabled=false
+timestamp=2023-06-14 10:11:28,073 threadId=MSC service thread 1-8 priority=INFO category=org.jboss.as.connector.subsystems.datasources - JBAS010409: Unbound data source [java:jboss/datasources/ExampleDS]
+timestamp=2023-06-14 10:11:28,184 threadId=MSC service thread 1-5 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010418: Stopped Driver service with driver-name = h2
+timestamp=2023-06-14 10:11:28,202 threadId=MSC service thread 1-2 priority=INFO category=org.wildfly.extension.undertow - JBAS017532: Host default-host stopping
+timestamp=2023-06-14 10:11:28,212 threadId=MSC service thread 1-10 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010418: Stopped Driver service with driver-name = mysql
+timestamp=2023-06-14 10:11:28,456 threadId=MSC service thread 1-11 priority=INFO category=org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+timestamp=2023-06-14 10:11:29,546 threadId=MSC service thread 1-20 priority=INFO category=org.jboss.as.server.deployment - JBAS015877: Stopped deployment cra-ds.xml (runtime-name: cra-ds.xml) in 1572ms
+timestamp=2023-06-14 10:11:31,106 threadId=MSC service thread 1-14 priority=INFO category=org.apache.cxf.service.factory.ReflectionServiceFactoryBean - Creating Service {http://ws.xdsvalidationproxy.kvalitetsit.dk/}iti41 from class org.openehealth.ipf.commons.ihe.xds.iti41.Iti41PortType
+timestamp=2023-06-14 10:11:34,516 threadId=MSC service thread 1-14 priority=INFO category=org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be http://jbossws.undefined.host:8080/kih-iti41/iti41
+timestamp=2023-06-14 10:11:34,734 threadId=MSC service thread 1-14 priority=INFO category=org.jboss.ws.cxf.deployment - JBWS024074: WSDL published to: file:/pack/wildfly8/standalone/data/wsdl/kih-iti41.war/iti41.wsdl
+timestamp=2023-06-14 10:11:34,898 threadId=MSC service thread 1-14 priority=INFO category=org.apache.cxf.service.factory.ReflectionServiceFactoryBean - Creating Service {http://ws.xdsvalidationproxy.kvalitetsit.dk/}iti43 from class dk.kvalitetsit.xdsvalidationproxy.ws.DocumentRepositoryPortType
+timestamp=2023-06-14 10:11:35,721 threadId=MSC service thread 1-14 priority=INFO category=org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be http://jbossws.undefined.host:8080/kih-iti41/iti43
+timestamp=2023-06-14 10:11:35,745 threadId=MSC service thread 1-14 priority=INFO category=org.jboss.ws.cxf.deployment - JBWS024074: WSDL published to: file:/pack/wildfly8/standalone/data/wsdl/kih-iti41.war/iti43.wsdl
+timestamp=2023-06-14 10:11:35,842 threadId=MSC service thread 1-14 priority=ERROR category=org.jboss.ws.common.deployment - JBWS022102: Cannot stop endpoint in state UNDEFINED: jboss.ws:context=kih-iti41,endpoint=Iti41
+timestamp=2023-06-14 10:11:35,844 threadId=MSC service thread 1-14 priority=ERROR category=org.jboss.ws.common.deployment - JBWS022102: Cannot stop endpoint in state UNDEFINED: jboss.ws:context=kih-iti41,endpoint=Iti43
+timestamp=2023-06-14 10:11:35,889 threadId=MSC service thread 1-14 priority=ERROR category=org.jboss.msc.service.fail - MSC000001: Failed to start service jboss.deployment.unit."kih-iti41.war".INSTALL: org.jboss.msc.service.StartException in service jboss.deployment.unit."kih-iti41.war".INSTALL: JBAS018733: Failed to process phase INSTALL of deployment "kih-iti41.war"
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:166) [wildfly-server-8.2.1.Final.jar:8.2.1.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1948) [jboss-msc-1.2.2.Final.jar:1.2.2.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1881) [jboss-msc-1.2.2.Final.jar:1.2.2.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [rt.jar:1.8.0_362]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [rt.jar:1.8.0_362]
+	at java.lang.Thread.run(Thread.java:750) [rt.jar:1.8.0_362]
+Caused by: java.lang.IllegalStateException: Container is down
+	at org.jboss.msc.service.ServiceContainerImpl.install(ServiceContainerImpl.java:715) [jboss-msc-1.2.2.Final.jar:1.2.2.Final]
+	at org.jboss.msc.service.ServiceTargetImpl.install(ServiceTargetImpl.java:223) [jboss-msc-1.2.2.Final.jar:1.2.2.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$ChildServiceTarget.install(ServiceControllerImpl.java:2401) [jboss-msc-1.2.2.Final.jar:1.2.2.Final]
+	at org.jboss.msc.service.ServiceTargetImpl.install(ServiceTargetImpl.java:223) [jboss-msc-1.2.2.Final.jar:1.2.2.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$ChildServiceTarget.install(ServiceControllerImpl.java:2401) [jboss-msc-1.2.2.Final.jar:1.2.2.Final]
+	at org.jboss.msc.service.ServiceBuilderImpl.install(ServiceBuilderImpl.java:317) [jboss-msc-1.2.2.Final.jar:1.2.2.Final]
+	at org.jboss.as.webservices.service.EndpointService.install(EndpointService.java:226)
+	at org.jboss.as.webservices.deployers.EndpointServiceDeploymentAspect.start(EndpointServiceDeploymentAspect.java:50)
+	at org.jboss.as.webservices.deployers.AspectDeploymentProcessor.deploy(AspectDeploymentProcessor.java:75)
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:159) [wildfly-server-8.2.1.Final.jar:8.2.1.Final]
+	... 5 more
+
+timestamp=2023-06-14 10:11:35,918 threadId=MSC service thread 1-7 priority=INFO category=org.wildfly.extension.undertow - JBAS017521: Undertow HTTP listener default suspending
+timestamp=2023-06-14 10:11:36,003 threadId=MSC service thread 1-7 priority=INFO category=org.wildfly.extension.undertow - JBAS017520: Undertow HTTP listener default stopped, was bound to /0.0.0.0:8080
+timestamp=2023-06-14 10:11:36,032 threadId=MSC service thread 1-7 priority=INFO category=org.wildfly.extension.undertow - JBAS017506: Undertow 1.1.8.Final stopping
+timestamp=2023-06-14 10:11:36,198 threadId=MSC service thread 1-6 priority=INFO category=org.jboss.as.server.deployment - JBAS015877: Stopped deployment kih-iti41.war (runtime-name: kih-iti41.war) in 8223ms
+timestamp=2023-06-14 10:11:36,205 threadId=MSC service thread 1-14 priority=INFO category=org.jboss.as - JBAS015950: WildFly 8.2.1.Final "Tweek" stopped in 8121ms
+timestamp=2023-06-14 10:24:19,298 threadId=main priority=INFO category=org.jboss.modules - JBoss Modules version 1.3.3.Final
+timestamp=2023-06-14 10:24:19,582 threadId=main priority=INFO category=org.jboss.msc - JBoss MSC version 1.2.2.Final
+timestamp=2023-06-14 10:24:19,659 threadId=MSC service thread 1-7 priority=INFO category=org.jboss.as - JBAS015899: WildFly 8.2.1.Final "Tweek" starting
+timestamp=2023-06-14 10:24:19,665 threadId=MSC service thread 1-7 priority=DEBUG category=org.jboss.as.config - Configured system properties:
+	[Standalone] = 
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /pack/wildfly8/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-1.8.0-amazon-corretto/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.runtime.name = OpenJDK Runtime Environment
+	java.runtime.version = 1.8.0_362-b08
+	java.specification.maintenance.version = 4
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Amazon.com Inc.
+	java.vendor.url = https://aws.amazon.com/corretto/
+	java.vendor.url.bug = https://github.com/corretto/corretto-8/issues/
+	java.version = 1.8.0_362
+	java.vm.info = mixed mode
+	java.vm.name = OpenJDK 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Amazon.com Inc.
+	java.vm.version = 25.362-b08
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.bind.address = 0.0.0.0
+	jboss.home.dir = /pack/wildfly8
+	jboss.host.name = 5afd0d8ff837
+	jboss.modules.dir = /pack/wildfly8/modules
+	jboss.node.name = 5afd0d8ff837
+	jboss.qualified.host.name = 5afd0d8ff837
+	jboss.server.base.dir = /pack/wildfly8/standalone
+	jboss.server.config.dir = /pack/wildfly8/standalone/configuration
+	jboss.server.data.dir = /pack/wildfly8/standalone/data
+	jboss.server.deploy.dir = /pack/wildfly8/standalone/data/content
+	jboss.server.log.dir = /pack/wildfly8/standalone/log
+	jboss.server.name = 5afd0d8ff837
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /pack/wildfly8/standalone/tmp
+	line.separator = 
+
+	logging.configuration = file:/pack/wildfly8/standalone/configuration/logging.properties
+	module.path = /pack/wildfly8/modules
+	org.jboss.boot.log.file = /pack/wildfly8/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 6.2.0-20-generic
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/resources.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/rt.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/jsse.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/jce.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/charsets.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/jfr.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /pack/wildfly8/jboss-modules.jar -mp /pack/wildfly8/modules org.jboss.as.standalone -Djboss.home.dir=/pack/wildfly8 -Djboss.server.base.dir=/pack/wildfly8/standalone -b 0.0.0.0
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	user.country = US
+	user.dir = /
+	user.home = /root
+	user.language = en
+	user.name = root
+	user.timezone = Europe/Copenhagen
+timestamp=2023-06-14 10:24:19,666 threadId=MSC service thread 1-7 priority=DEBUG category=org.jboss.as.config - VM Arguments: -D[Standalone] -XX:+UseCompressedOops -XX:+UseCompressedOops -Xms2048m -Xmx2048m -XX:MaxMetaspaceSize=512m -XX:CompressedClassSpaceSize=512m -XX:-OmitStackTraceInFastThrow -Dorg.jboss.boot.log.file=/pack/wildfly8/standalone/log/server.log -Dlogging.configuration=file:/pack/wildfly8/standalone/configuration/logging.properties 
+timestamp=2023-06-14 10:24:26,334 threadId=Controller Boot Thread priority=INFO category=org.jboss.as.server - JBAS015888: Creating http management service using socket-binding (management-http)
+timestamp=2023-06-14 10:24:26,403 threadId=MSC service thread 1-6 priority=INFO category=org.xnio - XNIO version 3.3.0.Final
+timestamp=2023-06-14 10:24:26,460 threadId=MSC service thread 1-6 priority=INFO category=org.xnio.nio - XNIO NIO Implementation Version 3.3.0.Final
+timestamp=2023-06-14 10:24:26,899 threadId=MSC service thread 1-6 priority=INFO category=org.jboss.remoting - JBoss Remoting version 4.0.7.Final
+timestamp=2023-06-14 10:24:26,974 threadId=ServerService Thread Pool -- 32 priority=INFO category=org.jboss.as.clustering.infinispan - JBAS010280: Activating Infinispan subsystem.
+timestamp=2023-06-14 10:24:26,984 threadId=ServerService Thread Pool -- 31 priority=INFO category=org.wildfly.extension.io - WFLYIO001: Worker 'default' has auto-configured to 24 core threads with 192 task threads based on your 12 available processors
+timestamp=2023-06-14 10:24:27,035 threadId=ServerService Thread Pool -- 38 priority=INFO category=org.jboss.as.jsf - JBAS012615: Activated the following JSF Implementations: [main]
+timestamp=2023-06-14 10:24:27,168 threadId=ServerService Thread Pool -- 40 priority=INFO category=org.jboss.as.naming - JBAS011800: Activating Naming Subsystem
+timestamp=2023-06-14 10:24:27,067 threadId=ServerService Thread Pool -- 45 priority=INFO category=org.jboss.as.security - JBAS013171: Activating Security Subsystem
+timestamp=2023-06-14 10:24:27,269 threadId=ServerService Thread Pool -- 48 priority=INFO category=org.jboss.as.webservices - JBAS015537: Activating WebServices Extension
+timestamp=2023-06-14 10:24:27,795 threadId=MSC service thread 1-20 priority=INFO category=org.jboss.as.connector.logging - JBAS010408: Starting JCA Subsystem (IronJacamar 1.1.9.Final)
+timestamp=2023-06-14 10:24:27,858 threadId=ServerService Thread Pool -- 47 priority=INFO category=org.wildfly.extension.undertow - JBAS017502: Undertow 1.1.8.Final starting
+timestamp=2023-06-14 10:24:27,836 threadId=MSC service thread 1-12 priority=INFO category=org.wildfly.extension.undertow - JBAS017502: Undertow 1.1.8.Final starting
+timestamp=2023-06-14 10:24:27,943 threadId=MSC service thread 1-2 priority=INFO category=org.jboss.as.security - JBAS013170: Current PicketBox version=4.0.21.Final
+timestamp=2023-06-14 10:24:28,476 threadId=MSC service thread 1-24 priority=INFO category=org.jboss.as.naming - JBAS011802: Starting Naming Service
+timestamp=2023-06-14 10:24:28,600 threadId=MSC service thread 1-5 priority=INFO category=org.jboss.as.mail.extension - JBAS015400: Bound mail session [java:jboss/mail/Default]
+timestamp=2023-06-14 10:24:28,609 threadId=ServerService Thread Pool -- 27 priority=INFO category=org.jboss.as.connector.subsystems.datasources - JBAS010403: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+timestamp=2023-06-14 10:24:28,738 threadId=MSC service thread 1-23 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010417: Started Driver service with driver-name = h2
+timestamp=2023-06-14 10:24:29,461 threadId=ServerService Thread Pool -- 27 priority=INFO category=org.jboss.as.connector.subsystems.datasources - JBAS010404: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+timestamp=2023-06-14 10:24:29,640 threadId=MSC service thread 1-5 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010417: Started Driver service with driver-name = mysql
+timestamp=2023-06-14 10:24:31,062 threadId=ServerService Thread Pool -- 47 priority=INFO category=org.wildfly.extension.undertow - JBAS017527: Creating file handler for path /pack/webapp
+timestamp=2023-06-14 10:24:31,315 threadId=MSC service thread 1-10 priority=INFO category=org.wildfly.extension.undertow - JBAS017525: Started server default-server.
+timestamp=2023-06-14 10:24:31,706 threadId=MSC service thread 1-23 priority=INFO category=org.wildfly.extension.undertow - JBAS017531: Host default-host starting
+timestamp=2023-06-14 10:24:32,854 threadId=MSC service thread 1-10 priority=INFO category=org.wildfly.extension.undertow - JBAS017519: Undertow HTTP listener default listening on /0.0.0.0:8080
+timestamp=2023-06-14 10:24:34,241 threadId=MSC service thread 1-3 priority=INFO category=org.jboss.as.server.deployment - JBAS015876: Starting deployment of "kih-iti41.war" (runtime-name: "kih-iti41.war")
+timestamp=2023-06-14 10:24:34,255 threadId=MSC service thread 1-1 priority=INFO category=org.jboss.as.server.deployment - JBAS015876: Starting deployment of "cra-ds.xml" (runtime-name: "cra-ds.xml")
+timestamp=2023-06-14 10:24:34,172 threadId=MSC service thread 1-13 priority=INFO category=org.jboss.as.server.deployment.scanner - JBAS015012: Started FileSystemDeploymentService for directory /pack/wildfly8/standalone/deployments
+timestamp=2023-06-14 10:24:34,984 threadId=MSC service thread 1-18 priority=INFO category=org.jboss.as.connector.subsystems.datasources - JBAS010400: Bound data source [java:jboss/datasources/ExampleDS]
+timestamp=2023-06-14 10:24:36,661 threadId=MSC service thread 1-2 priority=INFO category=org.jboss.as.connector.subsystems.datasources - JBAS010400: Bound data source [java:jboss/datasources/CRARO]
+timestamp=2023-06-14 10:24:38,230 threadId=MSC service thread 1-10 priority=INFO category=org.jboss.ws.common.management - JBWS022052: Starting JBoss Web Services - Stack CXF Server 4.3.2.Final
+timestamp=2023-06-14 10:24:42,286 threadId=MSC service thread 1-6 priority=WARN category=org.jboss.as.server.deployment - JBAS015852: Could not index class META-INF/versions/9/module-info.class at /content/kih-iti41.war/WEB-INF/lib/log4j-api-2.11.2.jar: java.lang.IllegalStateException: Unknown tag! pos=4 poolCount = 32
+	at org.jboss.jandex.Indexer.processConstantPool(Indexer.java:665) [jandex-1.2.1.Final.jar:1.2.1.Final]
+	at org.jboss.jandex.Indexer.index(Indexer.java:699) [jandex-1.2.1.Final.jar:1.2.1.Final]
+	at org.jboss.as.server.deployment.annotation.ResourceRootIndexer.indexResourceRoot(ResourceRootIndexer.java:100) [wildfly-server-8.2.1.Final.jar:8.2.1.Final]
+	at org.jboss.as.server.deployment.annotation.AnnotationIndexProcessor.deploy(AnnotationIndexProcessor.java:51) [wildfly-server-8.2.1.Final.jar:8.2.1.Final]
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:159) [wildfly-server-8.2.1.Final.jar:8.2.1.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1948) [jboss-msc-1.2.2.Final.jar:1.2.2.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1881) [jboss-msc-1.2.2.Final.jar:1.2.2.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [rt.jar:1.8.0_362]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [rt.jar:1.8.0_362]
+	at java.lang.Thread.run(Thread.java:750) [rt.jar:1.8.0_362]
+
+timestamp=2023-06-14 10:24:43,950 threadId=MSC service thread 1-20 priority=WARN category=org.jboss.as.dependency.private - JBAS018567: Deployment "deployment.kih-iti41.war" is using a private module ("org.apache.cxf.impl:main") which may be changed or removed in future versions without notice.
+timestamp=2023-06-14 10:24:43,952 threadId=MSC service thread 1-20 priority=WARN category=org.jboss.as.dependency.private - JBAS018567: Deployment "deployment.kih-iti41.war" is using a private module ("org.apache.cxf.impl:main") which may be changed or removed in future versions without notice.
+timestamp=2023-06-14 10:24:45,182 threadId=MSC service thread 1-23 priority=WARN category=org.jboss.as.ee - JBAS011006: Not installing optional component org.springframework.http.server.reactive.ServletServerHttpResponse$ResponseAsyncListener due to an exception (enable DEBUG log level to see the cause)
+timestamp=2023-06-14 10:24:45,190 threadId=MSC service thread 1-23 priority=WARN category=org.jboss.as.ee - JBAS011006: Not installing optional component org.springframework.http.server.reactive.ServletHttpHandlerAdapter$HandlerResultAsyncListener due to an exception (enable DEBUG log level to see the cause)
+timestamp=2023-06-14 10:24:45,196 threadId=MSC service thread 1-23 priority=WARN category=org.jboss.as.ee - JBAS011006: Not installing optional component org.springframework.http.server.ServletServerHttpAsyncRequestControl due to an exception (enable DEBUG log level to see the cause)
+timestamp=2023-06-14 10:24:45,199 threadId=MSC service thread 1-23 priority=WARN category=org.jboss.as.ee - JBAS011006: Not installing optional component org.springframework.web.context.request.async.StandardServletAsyncWebRequest due to an exception (enable DEBUG log level to see the cause)
+timestamp=2023-06-14 10:24:45,208 threadId=MSC service thread 1-23 priority=WARN category=org.jboss.as.ee - JBAS011006: Not installing optional component org.springframework.http.server.reactive.ServletServerHttpRequest$RequestAsyncListener due to an exception (enable DEBUG log level to see the cause)
+timestamp=2023-06-14 10:24:45,451 threadId=MSC service thread 1-23 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010404: Deploying non-JDBC-compliant driver class com.mysql.cj.jdbc.Driver (version 8.0)
+timestamp=2023-06-14 10:24:45,457 threadId=MSC service thread 1-23 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010404: Deploying non-JDBC-compliant driver class net.sourceforge.jtds.jdbc.Driver (version 1.3)
+timestamp=2023-06-14 10:24:45,528 threadId=MSC service thread 1-23 priority=INFO category=org.jboss.ws.cxf.metadata - JBWS024061: Adding service endpoint metadata: id=Iti41
+ address=http://jbossws.undefined.host:8080/kih-iti41/iti41
+ implementor=dk.kvalitetsit.xdsvalidationproxy.ws.Iti41ValidateAndProxyWs
+ serviceName={http://ws.xdsvalidationproxy.kvalitetsit.dk/}iti41
+ portName={http://ws.xdsvalidationproxy.kvalitetsit.dk/}Iti41ValidateAndProxyWsPort
+ annotationWsdlLocation=null
+ wsdlLocationOverride=null
+ mtomEnabled=false
+timestamp=2023-06-14 10:24:45,529 threadId=MSC service thread 1-23 priority=INFO category=org.jboss.ws.cxf.metadata - JBWS024061: Adding service endpoint metadata: id=Iti43
+ address=http://jbossws.undefined.host:8080/kih-iti41/iti43
+ implementor=dk.kvalitetsit.xdsvalidationproxy.ws.Iti43ValidateAndProxyWs
+ serviceName={http://ws.xdsvalidationproxy.kvalitetsit.dk/}iti43
+ portName={http://ws.xdsvalidationproxy.kvalitetsit.dk/}Iti43ValidateAndProxyWsPort
+ annotationWsdlLocation=null
+ wsdlLocationOverride=null
+ mtomEnabled=false
+timestamp=2023-06-14 10:24:46,940 threadId=MSC service thread 1-23 priority=INFO category=org.apache.cxf.service.factory.ReflectionServiceFactoryBean - Creating Service {http://ws.xdsvalidationproxy.kvalitetsit.dk/}iti41 from class org.openehealth.ipf.commons.ihe.xds.iti41.Iti41PortType
+timestamp=2023-06-14 10:24:50,453 threadId=MSC service thread 1-23 priority=INFO category=org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be http://jbossws.undefined.host:8080/kih-iti41/iti41
+timestamp=2023-06-14 10:24:50,812 threadId=MSC service thread 1-23 priority=INFO category=org.jboss.ws.cxf.deployment - JBWS024074: WSDL published to: file:/pack/wildfly8/standalone/data/wsdl/kih-iti41.war/iti41.wsdl
+timestamp=2023-06-14 10:24:51,108 threadId=MSC service thread 1-23 priority=INFO category=org.apache.cxf.service.factory.ReflectionServiceFactoryBean - Creating Service {http://ws.xdsvalidationproxy.kvalitetsit.dk/}iti43 from class dk.kvalitetsit.xdsvalidationproxy.ws.DocumentRepositoryPortType
+timestamp=2023-06-14 10:24:51,816 threadId=MSC service thread 1-23 priority=INFO category=org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be http://jbossws.undefined.host:8080/kih-iti41/iti43
+timestamp=2023-06-14 10:24:51,844 threadId=MSC service thread 1-23 priority=INFO category=org.jboss.ws.cxf.deployment - JBWS024074: WSDL published to: file:/pack/wildfly8/standalone/data/wsdl/kih-iti41.war/iti43.wsdl
+timestamp=2023-06-14 10:24:52,005 threadId=MSC service thread 1-6 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010417: Started Driver service with driver-name = kih-iti41.war_com.mysql.cj.jdbc.Driver_8_0
+timestamp=2023-06-14 10:24:52,006 threadId=MSC service thread 1-13 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010417: Started Driver service with driver-name = kih-iti41.war_net.sourceforge.jtds.jdbc.Driver_1_3
+timestamp=2023-06-14 10:24:52,005 threadId=MSC service thread 1-7 priority=INFO category=org.jboss.as.webservices - JBAS015539: Starting service jboss.ws.endpoint."kih-iti41.war".Iti43
+timestamp=2023-06-14 10:24:52,007 threadId=MSC service thread 1-20 priority=INFO category=org.jboss.as.webservices - JBAS015539: Starting service jboss.ws.endpoint."kih-iti41.war".Iti41
+timestamp=2023-06-14 10:24:52,628 threadId=MSC service thread 1-13 priority=INFO category=io.undertow.servlet - 1 Spring WebApplicationInitializers detected on classpath
+timestamp=2023-06-14 10:24:52,643 threadId=MSC service thread 1-13 priority=INFO category=io.undertow.servlet - Initializing Spring root WebApplicationContext
+timestamp=2023-06-14 10:24:52,717 threadId=MSC service thread 1-13 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:24:52.648+02:00","@version":"1","message":"Root WebApplicationContext: initialization started","logger_name":"org.springframework.web.context.ContextLoader","thread_name":"MSC service thread 1-13","level":"INFO","level_value":20000}
+timestamp=2023-06-14 10:24:54,041 threadId=MSC service thread 1-13 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:24:54.040+02:00","@version":"1","message":"no database connection established since no reporting","logger_name":"dk.kvalitetsit.xdsvalidationproxy.configuration.DatabaseConfiguration","thread_name":"MSC service thread 1-13","level":"INFO","level_value":20000}
+timestamp=2023-06-14 10:24:54,096 threadId=MSC service thread 1-13 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:24:54.095+02:00","@version":"1","message":"LoggingRules [doLogPatientId=true, doLogClinicalDocument=true]","logger_name":"dk.kvalitetsit.xdsvalidationproxy.logger.EventLogger","thread_name":"MSC service thread 1-13","level":"INFO","level_value":20000}
+timestamp=2023-06-14 10:24:54,096 threadId=MSC service thread 1-13 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:24:54.096+02:00","@version":"1","message":"Logging warn level","logger_name":"dk.kvalitetsit.xdsvalidationproxy.logger.EventLogger","thread_name":"MSC service thread 1-13","level":"WARN","level_value":30000}
+timestamp=2023-06-14 10:24:54,098 threadId=MSC service thread 1-13 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:24:54.097+02:00","@version":"1","message":"Logging info level","logger_name":"dk.kvalitetsit.xdsvalidationproxy.logger.EventLogger","thread_name":"MSC service thread 1-13","level":"INFO","level_value":20000}
+timestamp=2023-06-14 10:24:54,177 threadId=MSC service thread 1-13 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:24:54.113+02:00","@version":"1","message":"Logging as structured data","logger_name":"dk.kvalitetsit.xdsvalidationproxy.logger.EventLogger","thread_name":"MSC service thread 1-13","level":"INFO","level_value":20000,"event":{"action":"runAtStartUp","result":null,"requestIdentifier":null,"startTimestamp":null,"endTimestamp":null,"validationCallTimestamp":null,"validationReturnTimestamp":null,"backendCallTimestamp":null,"backendReturnTimestamp":null,"messages":null,"requesterDetails":null,"documentDetails":null}}
+timestamp=2023-06-14 10:24:54,198 threadId=MSC service thread 1-13 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:24:54.197+02:00","@version":"1","message":"ValidationRules [validateDocument=false, continueOnValidationError=false]","logger_name":"dk.kvalitetsit.xdsvalidationproxy.validator.DocumentValidator","thread_name":"MSC service thread 1-13","level":"INFO","level_value":20000}
+timestamp=2023-06-14 10:24:54,247 threadId=MSC service thread 1-13 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:24:54.245+02:00","@version":"1","message":"typeCodesMapping is: 53576-5;74468-0;74465-6;39289-4;, PHMR;QFDD;QRD;APD;","logger_name":"dk.kvalitetsit.xdsvalidationproxy.utils.CdaDocumentUtil","thread_name":"MSC service thread 1-13","level":"INFO","level_value":20000}
+timestamp=2023-06-14 10:24:54,250 threadId=MSC service thread 1-13 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:24:54.249+02:00","@version":"1","message":"doLogFullDocumentDuringDecode is: false","logger_name":"dk.kvalitetsit.xdsvalidationproxy.utils.CdaDocumentUtil","thread_name":"MSC service thread 1-13","level":"INFO","level_value":20000}
+timestamp=2023-06-14 10:24:54,318 threadId=MSC service thread 1-13 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:24:54.317+02:00","@version":"1","message":"ReportingRules [reportDocument=false]","logger_name":"dk.kvalitetsit.xdsvalidationproxy.reporting.DocumentReporter","thread_name":"MSC service thread 1-13","level":"INFO","level_value":20000}
+timestamp=2023-06-14 10:24:54,528 threadId=MSC service thread 1-13 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:24:54.527+02:00","@version":"1","message":"Root WebApplicationContext initialized in 1805 ms","logger_name":"org.springframework.web.context.ContextLoader","thread_name":"MSC service thread 1-13","level":"INFO","level_value":20000}
+timestamp=2023-06-14 10:24:54,674 threadId=MSC service thread 1-13 priority=INFO category=org.wildfly.extension.undertow - JBAS017534: Registered web context: /kih-iti41
+timestamp=2023-06-14 10:24:54,860 threadId=ServerService Thread Pool -- 28 priority=INFO category=org.jboss.as.server - JBAS018559: Deployed "cra-ds.xml" (runtime-name : "cra-ds.xml")
+timestamp=2023-06-14 10:24:54,863 threadId=ServerService Thread Pool -- 28 priority=INFO category=org.jboss.as.server - JBAS018559: Deployed "kih-iti41.war" (runtime-name : "kih-iti41.war")
+timestamp=2023-06-14 10:24:54,905 threadId=Controller Boot Thread priority=INFO category=org.jboss.as - JBAS015961: Http management interface listening on http://127.0.0.1:9990/management
+timestamp=2023-06-14 10:24:54,908 threadId=Controller Boot Thread priority=INFO category=org.jboss.as - JBAS015951: Admin console listening on http://127.0.0.1:9990
+timestamp=2023-06-14 10:24:54,909 threadId=Controller Boot Thread priority=INFO category=org.jboss.as - JBAS015874: WildFly 8.2.1.Final "Tweek" started in 35857ms - Started 429 of 489 services (100 services are lazy, passive or on-demand)
+timestamp=2023-06-14 10:26:13,087 threadId=MSC service thread 1-3 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010418: Stopped Driver service with driver-name = kih-iti41.war_net.sourceforge.jtds.jdbc.Driver_1_3
+timestamp=2023-06-14 10:26:13,088 threadId=MSC service thread 1-22 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010418: Stopped Driver service with driver-name = kih-iti41.war_com.mysql.cj.jdbc.Driver_8_0
+timestamp=2023-06-14 10:26:13,094 threadId=MSC service thread 1-16 priority=INFO category=org.wildfly.extension.undertow - JBAS017535: Unregistered web context: /kih-iti41
+timestamp=2023-06-14 10:26:13,097 threadId=MSC service thread 1-20 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010418: Stopped Driver service with driver-name = mysql
+timestamp=2023-06-14 10:26:13,100 threadId=MSC service thread 1-16 priority=INFO category=io.undertow.servlet - Closing Spring root WebApplicationContext
+timestamp=2023-06-14 10:26:13,110 threadId=MSC service thread 1-9 priority=INFO category=org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.1.3.Final
+timestamp=2023-06-14 10:26:13,120 threadId=MSC service thread 1-5 priority=INFO category=org.wildfly.extension.undertow - JBAS017532: Host default-host stopping
+timestamp=2023-06-14 10:26:13,121 threadId=MSC service thread 1-6 priority=INFO category=org.jboss.as.webservices - JBAS015540: Stopping service jboss.ws.endpoint."kih-iti41.war".Iti41
+timestamp=2023-06-14 10:26:13,122 threadId=MSC service thread 1-3 priority=INFO category=org.jboss.as.webservices - JBAS015540: Stopping service jboss.ws.endpoint."kih-iti41.war".Iti43
+timestamp=2023-06-14 10:26:13,123 threadId=MSC service thread 1-4 priority=INFO category=org.jboss.as.connector.subsystems.datasources - JBAS010409: Unbound data source [java:jboss/datasources/ExampleDS]
+timestamp=2023-06-14 10:26:13,126 threadId=MSC service thread 1-16 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010418: Stopped Driver service with driver-name = h2
+timestamp=2023-06-14 10:26:13,145 threadId=MSC service thread 1-7 priority=INFO category=org.wildfly.extension.undertow - JBAS017521: Undertow HTTP listener default suspending
+timestamp=2023-06-14 10:26:13,147 threadId=MSC service thread 1-7 priority=INFO category=org.wildfly.extension.undertow - JBAS017520: Undertow HTTP listener default stopped, was bound to /0.0.0.0:8080
+timestamp=2023-06-14 10:26:13,148 threadId=MSC service thread 1-21 priority=INFO category=org.wildfly.extension.undertow - JBAS017506: Undertow 1.1.8.Final stopping
+timestamp=2023-06-14 10:26:13,152 threadId=MSC service thread 1-6 priority=INFO category=org.jboss.as.server.deployment - JBAS015877: Stopped deployment cra-ds.xml (runtime-name: cra-ds.xml) in 68ms
+timestamp=2023-06-14 10:26:13,173 threadId=MSC service thread 1-9 priority=INFO category=org.jboss.as.server.deployment - JBAS015877: Stopped deployment kih-iti41.war (runtime-name: kih-iti41.war) in 89ms
+timestamp=2023-06-14 10:26:13,175 threadId=MSC service thread 1-19 priority=INFO category=org.jboss.as - JBAS015950: WildFly 8.2.1.Final "Tweek" stopped in 86ms
+timestamp=2023-06-14 10:33:45,755 threadId=main priority=INFO category=org.jboss.modules - JBoss Modules version 1.3.3.Final
+timestamp=2023-06-14 10:33:46,063 threadId=main priority=INFO category=org.jboss.msc - JBoss MSC version 1.2.2.Final
+timestamp=2023-06-14 10:33:46,131 threadId=MSC service thread 1-8 priority=INFO category=org.jboss.as - JBAS015899: WildFly 8.2.1.Final "Tweek" starting
+timestamp=2023-06-14 10:33:46,137 threadId=MSC service thread 1-8 priority=DEBUG category=org.jboss.as.config - Configured system properties:
+	[Standalone] = 
+	awt.toolkit = sun.awt.X11.XToolkit
+	file.encoding = UTF-8
+	file.encoding.pkg = sun.io
+	file.separator = /
+	java.awt.graphicsenv = sun.awt.X11GraphicsEnvironment
+	java.awt.printerjob = sun.print.PSPrinterJob
+	java.class.path = /pack/wildfly8/jboss-modules.jar
+	java.class.version = 52.0
+	java.endorsed.dirs = /usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/endorsed
+	java.ext.dirs = /usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/ext:/usr/java/packages/lib/ext
+	java.home = /usr/lib/jvm/java-1.8.0-amazon-corretto/jre
+	java.io.tmpdir = /tmp
+	java.library.path = /usr/java/packages/lib/amd64:/usr/lib64:/lib64:/lib:/usr/lib
+	java.runtime.name = OpenJDK Runtime Environment
+	java.runtime.version = 1.8.0_362-b08
+	java.specification.maintenance.version = 4
+	java.specification.name = Java Platform API Specification
+	java.specification.vendor = Oracle Corporation
+	java.specification.version = 1.8
+	java.util.logging.manager = org.jboss.logmanager.LogManager
+	java.vendor = Amazon.com Inc.
+	java.vendor.url = https://aws.amazon.com/corretto/
+	java.vendor.url.bug = https://github.com/corretto/corretto-8/issues/
+	java.version = 1.8.0_362
+	java.vm.info = mixed mode
+	java.vm.name = OpenJDK 64-Bit Server VM
+	java.vm.specification.name = Java Virtual Machine Specification
+	java.vm.specification.vendor = Oracle Corporation
+	java.vm.specification.version = 1.8
+	java.vm.vendor = Amazon.com Inc.
+	java.vm.version = 25.362-b08
+	javax.management.builder.initial = org.jboss.as.jmx.PluggableMBeanServerBuilder
+	javax.xml.datatype.DatatypeFactory = __redirected.__DatatypeFactory
+	javax.xml.parsers.DocumentBuilderFactory = __redirected.__DocumentBuilderFactory
+	javax.xml.parsers.SAXParserFactory = __redirected.__SAXParserFactory
+	javax.xml.stream.XMLEventFactory = __redirected.__XMLEventFactory
+	javax.xml.stream.XMLInputFactory = __redirected.__XMLInputFactory
+	javax.xml.stream.XMLOutputFactory = __redirected.__XMLOutputFactory
+	javax.xml.transform.TransformerFactory = __redirected.__TransformerFactory
+	javax.xml.validation.SchemaFactory:http://www.w3.org/2001/XMLSchema = __redirected.__SchemaFactory
+	javax.xml.xpath.XPathFactory:http://java.sun.com/jaxp/xpath/dom = __redirected.__XPathFactory
+	jboss.bind.address = 0.0.0.0
+	jboss.home.dir = /pack/wildfly8
+	jboss.host.name = e27f05d3ca9a
+	jboss.modules.dir = /pack/wildfly8/modules
+	jboss.node.name = e27f05d3ca9a
+	jboss.qualified.host.name = e27f05d3ca9a
+	jboss.server.base.dir = /pack/wildfly8/standalone
+	jboss.server.config.dir = /pack/wildfly8/standalone/configuration
+	jboss.server.data.dir = /pack/wildfly8/standalone/data
+	jboss.server.deploy.dir = /pack/wildfly8/standalone/data/content
+	jboss.server.log.dir = /pack/wildfly8/standalone/log
+	jboss.server.name = e27f05d3ca9a
+	jboss.server.persist.config = true
+	jboss.server.temp.dir = /pack/wildfly8/standalone/tmp
+	line.separator = 
+
+	logging.configuration = file:/pack/wildfly8/standalone/configuration/logging.properties
+	module.path = /pack/wildfly8/modules
+	org.jboss.boot.log.file = /pack/wildfly8/standalone/log/server.log
+	org.jboss.resolver.warning = true
+	org.xml.sax.driver = __redirected.__XMLReaderFactory
+	os.arch = amd64
+	os.name = Linux
+	os.version = 6.2.0-20-generic
+	path.separator = :
+	sun.arch.data.model = 64
+	sun.boot.class.path = /usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/resources.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/rt.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/jsse.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/jce.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/charsets.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/jfr.jar:/usr/lib/jvm/java-1.8.0-amazon-corretto/jre/classes
+	sun.boot.library.path = /usr/lib/jvm/java-1.8.0-amazon-corretto/jre/lib/amd64
+	sun.cpu.endian = little
+	sun.cpu.isalist = 
+	sun.io.unicode.encoding = UnicodeLittle
+	sun.java.command = /pack/wildfly8/jboss-modules.jar -mp /pack/wildfly8/modules org.jboss.as.standalone -Djboss.home.dir=/pack/wildfly8 -Djboss.server.base.dir=/pack/wildfly8/standalone -b 0.0.0.0
+	sun.java.launcher = SUN_STANDARD
+	sun.jnu.encoding = UTF-8
+	sun.management.compiler = HotSpot 64-Bit Tiered Compilers
+	sun.os.patch.level = unknown
+	user.country = US
+	user.dir = /
+	user.home = /root
+	user.language = en
+	user.name = root
+	user.timezone = Europe/Copenhagen
+timestamp=2023-06-14 10:33:46,138 threadId=MSC service thread 1-8 priority=DEBUG category=org.jboss.as.config - VM Arguments: -D[Standalone] -XX:+UseCompressedOops -XX:+UseCompressedOops -Xms2048m -Xmx2048m -XX:MaxMetaspaceSize=512m -XX:CompressedClassSpaceSize=512m -XX:-OmitStackTraceInFastThrow -Dorg.jboss.boot.log.file=/pack/wildfly8/standalone/log/server.log -Dlogging.configuration=file:/pack/wildfly8/standalone/configuration/logging.properties 
+timestamp=2023-06-14 10:33:49,644 threadId=Controller Boot Thread priority=INFO category=org.jboss.as.server - JBAS015888: Creating http management service using socket-binding (management-http)
+timestamp=2023-06-14 10:33:49,847 threadId=MSC service thread 1-2 priority=INFO category=org.xnio - XNIO version 3.3.0.Final
+timestamp=2023-06-14 10:33:49,925 threadId=MSC service thread 1-2 priority=INFO category=org.xnio.nio - XNIO NIO Implementation Version 3.3.0.Final
+timestamp=2023-06-14 10:33:50,335 threadId=ServerService Thread Pool -- 31 priority=INFO category=org.wildfly.extension.io - WFLYIO001: Worker 'default' has auto-configured to 24 core threads with 192 task threads based on your 12 available processors
+timestamp=2023-06-14 10:33:50,367 threadId=ServerService Thread Pool -- 32 priority=INFO category=org.jboss.as.clustering.infinispan - JBAS010280: Activating Infinispan subsystem.
+timestamp=2023-06-14 10:33:50,533 threadId=ServerService Thread Pool -- 40 priority=INFO category=org.jboss.as.naming - JBAS011800: Activating Naming Subsystem
+timestamp=2023-06-14 10:33:50,804 threadId=ServerService Thread Pool -- 38 priority=INFO category=org.jboss.as.jsf - JBAS012615: Activated the following JSF Implementations: [main]
+timestamp=2023-06-14 10:33:50,822 threadId=ServerService Thread Pool -- 48 priority=INFO category=org.jboss.as.webservices - JBAS015537: Activating WebServices Extension
+timestamp=2023-06-14 10:33:50,628 threadId=ServerService Thread Pool -- 45 priority=INFO category=org.jboss.as.security - JBAS013171: Activating Security Subsystem
+timestamp=2023-06-14 10:33:51,465 threadId=MSC service thread 1-2 priority=INFO category=org.jboss.remoting - JBoss Remoting version 4.0.7.Final
+timestamp=2023-06-14 10:33:51,598 threadId=ServerService Thread Pool -- 27 priority=INFO category=org.jboss.as.connector.subsystems.datasources - JBAS010403: Deploying JDBC-compliant driver class org.h2.Driver (version 1.3)
+timestamp=2023-06-14 10:33:51,812 threadId=MSC service thread 1-6 priority=INFO category=org.wildfly.extension.undertow - JBAS017502: Undertow 1.1.8.Final starting
+timestamp=2023-06-14 10:33:51,815 threadId=ServerService Thread Pool -- 47 priority=INFO category=org.wildfly.extension.undertow - JBAS017502: Undertow 1.1.8.Final starting
+timestamp=2023-06-14 10:33:51,936 threadId=MSC service thread 1-17 priority=INFO category=org.jboss.as.naming - JBAS011802: Starting Naming Service
+timestamp=2023-06-14 10:33:52,044 threadId=MSC service thread 1-16 priority=INFO category=org.jboss.as.connector.logging - JBAS010408: Starting JCA Subsystem (IronJacamar 1.1.9.Final)
+timestamp=2023-06-14 10:33:52,077 threadId=MSC service thread 1-11 priority=INFO category=org.jboss.as.security - JBAS013170: Current PicketBox version=4.0.21.Final
+timestamp=2023-06-14 10:33:52,037 threadId=MSC service thread 1-22 priority=INFO category=org.jboss.as.mail.extension - JBAS015400: Bound mail session [java:jboss/mail/Default]
+timestamp=2023-06-14 10:33:52,523 threadId=ServerService Thread Pool -- 27 priority=INFO category=org.jboss.as.connector.subsystems.datasources - JBAS010404: Deploying non-JDBC-compliant driver class com.mysql.jdbc.Driver (version 5.1)
+timestamp=2023-06-14 10:33:52,534 threadId=MSC service thread 1-4 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010417: Started Driver service with driver-name = h2
+timestamp=2023-06-14 10:33:52,635 threadId=MSC service thread 1-21 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010417: Started Driver service with driver-name = mysql
+timestamp=2023-06-14 10:33:54,729 threadId=ServerService Thread Pool -- 47 priority=INFO category=org.wildfly.extension.undertow - JBAS017527: Creating file handler for path /pack/webapp
+timestamp=2023-06-14 10:33:55,069 threadId=MSC service thread 1-13 priority=INFO category=org.wildfly.extension.undertow - JBAS017525: Started server default-server.
+timestamp=2023-06-14 10:33:55,241 threadId=MSC service thread 1-6 priority=INFO category=org.wildfly.extension.undertow - JBAS017531: Host default-host starting
+timestamp=2023-06-14 10:33:57,000 threadId=MSC service thread 1-13 priority=INFO category=org.wildfly.extension.undertow - JBAS017519: Undertow HTTP listener default listening on /0.0.0.0:8080
+timestamp=2023-06-14 10:33:57,821 threadId=MSC service thread 1-4 priority=INFO category=org.jboss.as.server.deployment - JBAS015876: Starting deployment of "kih-iti41.war" (runtime-name: "kih-iti41.war")
+timestamp=2023-06-14 10:33:57,822 threadId=MSC service thread 1-20 priority=INFO category=org.jboss.as.server.deployment - JBAS015876: Starting deployment of "cra-ds.xml" (runtime-name: "cra-ds.xml")
+timestamp=2023-06-14 10:33:57,954 threadId=MSC service thread 1-12 priority=INFO category=org.jboss.as.server.deployment.scanner - JBAS015012: Started FileSystemDeploymentService for directory /pack/wildfly8/standalone/deployments
+timestamp=2023-06-14 10:33:58,336 threadId=MSC service thread 1-21 priority=INFO category=org.jboss.as.connector.subsystems.datasources - JBAS010400: Bound data source [java:jboss/datasources/ExampleDS]
+timestamp=2023-06-14 10:33:59,467 threadId=MSC service thread 1-2 priority=INFO category=org.jboss.as.connector.subsystems.datasources - JBAS010400: Bound data source [java:jboss/datasources/CRARO]
+timestamp=2023-06-14 10:34:01,899 threadId=MSC service thread 1-1 priority=INFO category=org.jboss.ws.common.management - JBWS022052: Starting JBoss Web Services - Stack CXF Server 4.3.2.Final
+timestamp=2023-06-14 10:34:03,784 threadId=MSC service thread 1-17 priority=WARN category=org.jboss.as.server.deployment - JBAS015852: Could not index class META-INF/versions/9/module-info.class at /content/kih-iti41.war/WEB-INF/lib/log4j-api-2.11.2.jar: java.lang.IllegalStateException: Unknown tag! pos=4 poolCount = 32
+	at org.jboss.jandex.Indexer.processConstantPool(Indexer.java:665) [jandex-1.2.1.Final.jar:1.2.1.Final]
+	at org.jboss.jandex.Indexer.index(Indexer.java:699) [jandex-1.2.1.Final.jar:1.2.1.Final]
+	at org.jboss.as.server.deployment.annotation.ResourceRootIndexer.indexResourceRoot(ResourceRootIndexer.java:100) [wildfly-server-8.2.1.Final.jar:8.2.1.Final]
+	at org.jboss.as.server.deployment.annotation.AnnotationIndexProcessor.deploy(AnnotationIndexProcessor.java:51) [wildfly-server-8.2.1.Final.jar:8.2.1.Final]
+	at org.jboss.as.server.deployment.DeploymentUnitPhaseService.start(DeploymentUnitPhaseService.java:159) [wildfly-server-8.2.1.Final.jar:8.2.1.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.startService(ServiceControllerImpl.java:1948) [jboss-msc-1.2.2.Final.jar:1.2.2.Final]
+	at org.jboss.msc.service.ServiceControllerImpl$StartTask.run(ServiceControllerImpl.java:1881) [jboss-msc-1.2.2.Final.jar:1.2.2.Final]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) [rt.jar:1.8.0_362]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) [rt.jar:1.8.0_362]
+	at java.lang.Thread.run(Thread.java:750) [rt.jar:1.8.0_362]
+
+timestamp=2023-06-14 10:34:05,589 threadId=MSC service thread 1-12 priority=WARN category=org.jboss.as.dependency.private - JBAS018567: Deployment "deployment.kih-iti41.war" is using a private module ("org.apache.cxf.impl:main") which may be changed or removed in future versions without notice.
+timestamp=2023-06-14 10:34:05,591 threadId=MSC service thread 1-12 priority=WARN category=org.jboss.as.dependency.private - JBAS018567: Deployment "deployment.kih-iti41.war" is using a private module ("org.apache.cxf.impl:main") which may be changed or removed in future versions without notice.
+timestamp=2023-06-14 10:34:07,289 threadId=MSC service thread 1-22 priority=WARN category=org.jboss.as.ee - JBAS011006: Not installing optional component org.springframework.http.server.reactive.ServletServerHttpResponse$ResponseAsyncListener due to an exception (enable DEBUG log level to see the cause)
+timestamp=2023-06-14 10:34:07,296 threadId=MSC service thread 1-22 priority=WARN category=org.jboss.as.ee - JBAS011006: Not installing optional component org.springframework.http.server.reactive.ServletHttpHandlerAdapter$HandlerResultAsyncListener due to an exception (enable DEBUG log level to see the cause)
+timestamp=2023-06-14 10:34:07,304 threadId=MSC service thread 1-22 priority=WARN category=org.jboss.as.ee - JBAS011006: Not installing optional component org.springframework.http.server.ServletServerHttpAsyncRequestControl due to an exception (enable DEBUG log level to see the cause)
+timestamp=2023-06-14 10:34:07,311 threadId=MSC service thread 1-22 priority=WARN category=org.jboss.as.ee - JBAS011006: Not installing optional component org.springframework.web.context.request.async.StandardServletAsyncWebRequest due to an exception (enable DEBUG log level to see the cause)
+timestamp=2023-06-14 10:34:07,338 threadId=MSC service thread 1-22 priority=WARN category=org.jboss.as.ee - JBAS011006: Not installing optional component org.springframework.http.server.reactive.ServletServerHttpRequest$RequestAsyncListener due to an exception (enable DEBUG log level to see the cause)
+timestamp=2023-06-14 10:34:07,661 threadId=MSC service thread 1-22 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010404: Deploying non-JDBC-compliant driver class com.mysql.cj.jdbc.Driver (version 8.0)
+timestamp=2023-06-14 10:34:07,671 threadId=MSC service thread 1-22 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010404: Deploying non-JDBC-compliant driver class net.sourceforge.jtds.jdbc.Driver (version 1.3)
+timestamp=2023-06-14 10:34:07,898 threadId=MSC service thread 1-22 priority=INFO category=org.jboss.ws.cxf.metadata - JBWS024061: Adding service endpoint metadata: id=Iti41
+ address=http://jbossws.undefined.host:8080/kih-iti41/iti41
+ implementor=dk.kvalitetsit.xdsvalidationproxy.ws.Iti41ValidateAndProxyWs
+ serviceName={http://ws.xdsvalidationproxy.kvalitetsit.dk/}iti41
+ portName={http://ws.xdsvalidationproxy.kvalitetsit.dk/}Iti41ValidateAndProxyWsPort
+ annotationWsdlLocation=null
+ wsdlLocationOverride=null
+ mtomEnabled=false
+timestamp=2023-06-14 10:34:07,901 threadId=MSC service thread 1-22 priority=INFO category=org.jboss.ws.cxf.metadata - JBWS024061: Adding service endpoint metadata: id=Iti43
+ address=http://jbossws.undefined.host:8080/kih-iti41/iti43
+ implementor=dk.kvalitetsit.xdsvalidationproxy.ws.Iti43ValidateAndProxyWs
+ serviceName={http://ws.xdsvalidationproxy.kvalitetsit.dk/}iti43
+ portName={http://ws.xdsvalidationproxy.kvalitetsit.dk/}Iti43ValidateAndProxyWsPort
+ annotationWsdlLocation=null
+ wsdlLocationOverride=null
+ mtomEnabled=false
+timestamp=2023-06-14 10:34:08,611 threadId=MSC service thread 1-22 priority=INFO category=org.apache.cxf.service.factory.ReflectionServiceFactoryBean - Creating Service {http://ws.xdsvalidationproxy.kvalitetsit.dk/}iti41 from class org.openehealth.ipf.commons.ihe.xds.iti41.Iti41PortType
+timestamp=2023-06-14 10:34:12,485 threadId=MSC service thread 1-22 priority=INFO category=org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be http://jbossws.undefined.host:8080/kih-iti41/iti41
+timestamp=2023-06-14 10:34:12,836 threadId=MSC service thread 1-22 priority=INFO category=org.jboss.ws.cxf.deployment - JBWS024074: WSDL published to: file:/pack/wildfly8/standalone/data/wsdl/kih-iti41.war/iti41.wsdl
+timestamp=2023-06-14 10:34:13,205 threadId=MSC service thread 1-22 priority=INFO category=org.apache.cxf.service.factory.ReflectionServiceFactoryBean - Creating Service {http://ws.xdsvalidationproxy.kvalitetsit.dk/}iti43 from class dk.kvalitetsit.xdsvalidationproxy.ws.DocumentRepositoryPortType
+timestamp=2023-06-14 10:34:13,891 threadId=MSC service thread 1-22 priority=INFO category=org.apache.cxf.endpoint.ServerImpl - Setting the server's publish address to be http://jbossws.undefined.host:8080/kih-iti41/iti43
+timestamp=2023-06-14 10:34:13,901 threadId=MSC service thread 1-22 priority=INFO category=org.jboss.ws.cxf.deployment - JBWS024074: WSDL published to: file:/pack/wildfly8/standalone/data/wsdl/kih-iti41.war/iti43.wsdl
+timestamp=2023-06-14 10:34:14,052 threadId=MSC service thread 1-4 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010417: Started Driver service with driver-name = kih-iti41.war_com.mysql.cj.jdbc.Driver_8_0
+timestamp=2023-06-14 10:34:14,064 threadId=MSC service thread 1-6 priority=INFO category=org.jboss.as.connector.deployers.jdbc - JBAS010417: Started Driver service with driver-name = kih-iti41.war_net.sourceforge.jtds.jdbc.Driver_1_3
+timestamp=2023-06-14 10:34:14,066 threadId=MSC service thread 1-15 priority=INFO category=org.jboss.as.webservices - JBAS015539: Starting service jboss.ws.endpoint."kih-iti41.war".Iti43
+timestamp=2023-06-14 10:34:14,071 threadId=MSC service thread 1-9 priority=INFO category=org.jboss.as.webservices - JBAS015539: Starting service jboss.ws.endpoint."kih-iti41.war".Iti41
+timestamp=2023-06-14 10:34:14,411 threadId=MSC service thread 1-18 priority=INFO category=io.undertow.servlet - 1 Spring WebApplicationInitializers detected on classpath
+timestamp=2023-06-14 10:34:14,437 threadId=MSC service thread 1-18 priority=INFO category=io.undertow.servlet - Initializing Spring root WebApplicationContext
+timestamp=2023-06-14 10:34:14,515 threadId=MSC service thread 1-18 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:34:14.453+02:00","@version":"1","message":"Root WebApplicationContext: initialization started","logger_name":"org.springframework.web.context.ContextLoader","thread_name":"MSC service thread 1-18","level":"INFO","level_value":20000}
+timestamp=2023-06-14 10:34:15,314 threadId=MSC service thread 1-18 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:34:15.313+02:00","@version":"1","message":"no database connection established since no reporting","logger_name":"dk.kvalitetsit.xdsvalidationproxy.configuration.DatabaseConfiguration","thread_name":"MSC service thread 1-18","level":"INFO","level_value":20000}
+timestamp=2023-06-14 10:34:15,357 threadId=MSC service thread 1-18 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:34:15.356+02:00","@version":"1","message":"LoggingRules [doLogPatientId=true, doLogClinicalDocument=true]","logger_name":"dk.kvalitetsit.xdsvalidationproxy.logger.EventLogger","thread_name":"MSC service thread 1-18","level":"INFO","level_value":20000}
+timestamp=2023-06-14 10:34:15,358 threadId=MSC service thread 1-18 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:34:15.357+02:00","@version":"1","message":"Logging warn level","logger_name":"dk.kvalitetsit.xdsvalidationproxy.logger.EventLogger","thread_name":"MSC service thread 1-18","level":"WARN","level_value":30000}
+timestamp=2023-06-14 10:34:15,358 threadId=MSC service thread 1-18 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:34:15.358+02:00","@version":"1","message":"Logging info level","logger_name":"dk.kvalitetsit.xdsvalidationproxy.logger.EventLogger","thread_name":"MSC service thread 1-18","level":"INFO","level_value":20000}
+timestamp=2023-06-14 10:34:15,409 threadId=MSC service thread 1-18 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:34:15.363+02:00","@version":"1","message":"Logging as structured data","logger_name":"dk.kvalitetsit.xdsvalidationproxy.logger.EventLogger","thread_name":"MSC service thread 1-18","level":"INFO","level_value":20000,"event":{"action":"runAtStartUp","result":null,"requestIdentifier":null,"startTimestamp":null,"endTimestamp":null,"validationCallTimestamp":null,"validationReturnTimestamp":null,"backendCallTimestamp":null,"backendReturnTimestamp":null,"messages":null,"requesterDetails":null,"documentDetails":null}}
+timestamp=2023-06-14 10:34:15,425 threadId=MSC service thread 1-18 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:34:15.425+02:00","@version":"1","message":"ValidationRules [validateDocument=false, continueOnValidationError=false]","logger_name":"dk.kvalitetsit.xdsvalidationproxy.validator.DocumentValidator","thread_name":"MSC service thread 1-18","level":"INFO","level_value":20000}
+timestamp=2023-06-14 10:34:15,434 threadId=MSC service thread 1-18 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:34:15.434+02:00","@version":"1","message":"typeCodesMapping is: 53576-5;74468-0;74465-6;39289-4;, PHMR;QFDD;QRD;APD;","logger_name":"dk.kvalitetsit.xdsvalidationproxy.utils.CdaDocumentUtil","thread_name":"MSC service thread 1-18","level":"INFO","level_value":20000}
+timestamp=2023-06-14 10:34:15,435 threadId=MSC service thread 1-18 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:34:15.435+02:00","@version":"1","message":"doLogFullDocumentDuringDecode is: false","logger_name":"dk.kvalitetsit.xdsvalidationproxy.utils.CdaDocumentUtil","thread_name":"MSC service thread 1-18","level":"INFO","level_value":20000}
+timestamp=2023-06-14 10:34:15,456 threadId=MSC service thread 1-18 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:34:15.455+02:00","@version":"1","message":"ReportingRules [reportDocument=false]","logger_name":"dk.kvalitetsit.xdsvalidationproxy.reporting.DocumentReporter","thread_name":"MSC service thread 1-18","level":"INFO","level_value":20000}
+timestamp=2023-06-14 10:34:15,586 threadId=MSC service thread 1-18 priority=INFO category=stdout - {"@timestamp":"2023-06-14T10:34:15.583+02:00","@version":"1","message":"Root WebApplicationContext initialized in 1067 ms","logger_name":"org.springframework.web.context.ContextLoader","thread_name":"MSC service thread 1-18","level":"INFO","level_value":20000}
+timestamp=2023-06-14 10:34:15,730 threadId=MSC service thread 1-18 priority=INFO category=org.wildfly.extension.undertow - JBAS017534: Registered web context: /kih-iti41
+timestamp=2023-06-14 10:34:15,942 threadId=ServerService Thread Pool -- 28 priority=INFO category=org.jboss.as.server - JBAS018559: Deployed "cra-ds.xml" (runtime-name : "cra-ds.xml")
+timestamp=2023-06-14 10:34:15,944 threadId=ServerService Thread Pool -- 28 priority=INFO category=org.jboss.as.server - JBAS018559: Deployed "kih-iti41.war" (runtime-name : "kih-iti41.war")
+timestamp=2023-06-14 10:34:15,982 threadId=Controller Boot Thread priority=INFO category=org.jboss.as - JBAS015961: Http management interface listening on http://127.0.0.1:9990/management
+timestamp=2023-06-14 10:34:15,984 threadId=Controller Boot Thread priority=INFO category=org.jboss.as - JBAS015951: Admin console listening on http://127.0.0.1:9990
+timestamp=2023-06-14 10:34:15,985 threadId=Controller Boot Thread priority=INFO category=org.jboss.as - JBAS015874: WildFly 8.2.1.Final "Tweek" started in 30479ms - Started 429 of 489 services (100 services are lazy, passive or on-demand)

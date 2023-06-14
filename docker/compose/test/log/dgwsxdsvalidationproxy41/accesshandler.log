@@ -96,3 +96,10 @@ timestamp=2023-06-14 09:51:54,031 threadId=default task-1 priority=INFO category
 timestamp=2023-06-14 09:51:54,138 threadId=default task-1 priority=INFO category=dk.sds.nsp.accesshandler.cra.CertificateRevocationCache - Found 10 certificate revocation lists
 timestamp=2023-06-14 09:51:54,139 threadId=default task-1 priority=INFO category=dk.sds.nsp.accesshandler.cra.CertificateRevocationCache - Found 3 revoked certificates
 timestamp=2023-06-14 09:51:54,140 threadId=default task-1 priority=INFO category=dk.sds.nsp.accesshandler.cra.CertificateRevocationCache - The Certificate Revocation Cache will be refreshed every 10 minutes.
+timestamp=2023-06-14 10:11:36,449 threadId=MSC service thread 1-12 priority=INFO category=dk.sds.nsp.accesshandler.NspServletHandler - NSP AccessHandler vSNAPSHOT@d26da2c1e497ccdb13d78f969d9babbfaedf3784 installed on null (kih-iti41.war)
+timestamp=2023-06-14 10:24:54,742 threadId=MSC service thread 1-16 priority=INFO category=dk.sds.nsp.accesshandler.NspServletHandler - NSP AccessHandler vSNAPSHOT@d26da2c1e497ccdb13d78f969d9babbfaedf3784 installed on null (kih-iti41.war)
+timestamp=2023-06-14 10:25:08,127 threadId=default task-1 priority=INFO category=dk.sds.nsp.accesshandler.cra.CertificateRevocationCache - Updating the Certificate Revocation Cache
+timestamp=2023-06-14 10:25:08,231 threadId=default task-1 priority=INFO category=dk.sds.nsp.accesshandler.cra.CertificateRevocationCache - Found 10 certificate revocation lists
+timestamp=2023-06-14 10:25:08,232 threadId=default task-1 priority=INFO category=dk.sds.nsp.accesshandler.cra.CertificateRevocationCache - Found 3 revoked certificates
+timestamp=2023-06-14 10:25:08,234 threadId=default task-1 priority=INFO category=dk.sds.nsp.accesshandler.cra.CertificateRevocationCache - The Certificate Revocation Cache will be refreshed every 10 minutes.
+timestamp=2023-06-14 10:34:14,933 threadId=MSC service thread 1-19 priority=INFO category=dk.sds.nsp.accesshandler.NspServletHandler - NSP AccessHandler vSNAPSHOT@d26da2c1e497ccdb13d78f969d9babbfaedf3784 installed on null (kih-iti41.war)
