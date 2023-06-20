@@ -24,10 +24,7 @@ func (c Config) GetLoggerLevel(pkg string) string {
 
 // Helper function for DB connections
 func (c Config) CreateDatabaseURL() (string, error) {
-	if len(c.Database.Hostname) == 0 ||
-		len(c.Database.Username) == 0 ||
-		len(c.Database.Password) == 0 ||
-		len(c.Database.Database) == 0 {
+	if len(c.Database.Hostname) == 0 {
 		return "", fmt.Errorf("Database parameters is missing")
 	}
 	var dbURL strings.Builder
@@ -80,6 +77,9 @@ func InitConfig() (*Config, error) {
 
 	viper.SetEnvKeyReplacer(strings.NewReplacer(".", "_"))
 	viper.AutomaticEnv()
+
+	bindAllEnv()
+
 	if err := viper.Unmarshal(&config); err != nil {
 		logrus.Errorf("unable to decode into struct, %v", err)
 	}
@@ -97,4 +97,42 @@ func InitConfig() (*Config, error) {
 	config.Logger = logger
 
 	return &config, nil
+}
+
+// Cannot find env variables with config file unless explicitly binded
+// https://github.com/spf13/viper/issues/584
+func bindAllEnv() {
+	viper.SetEnvPrefix("ENV")
+
+	viper.BindEnv("ENVIRONMENT")
+	viper.BindEnv("LOGFILE")
+	viper.BindEnv("LOGLEVEL")
+
+	// LOGGING
+	viper.BindEnv("LOGGING.REPOSITORY")
+	viper.BindEnv("LOGGING.MEASUREMENT")
+
+	// EXPORT
+	viper.BindEnv("EXPORT.START")
+	viper.BindEnv("EXPORT.RETRYDAYS")
+	viper.BindEnv("EXPORT.NODEVICEWHITELIST")
+	viper.BindEnv("EXPORT.BACKEND")
+	viper.BindEnv("EXPORT.OIOXDS.XDSGENERATOR.URL")
+	viper.BindEnv("EXPORT.OIOXDS.XDSGENERATOR.HEALTHCHECK")
+
+	// CLINICIAN
+	viper.BindEnv("CLINICIAN.BATCHSIZE")
+	viper.BindEnv("CLINICIAN.URL")
+
+	// AUTHENTICATION
+	viper.BindEnv("AUTHENTICATION.KEY")
+	viper.BindEnv("AUTHENTICATION.SECRET")
+
+	// DATABASE
+	viper.BindEnv("DATABASE.HOSTNAME")
+	viper.BindEnv("DATABASE.USERNAME")
+	viper.BindEnv("DATABASE.PASSWORD")
+	viper.BindEnv("DATABASE.TYPE")
+	viper.BindEnv("DATABASE.PORT")
+	viper.BindEnv("DATABASE.DATABASE")
 }
