@@ -104,6 +104,7 @@ func InitConfig() (*Config, error) {
 func bindAllEnv() {
 	viper.SetEnvPrefix("ENV")
 
+	viper.BindEnv("VERSION")
 	viper.BindEnv("ENVIRONMENT")
 	viper.BindEnv("LOGFILE")
 	viper.BindEnv("LOGLEVEL")
