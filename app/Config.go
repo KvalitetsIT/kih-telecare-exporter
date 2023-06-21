@@ -36,7 +36,7 @@ func (c Config) CreateDatabaseURL() (string, error) {
 	fmt.Println("------------------")
 	if c.Database.Port == "3306" || c.Database.Port == "0" {
 		c.Logger.Debug("Assuming standard DB port")
-		dbURL.WriteString(fmt.Sprintf("%s:%s@tcp(%s)/%s", c.Database.Username, c.Database.Password, c.Database.Hostname, c.Database.Database))
+		dbURL.WriteString(fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", c.Database.Username, c.Database.Password, c.Database.Hostname, c.Database.Port, c.Database.Database))
 	} else {
 		fmt.Println("---DBURL-----------------")
 		fmt.Println(fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", c.Database.Username, c.Database.Password, c.Database.Hostname, c.Database.Port, c.Database.Database))
