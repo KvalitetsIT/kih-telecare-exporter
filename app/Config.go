@@ -24,7 +24,10 @@ func (c Config) GetLoggerLevel(pkg string) string {
 
 // Helper function for DB connections
 func (c Config) CreateDatabaseURL() (string, error) {
-	if len(c.Database.Hostname) == 0 {
+	if len(c.Database.Hostname) == 0 ||
+		len(c.Database.Username) == 0 ||
+		len(c.Database.Password) == 0 ||
+		len(c.Database.Database) == 0 {
 		return "", fmt.Errorf("Database parameters is missing")
 	}
 	var dbURL strings.Builder
