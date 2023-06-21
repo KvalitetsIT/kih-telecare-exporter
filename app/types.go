@@ -114,7 +114,7 @@ type XdsConfig struct {
 type DatabaseConfig struct {
 	Hostname string `mapstructure:"hostname"`
 	Username string `mapstructure:"username"`
-	Port     int    `mapstructure:"port"`
+	Port     string `mapstructure:"port"`
 	Password string `mapstructure:"password"`
 	Database string `mapstructure:"database"`
 }

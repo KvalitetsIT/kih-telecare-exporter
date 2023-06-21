@@ -49,7 +49,7 @@ func TestSetPortDatabaseURL(t *testing.T) {
 		Username: "test",
 		Password: "test",
 		Database: "db",
-		Port:     3307,
+		Port:     "3307",
 	}
 	app.Database = db
 
