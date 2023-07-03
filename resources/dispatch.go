@@ -83,6 +83,7 @@ type exportOverview struct {
 	}
 	Source struct {
 		Endpoint string
+		LastSuccesfullPing string
 	}
 	Destination struct {
 		Type     string

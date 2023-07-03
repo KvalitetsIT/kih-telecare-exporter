@@ -27,6 +27,7 @@ func statusHandler(w http.ResponseWriter, r *http.Request) {
 	overview.Runs.Successfull = successfullruns
 
 	overview.Source.Endpoint = config.ClinicianConfig.URL
+	overview.Source.LastSuccesfullPing = time.Now().Format(time.RFC3339)
 	overview.Destination.Type = config.Export.Backend
 	overview.Destination.Endpoint = config.Export.GetExportEndpoint()
 

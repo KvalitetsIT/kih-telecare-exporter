@@ -122,7 +122,7 @@ docker-enter: ### Enter container
 	@docker exec -it exporter bash
 
 start-dev-env: ### Start local development environment
-	docker compose -f docker/compose/test/docker-compose.yml up -d
+	docker compose -f docker/compose/test/docker-compose.yml up
 
 stop-dev-env: ### Stop local development environment
 	docker compose -f docker/compose/test/docker-compose.yml down
