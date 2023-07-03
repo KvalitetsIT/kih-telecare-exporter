@@ -4,3 +4,4 @@
 /build
 .envrc
 /exporter.yaml
+*.log
