@@ -30,6 +30,11 @@ type mockApi struct {
 	measurements measurement.MeasurementResponse
 }
 
+// CheckHealth implements measurement.MeasurementApi
+func (mockApi) CheckHealth() error {
+	return nil
+}
+
 func (ma mockApi) FetchMeasurements(since time.Time, offset int) (measurement.MeasurementResponse, error) {
 	fmt.Println("OFFE", offset, ma.measurements.Total)
 	return ma.measurements, nil

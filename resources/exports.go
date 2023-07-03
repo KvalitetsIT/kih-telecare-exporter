@@ -10,7 +10,21 @@ import (
 	"github.com/go-chi/render"
 )
 
+var lastSuccesfullSourcePing time.Time
+var lastFailedSourcePing time.Time
+
+var lastSuccesfullDestinatiomPing time.Time
+var lastFailedDestinatiomPing time.Time
+
+var lastSuccesfullDBPing time.Time
+var lastFailedDBPing time.Time
+var serviceStarted = time.Now()
+
 func statusHandler(w http.ResponseWriter, r *http.Request) {
+	checkSource()
+	checkDestination()
+	checkDb()
+
 	overview := exportOverview{}
 
 	total, failed, tempfailed, rejects := repo.GetTotals()
@@ -27,11 +41,42 @@ func statusHandler(w http.ResponseWriter, r *http.Request) {
 	overview.Runs.Successfull = successfullruns
 
 	overview.Source.Endpoint = config.ClinicianConfig.URL
-	overview.Source.LastSuccesfullPing = time.Now().Format(time.RFC3339)
+	overview.Source.LastSuccesfullPing = lastSuccesfullSourcePing.Format(time.RFC3339)
+	overview.Source.LastFailedPing = lastFailedSourcePing.Format(time.RFC3339)
 	overview.Destination.Type = config.Export.Backend
 	overview.Destination.Endpoint = config.Export.GetExportEndpoint()
+	overview.Destination.LastSuccesfullPing = lastSuccesfullDestinatiomPing.Format(time.RFC3339)
+	overview.Destination.LastFailedPing = lastFailedDestinatiomPing.Format(time.RFC3339)
+	overview.DB.LastSuccesfullPing = lastSuccesfullDBPing.Format(time.RFC3339)
+	overview.DB.LastFailedPing = lastFailedDBPing.Format(time.RFC3339)
 
+	overview.Service.Started = serviceStarted.Format(time.RFC3339)
 	render.JSON(w, r, overview)
+}
+
+func checkSource() {
+	if err := api.CheckHealth(); err != nil {
+		lastFailedSourcePing = time.Now()
+	} else {
+		lastSuccesfullSourcePing = time.Now()
+	}
+
+}
+
+func checkDb() {
+	if err := repo.CheckRepository(); err != nil {
+		lastFailedDBPing = time.Now()
+	} else {
+		lastSuccesfullDBPing = time.Now()
+	}
+}
+
+func checkDestination() {
+	if err := exprtr.CheckHealth(); err != nil {
+		lastFailedDestinatiomPing = time.Now()
+	} else {
+		lastSuccesfullDestinatiomPing = time.Now()
+	}
 }
 
 func exportHandler(w http.ResponseWriter, r *http.Request) {

@@ -11,6 +11,7 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
+	"github.com/sirupsen/logrus"
 )
 
 type clinicianApi struct {
@@ -128,4 +129,36 @@ func (m clinicianApi) FetchMeasurements(since time.Time, offset int) (Measuremen
 		return result, err
 	}
 	return result, err
+}
+
+func (m clinicianApi) CheckHealth() error {
+	requestUrl := fmt.Sprintf("%s/health", m.apiUrl)
+	log.Debugf("Performing health check against %s", requestUrl)
+
+	req, err := http.NewRequest(http.MethodGet, requestUrl, nil)
+
+	if err != nil {
+		return err
+	}
+
+	resp, err := client.Do(req)
+	if err != nil {
+		return errors.Wrap(err, fmt.Sprintf("Error creating requet for %s", requestUrl))
+	}
+	defer resp.Body.Close()
+
+	logrus.Infof("Got reply %s - %d, should be %d", resp.Status, resp.StatusCode, http.StatusOK)
+
+	if http.StatusOK != resp.StatusCode {
+		body, err := ioutil.ReadAll(resp.Body)
+		logrus.Infof("returning error %s", string(body))
+		if err != nil {
+			return errors.Wrap(err, fmt.Sprintf("Error reading response from %s", requestUrl))
+		}
+
+		return fmt.Errorf("Error checking status on %s - response - %s", requestUrl, string(body))
+
+	}
+
+	return nil
 }

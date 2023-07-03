@@ -81,13 +81,23 @@ type exportOverview struct {
 		Failed      int
 		Successfull int
 	}
-	Source struct {
-		Endpoint string
+	DB struct {
 		LastSuccesfullPing string
+		LastFailedPing     string
+	}
+	Source struct {
+		Endpoint           string
+		LastSuccesfullPing string
+		LastFailedPing     string
 	}
 	Destination struct {
-		Type     string
-		Endpoint string
+		Type               string
+		Endpoint           string
+		LastSuccesfullPing string
+		LastFailedPing     string
+	}
+	Service struct {
+		Started string
 	}
 }
 
