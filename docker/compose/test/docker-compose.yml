@@ -198,7 +198,7 @@ services:
       - SERVER.TOMCAT.BASEDIR=tomcat
       - XDS.REPOSITORYUNIQUEID=1.2.208.176.43210.8.1.29
       - XDS.GENERATE.DOCUMENTID=true
-      - XDS.ITI41.ENDPOINT=http://dgwsxdsvalidationproxy/kih-iti41/iti41
+      - XDS.ITI41.ENDPOINT=http://dgwsxdsvalidationproxy41:8080/kih-iti41/iti41
       - SOR.CODE=6071000016008
       - SOR.NAME=TeleCare Nord
       - DGWS.ENABLED=true
