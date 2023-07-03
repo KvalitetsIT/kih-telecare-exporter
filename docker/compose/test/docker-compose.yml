@@ -183,33 +183,35 @@ services:
     depends_on:
       - dgwsxdsvalidationproxy41
     environment:
-      - SPRING.OUTPUT.ANSI.ENABLED="detect"
-      - LOGGING.LEVEL.ROOT="warn"
-      - LOGGING.LEVEL.ORG.APACHE.CXF="warn"
-      - LOGGING.LEVEL.IO.OTH.XDSGENERATOR.HANDLERS.KIHDATACONTROLLER="info"
-      - LOGGING.PATTERN.DATEFORMAT="yyyy-MM-dd HH:mm:ss.SSS"
-      - LOGGING.PATTERN.CONSOLE='%d %-5p %-30.30logger{29}:%m %n %ex{2}'
-      - MANAGEMENT.ENDPOINT.HEALTH.PROBES.ENABLED="true"
-      - MANAGEMENT.ENDPOINT.HEALTH.SHOW-DETAILS="always"
-      - SERVER.ERROR.INCLUDE-STACKTRACE="never"
-      - SERVER.PORT="9010"
-      - SERVER.TOMCAT.ACCESSLOG.ENABLED="true"
-      - SERVER.TOMCAT.ACCESSLOG.PATTERN='%t sip=%h r="%r" htsc=%s B=%b tt=%D tid=%I ua="%{User-Agent}i"'
-      - SERVER.TOMCAT.BASEDIR="tomcat"
-      - XDS.REPOSITORYUNIQUEID="1.2.208.176.43210.8.1.29"
-      - XDS.GENERATE.DOCUMENTID="true"
-      - XDS.ITI41.ENDPOINT="http://dgwsxdsvalidationproxy/kih-iti41/iti41"
-      - SOR.CODE="6071000016008"
-      - SOR.NAME="TeleCare Nord"
-      - DGWS.ENABLED="true"
-      - DGWS.STS.URL="https://test2.ekstern-test.nspop.dk:8443/sts/services/SecurityTokenService"
-      - DGWS.KEYSTORE.TYPE="production"
-      - DGWS.KEYSTORE.ALIAS="tu generel foces gyldig (funktionscertifikat)"
-      - DGWS.KEYSTORE.FILENAME="file:/app/conf/FOCES_gyldig_2025.p12"
-      - DGWS.KEYSTORE.PASSWORD="Test1234"
-      - DGWS.CERTIFICATE.ITSYSTEM="TRUST2408 Systemtest XIX CA"
-      - DGWS.CERTIFICATE.ORGNAME="TU GENEREL FOCES gyldig (funktionscertifikat)"
-      - DGWS.CERTIFICATE.CVR="30808460"
+      - SPRING.OUTPUT.ANSI.ENABLED=detect
+      - LOGGING.LEVEL.ROOT=warn
+      - LOGGING.LEVEL.ORG.APACHE.CXF=warn
+      - LOGGING.LEVEL.IO.OTH.XDSGENERATOR.HANDLERS.KIHDATACONTROLLER=info
+      - LOGGING.PATTERN.DATEFORMAT=yyyy-MM-dd HH:mm:ss.SSS
+      - LOGGING.PATTERN.CONSOLE=%d %-5p %-30.30logger{29} :%m %n %ex{2}
+      - MANAGEMENT.ENDPOINT.HEALTH.PROBES.ENABLED=true
+      - MANAGEMENT.ENDPOINT.HEALTH.SHOW-DETAILS=always
+      - SERVER.ERROR.INCLUDE-STACKTRACE=never
+      - SERVER.PORT=9010
+      - SERVER.TOMCAT.ACCESSLOG.ENABLED=true
+      - SERVER.TOMCAT.ACCESSLOG.PATTERN=%t sip=%h r="%r" htsc=%s B=%b tt=%D tid=%I ua="%{User-Agent}i"
+      - SERVER.TOMCAT.BASEDIR=tomcat
+      - XDS.REPOSITORYUNIQUEID=1.2.208.176.43210.8.1.29
+      - XDS.GENERATE.DOCUMENTID=true
+      - XDS.ITI41.ENDPOINT=http://dgwsxdsvalidationproxy41:8080/kih-iti41/iti41
+      - SOR.CODE=6071000016008
+      - SOR.NAME=TeleCare Nord
+      - DGWS.ENABLED=true
+      - DGWS.STS.URL=https://test2.ekstern-test.nspop.dk:8443/sts/services/SecurityTokenService
+      - DGWS.KEYSTORE.TYPE=production
+      - DGWS.KEYSTORE.ALIAS=tu generel foces gyldig (funktionscertifikat)
+      - DGWS.KEYSTORE.FILENAME=file:/app/conf/FOCES_gyldig_2025.p12
+      - DGWS.KEYSTORE.PASSWORD=Test1234
+      - DGWS.CERTIFICATE.ITSYSTEM=TRUST2408 Systemtest XIX CA
+      - DGWS.CERTIFICATE.ORGNAME=TU GENEREL FOCES gyldig (funktionscertifikat)
+      - DGWS.CERTIFICATE.CVR=30808460
+    volumes:
+      - ../configuration/FOCES_gyldig_2025.p12:/app/conf/FOCES_gyldig_2025.p12
 
   devdb:
     container_name: devdb

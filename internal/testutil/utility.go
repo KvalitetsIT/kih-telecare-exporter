@@ -103,6 +103,11 @@ type mockApi struct {
 	masurementMap map[string]int
 }
 
+// CheckHealth implements measurement.MeasurementApi
+func (mockApi) CheckHealth() error {
+	return nil
+}
+
 func (ma mockApi) FetchMeasurements(since time.Time, offset int) (measurement.MeasurementResponse, error) {
 	return ma.measurements, nil
 }

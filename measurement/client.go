@@ -17,6 +17,7 @@ type MeasurementApi interface {
 	FetchMeasurements(since time.Time, offset int) (MeasurementResponse, error)
 	FetchMeasurement(measurement string) (Measurement, error)
 	FetchPatient(person string) (PatientResult, error)
+	CheckHealth() error
 }
 
 var (

@@ -10,6 +10,9 @@ type TestInjectorApi struct {
 	Patient measurement.PatientResult
 }
 
+func (r TestInjectorApi) CheckHealth() error {
+	return nil
+}
 func (r TestInjectorApi) FetchMeasurements(since time.Time, offset int) (measurement.MeasurementResponse, error) {
 	return measurement.MeasurementResponse{}, nil
 }
