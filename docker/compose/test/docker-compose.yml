@@ -177,7 +177,7 @@ services:
   kih-xds-generator:
     image: kvalitetsit/kih-xds-generator:6db7fa75fb106ad197d521f3c9b55cf053ab93e0
     ports:
-      - "9020:9010"
+      - "9010:9010"
     networks:
       - dds_net
     depends_on:
