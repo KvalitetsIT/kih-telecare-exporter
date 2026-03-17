@@ -198,10 +198,10 @@ services:
       - SERVER.TOMCAT.BASEDIR=tomcat
       - XDS.REPOSITORYUNIQUEID=1.2.208.176.43210.8.1.29
       - XDS.GENERATE.DOCUMENTID=true
-      - XDS.ITI41.ENDPOINT=http://dgwsxdsvalidationproxy41:8080/kih-iti41/iti41
+      - XDS.ITI41.ENDPOINT=http://openxds-server:8020/axis2/services/xdsrepositoryb
       - SOR.CODE=6071000016008
       - SOR.NAME=TeleCare Nord
-      - DGWS.ENABLED=true
+      - DGWS.ENABLED=false
       - DGWS.STS.URL=https://test2.ekstern-test.nspop.dk:8443/sts/services/SecurityTokenService
       - DGWS.KEYSTORE.TYPE=production
       - DGWS.KEYSTORE.ALIAS=tu generel foces gyldig (funktionscertifikat)
@@ -229,6 +229,14 @@ services:
       - type: volume
         source: devdbvolume
         target: /var/lib/mysql
+
+  mock-api:
+    build:
+      context: ../../../mock_clinician_api
+    ports:
+      - "8081:8081"
+    networks:
+      - dds_net
 
 volumes:
   devdbvolume:

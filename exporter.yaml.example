@@ -19,7 +19,7 @@ export:
 
 clinician:
   batchsize: 1000
-  url: "https://oth-demo.oth.io/clinician/api"
+  url: "http://localhost:8081"
 
 authentication:
   key: <insert key>

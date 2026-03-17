@@ -31,7 +31,7 @@ app:
 
 clinician:
   batchsize: 50
-  url: "https://oth-demo.oth.io/clinician/api"
+  url: "http://localhost:8081"
 
 authentication:
   key: ""
