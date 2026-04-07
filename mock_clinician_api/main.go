@@ -130,9 +130,9 @@ func measurementsHandler(w http.ResponseWriter, r *http.Request) {
 
 // 3 eksempler fra vores testsystem
 var patients = map[string]string{
-	"1": `{
+	"1610940125": `{
 		"createdDate": "%s",
-		"uniqueId": "1",
+		"uniqueId": "1610940125",
 		"username": "BrianB",
 		"firstName": "Brian",
 		"lastName": "Bach",
@@ -143,12 +143,12 @@ var patients = map[string]string{
 		"postalCode": "1438",
 		"city": "København K",
 		"links": {
-			"self": "http://localhost:8081/clinician/api/patients/1"
+			"self": "http://localhost:8081/clinician/api/patients/1610940125"
 		}
 	}`,
-	"2": `{
+	"1805039414": `{
 		"createdDate": "%s",
-		"uniqueId": "2",
+		"uniqueId": "1805039414",
 		"username": "HelleL",
 		"firstName": "Helle",
 		"lastName": "Larsen",
@@ -159,12 +159,12 @@ var patients = map[string]string{
 		"postalCode": "6690",
 		"city": "Gørding",
 		"links": {
-			"self": "http://localhost:8081/clinician/api/patients/2"
+			"self": "http://localhost:8081/clinician/api/patients/1805039414"
 		}
 	}`,
-	"3": `{
+	"2303079354": `{
 		"createdDate": "%s",
-		"uniqueId": "3",
+		"uniqueId": "2303079354",
 		"username": "AneP",
 		"firstName": "Ane",
 		"lastName": "Pedersen",
@@ -175,7 +175,7 @@ var patients = map[string]string{
 		"postalCode": "3630",
 		"city": "Jægerspris",
 		"links": {
-			"self": "http://localhost:8081/clinician/api/patients/3"
+			"self": "http://localhost:8081/clinician/api/patients/2303079354"
 		}
 	}`,
 }
@@ -265,8 +265,8 @@ var serverResponse = `
         }
       },
       "links": {
-        "measurement": "http://localhost:8081/clinician/api/patients/1/measurements/1",
-        "patient": "http://localhost:8081/clinician/api/patients/1"
+        "measurement": "http://localhost:8081/clinician/api/patients/1610940125/measurements/1",
+        "patient": "http://localhost:8081/clinician/api/patients/1610940125"
       }
     },
     {
@@ -277,8 +277,8 @@ var serverResponse = `
         "value": 75
       },
       "links": {
-        "measurement": "http://localhost:8081/clinician/api/patients/1/measurements/2",
-        "patient": "http://localhost:8081/clinician/api/patients/1"
+        "measurement": "http://localhost:8081/clinician/api/patients/1610940125/measurements/2",
+        "patient": "http://localhost:8081/clinician/api/patients/1610940125"
       }
     },
     {
@@ -295,8 +295,8 @@ var serverResponse = `
         }
       },
       "links": {
-        "measurement": "http://localhost:8081/clinician/api/patients/2/measurements/3",
-        "patient": "http://localhost:8081/clinician/api/patients/2"
+        "measurement": "http://localhost:8081/clinician/api/patients/1805039414/measurements/3",
+        "patient": "http://localhost:8081/clinician/api/patients/1805039414"
       }
     },
     {
@@ -307,8 +307,8 @@ var serverResponse = `
         "value": 65
       },
       "links": {
-        "measurement": "http://localhost:8081/clinician/api/patients/2/measurements/4",
-        "patient": "http://localhost:8081/clinician/api/patients/2"
+        "measurement": "http://localhost:8081/clinician/api/patients/1805039414/measurements/4",
+        "patient": "http://localhost:8081/clinician/api/patients/1805039414"
       }
     },
     {
@@ -325,8 +325,8 @@ var serverResponse = `
         }
       },
       "links": {
-        "measurement": "http://localhost:8081/clinician/api/patients/3/measurements/5",
-        "patient": "http://localhost:8081/clinician/api/patients/3"
+        "measurement": "http://localhost:8081/clinician/api/patients/2303079354/measurements/5",
+        "patient": "http://localhost:8081/clinician/api/patients/2303079354"
       }
     },
     {
@@ -337,8 +337,8 @@ var serverResponse = `
         "value": 55
       },
       "links": {
-        "measurement": "http://localhost:8081/clinician/api/patients/3/measurements/6",
-        "patient": "http://localhost:8081/clinician/api/patients/3"
+        "measurement": "http://localhost:8081/clinician/api/patients/2303079354/measurements/6",
+        "patient": "http://localhost:8081/clinician/api/patients/2303079354"
       }
     }
   ]
