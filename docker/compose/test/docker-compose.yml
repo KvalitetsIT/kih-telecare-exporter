@@ -213,8 +213,8 @@ services:
       - DK_SOSI_SEAL_VAULT_CREDENTIALVAULT_KEYALIAS=sosi:key_alias_system
       - JAVA_OPTS=-Ddk.sosi.seal.vault.CredentialVault#KeyAlias=sosi:key_alias_system
     volumes:
-      - ../configuration/FOCES_gyldig_2025.p12:/app/conf/FOCES_gyldig_2025.p12
-      - ../configuration/final_keystore_fixed.p12:/app/conf/final_keystore_fixed.p12
+      - ../configuration/NSP_Test_Service_Consumer_sds_NEW.p12:/app/conf/NSP_Test_Service_Consumer_sds_NEW.p12
+
   devdb:
     container_name: devdb
     image: mariadb:10.1
