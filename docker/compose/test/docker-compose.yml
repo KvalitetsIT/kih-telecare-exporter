@@ -118,7 +118,7 @@ services:
     environment:
       - LOG_MAX_FILE_SIZE=10MB
       - LOG_MAX_BACKUP_INDEX=5
-      - iti41_backend_url=http://openxds-server:8020/axis2/services/xdsrepositoryb
+      - iti41_backend_url=https://kih.test.xdsrepositoryb.medcom.dk/kih-iti41/iti41
       - iti43_backend_url=http://openxds-server:8020/axis2/services/xdsrepositoryb
       - logging_rules_log_cprnumber=true
       - logging_rules_log_clinical_document=true
@@ -152,7 +152,7 @@ services:
     environment:
       - LOG_MAX_FILE_SIZE=10MB
       - LOG_MAX_BACKUP_INDEX=5
-      - iti41_backend_url=http://openxds-server:8020/axis2/services/xdsrepositoryb
+      - iti41_backend_url=https://kih.test.xdsrepositoryb.medcom.dk/kih-iti41/iti41
       - iti43_backend_url=http://openxds-server:8020/axis2/services/xdsrepositoryb
       - logging_rules_log_cprnumber=true
       - logging_rules_log_clinical_document=true
@@ -175,9 +175,9 @@ services:
       - ./log/dgwsxdsvalidationproxy43:/pack/wildfly8/standalone/log
 
   kih-xds-generator:
-    image: kvalitetsit/kih-xds-generator:6db7fa75fb106ad197d521f3c9b55cf053ab93e0
+    image: kvalitetsit/kih-xds-generator:latest
     ports:
-      - "9020:9010"
+      - "9010:9010"
     networks:
       - dds_net
     depends_on:
@@ -198,20 +198,22 @@ services:
       - SERVER.TOMCAT.BASEDIR=tomcat
       - XDS.REPOSITORYUNIQUEID=1.2.208.176.43210.8.1.29
       - XDS.GENERATE.DOCUMENTID=true
-      - XDS.ITI41.ENDPOINT=http://dgwsxdsvalidationproxy41:8080/kih-iti41/iti41
+      - XDS.ITI41.ENDPOINT=https://kih.test.xdsrepositoryb.medcom.dk/kih-iti41/iti41
       - SOR.CODE=6071000016008
       - SOR.NAME=TeleCare Nord
       - DGWS.ENABLED=true
       - DGWS.STS.URL=https://test2.ekstern-test.nspop.dk:8443/sts/services/SecurityTokenService
       - DGWS.KEYSTORE.TYPE=production
-      - DGWS.KEYSTORE.ALIAS=tu generel foces gyldig (funktionscertifikat)
-      - DGWS.KEYSTORE.FILENAME=file:/app/conf/FOCES_gyldig_2025.p12
+      - DGWS.KEYSTORE.ALIAS=1
+      - DGWS.KEYSTORE.FILENAME=file:/app/conf/NSP_Test_Service_Consumer_sds_NEW.p12
       - DGWS.KEYSTORE.PASSWORD=Test1234
-      - DGWS.CERTIFICATE.ITSYSTEM=TRUST2408 Systemtest XIX CA
-      - DGWS.CERTIFICATE.ORGNAME=TU GENEREL FOCES gyldig (funktionscertifikat)
-      - DGWS.CERTIFICATE.CVR=30808460
+      - DGWS.CERTIFICATE.ITSYSTEM=Den Danske Stat OCES udstedende-CA 1
+      - DGWS.CERTIFICATE.ORGNAME=NSP Test Service Consumer
+      - DGWS.CERTIFICATE.CVR=33257872
+      - DK_SOSI_SEAL_VAULT_CREDENTIALVAULT_KEYALIAS=sosi:key_alias_system
+      - JAVA_OPTS=-Ddk.sosi.seal.vault.CredentialVault#KeyAlias=sosi:key_alias_system
     volumes:
-      - ../configuration/FOCES_gyldig_2025.p12:/app/conf/FOCES_gyldig_2025.p12
+      - ../configuration/NSP_Test_Service_Consumer_sds_NEW.p12:/app/conf/NSP_Test_Service_Consumer_sds_NEW.p12
 
   devdb:
     container_name: devdb
@@ -229,6 +231,14 @@ services:
       - type: volume
         source: devdbvolume
         target: /var/lib/mysql
+
+  mock-api:
+    build:
+      context: ../../../mock_clinician_api
+    ports:
+      - "8081:8081"
+    networks:
+      - dds_net
 
 volumes:
   devdbvolume:

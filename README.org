@@ -294,10 +294,11 @@ Bootstrap and restart the service
   make resetdb start
 #+end_src
 
-Data can be exported in two ways:
+Data can be exported in three ways:
 1. Batch mode
    a. Intended for re-exporting all measurements from an OTH installation
 2. Normally operations, using cron/scheduled job/curl
+3. Two-step export (implemented in 2026)
 
 To trigger the batch export, using the =exportall= subcommand:
 #+begin_src sh
@@ -312,6 +313,26 @@ Or setup for normal operations by:
 Then in another shell, trigger the export like so:
 #+begin_src sh
   curl http://localhost:8360/export
+#+end_src
+
+To trigger the two step export, first build the most recent version of the kih-xds-generator project, by running this command in the kih-xds-generator project:
+#+begin_src sh
+  make build-container
+#+end_src
+
+After this, run this command in this project:
+#+begin_src sh
+  make start-dev-env
+#+end_src
+
+You can then export all measurements to a json file by running:
+#+begin_src sh
+  go run main.go fetch-measurements --out-file measurements.json
+#+end_src
+
+These can later be sent to the generator by running:
+#+begin_src sh
+  go run main.go process-measurements --in-file measurements.json
 #+end_src
 
 *** Backends
