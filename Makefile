@@ -172,7 +172,7 @@ test: ## Runs test for component
 ifndef SSH_CONNECTION
 	@echo "Testing Outside CI..."
 	$Q go vet $(allpackages)
-	$Q GOEXPERIMENT=cgocheck2 go test -race $(allpackages)
+	$Q go test -race $(allpackages)
 else
 	docker run --rm -v $$(pwd):/app -w /app golang:1.16 make ci-test
 endif
@@ -186,13 +186,13 @@ ci-test: ### Run tests for cmponent
 	$Q mkdir -p test
 	$Q ( go vet $(allpackages); echo $$? ) | \
 	   tee test/vet.txt | sed '$$ d'; exit $$(tail -1 test/vet.txt)
-	$Q ( GOEXPERIMENT=cgocheck2 go test -v -race $(allpackages); echo $$? ) | \
+	$Q ( go test -v -race $(allpackages); echo $$? ) | \
 	   tee test/output.txt | sed '$$ d'; exit $$(tail -1 test/output.txt)
 
 integrationtest: ### Runs integration tests
 	@echo "Testing Outside CI..."
 	$Q go vet $(allpackages)
-	$Q GOEXPERIMENT=cgocheck2 INTEGRATION_TEST=true go test -v -race $(allpackages)
+	$Q INTEGRATION_TEST=true go test -v -race $(allpackages)
 
 testall: test integrationtest ### Test all then things
 
