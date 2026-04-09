@@ -119,35 +119,3 @@ func (mi repositoryImpl) UpdateExport(rs RunStatus) error {
 	log.Debug("Stored run ", rs)
 	return nil
 }
-
-func (mi repositoryImpl) DeleteExport(rs RunStatus) error {
-	log.Debug("Deleting", rs)
-
-	sess, err := mi.getSession()
-	if err != nil {
-		log.Error("Error gettting DB session")
-		return errors.Wrap(err, "Error getting conection")
-	}
-
-	tx, err := sess.Begin()
-	if err != nil {
-		log.Error("Error creating transaction", err)
-		log.Infof("Trace %+v", err)
-		return errors.Wrap(err, "Error creating transaction")
-	}
-
-	_, err = tx.Exec("DELETE FROM runstatus where id=?", rs.Id)
-
-	if err != nil {
-		if rerr := tx.Rollback(); rerr != nil {
-			return errors.Wrap(rerr, "Error performing rollback")
-		}
-		return errors.Wrap(err, "Error deleting runstatus")
-	}
-	err = tx.Commit()
-	if err != nil {
-		return errors.Wrap(err, "Error commiting transaction")
-	}
-	log.Debug("Deleted run ", rs)
-	return nil
-}

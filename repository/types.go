@@ -79,7 +79,6 @@ func (m MeasurementExportState) MarshalJSON() ([]byte, error) {
 type Repository interface {
 	StartExport() (RunStatus, error)
 	UpdateExport(lr RunStatus) error
-	DeleteExport(lr RunStatus) error
 	// Returns stats. Returns total numbed of measurements, failed messaurements, temporarily failed and rejected measusmrents
 	GetTotals() (int, int, int, int)
 	GetRuns() (time.Time, int, int, int, int)
